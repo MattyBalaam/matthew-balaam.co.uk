@@ -1,10 +1,18 @@
 .App {
   text-align: center;
+@font-face {
+  font-family: 'Calluna';
+  src: url('~//fonts/Calluna-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+body {
+  font-family: 'Calluna', serif;
+  font-size: 19px;
 }
 
 .App-header {
@@ -16,7 +24,7 @@
 
 .App-title {
   font-size: 1.5em;
-}
+  }
 
 .App-intro {
   font-size: large;
@@ -25,4 +33,4 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
+  }
