@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {bodyText} from './bodyText';
+import cvJSON from './cv.json';
 
 
 class Paragraphs extends Component {
@@ -61,9 +60,8 @@ class App extends Component {
 
   componentWillMount() {
     this.setState({
-      bodyText: bodyText,
+      content: cvJSON,
     })
-    console.log('figure out why fragments aren’t working');
   }
 
   render() {
