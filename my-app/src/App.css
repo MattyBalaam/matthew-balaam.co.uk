@@ -4,7 +4,7 @@
   --header-size: 1.75rem;
   --column: auto;
   --column-gap: 3em;
-
+  --section-decoration: 1px solid cyan;
 }
 @font-face {
   font-family: 'Calluna';
@@ -84,7 +84,7 @@ body {
 }
 
 .role {
-  border-top: 1px solid cyan;
+  border-top: var(--section-decoration);
   &__header {
     grid-area: two;
   }
@@ -103,6 +103,7 @@ body {
       text-align: right;
     }
     &__list {
+      border-top: var(--section-decoration);
       grid-area: two-three;
       column-count: 3;
       column-gap: var(--column-gap);
@@ -111,6 +112,6 @@ body {
 
 ul, li {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
 }
 
