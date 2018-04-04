@@ -1,0 +1,193 @@
+/*@use postcss-cssnext;*/
+
+@import 'resets.css';
+@import 'variables.css';
+
+
+@font-face {
+  font-family: 'Calluna';
+  src: url('~//fonts/Calluna-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Theinhardt';
+  src: url('~//fonts/TheinhardtReg.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Theinhardt';
+  src: url('~//fonts/TheinhardtLight_alt.woff') format('woff');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@page {
+  width: 31cm;
+  margin: 0.5cm;
+}
+
+html {
+  @media screen {
+    background: #888;
+    font-size: 17px;
+  }
+  @media print {
+    font-size: 8pt;
+  }
+}
+
+body {
+  font-family: 'Theinhardt', sans-serif;  
+  line-height: var(--line-height__body);
+  padding: 0;
+  color: var(--color__body);
+}
+
+.cv {
+  &__grid {
+    display: grid;
+    max-width: 1200px;
+    margin: 0;
+    background: var(--color__subtle-off-white);
+    padding: 4vw;
+    @media (--break-horizontal-min) {
+      margin: 1em auto;
+      padding: 4em;
+    }
+    @media print {
+      width: 21cm;
+      padding: 0.5cm 2cm;
+      max-width: none;
+    }
+  }
+}
+
+.grid {
+  margin-bottom: 1em;
+  /* background-position-y: -6px;
+  background-image: linear-gradient(#ddd 0, #ddd 1px, transparent 1px);
+  background-size: 21.55px 21.55px; */
+  @media (--break-horizontal-min),
+  print {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: var(--column-gap);
+    grid-template-areas: "one two-three two-three two-three";
+  }
+  &__header {
+    grid-area: one;
+  }
+  &__main {
+    grid-area: two-three
+  }
+  &__sub {
+    margin-bottom: 1.33rem;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -0.45rem;
+      width: 100%;
+      border-top: var(--section-decoration);
+    }
+    @media (--break-medium-min),
+    print  {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: var(--column-gap);
+      grid-template-areas:
+        "two three three";
+    }
+  }
+  &__sub-info {
+    grid-area: two;
+  }
+  &__sub-description {
+    grid-area: three
+  }
+}
+
+
+.contact {
+  /* @media (min-width: 800px) {
+    grid-template-areas:
+    "one two three";
+  } */
+  padding-bottom: 1rem;
+
+  &__primary {
+      grid-area: one;
+
+      @media (--break-horizontal-min),
+      print {
+        white-space: nowrap;
+        text-align: right;
+        
+    }
+  }
+  &__name {
+    font-size: var(--header-size);
+  }
+  &__address {
+    grid-area: two;
+  }
+  &__address-line {
+    display: block;
+  }
+}
+
+.role {
+  &__title {
+    margin-bottom: 1.35rem;
+  }
+  &__name {
+    margin-bottom: 1.35rem;
+  }
+}
+
+.section-header {
+  font-size: var(--header-size);
+  font-family: var(--font__header);
+  font-weight: lighter;
+  white-space: nowrap;
+  margin-top: -var(--header-margin-top);
+  padding-bottom: calc(var(--line-height__body) + var(--header-margin-top)) ;
+  @media (--break-horizontal-min),
+  print {
+    margin-top: -var(--header-margin-top);
+    text-align: right;
+  }
+}
+
+.technology {
+    grid-template-areas:
+    "one two-three two-three two-three";
+    &__list {
+      border-top: var(--section-decoration);
+      grid-area: two-three;
+      column-count: 3;
+      column-gap: var(--column-gap);
+    }
+}
+
+ul, li {
+  list-style: none;
+  padding-left: 0;
+}
+
+.paragraphs {
+  &__p {
+    font-family: 'Calluna', serif; 
+    font-size: 105%; 
+    &:not(:first-of-type) {
+      text-indent: 1em;
+    }
+  }
+}
+
+:link {
+  color: var(--color__ice);
+}
