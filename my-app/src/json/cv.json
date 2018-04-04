@@ -78,8 +78,8 @@
       ] 
     }
   ],
-  "education": {
-    "institution": "Southampton Solent Univesity",
+  "education": [{
+    "institution": "Southampton Solent University",
     "area": "Media and Cultural Studies",
     "studyType": "BA (Hons)",
     "startDate": "1993-09-15",
@@ -87,7 +87,7 @@
     "summary": [
       "The practical half of this degree covered web design, television and radio production, desktop publishing, journalism and photography. These creative practices were informed by studying strands of critical theory with an emphasis on how these can assist the creative process." 
     ]
-  },
+  }],
   "skills": [
     {
       "name": "Development",
