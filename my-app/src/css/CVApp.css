@@ -2,6 +2,7 @@
 
 @import 'resets.css';
 @import 'variables.css';
+@import 'animations.css';
 
 
 @font-face {
@@ -43,17 +44,64 @@ body {
   line-height: var(--line-height__body);
   padding: 0;
   color: var(--color__body);
+  @media (--break-horizontal-min) {
+    margin: 1em auto;
+  }
 }
 
+
+.cube {
+  
+  &__perspective {
+    perspective: 200vw;
+    transform-style: preserve-3d;
+    transform-origin: top;
+  }
+  @media (--break-horizontal-min) {
+    transform-style: preserve-3d;
+    animation: spin-in 1s backwards 1 1s;
+    will-change: transform;
+  }
+  display: flex;
+
+  &__face-1 {
+    backface-visibility: hidden;
+    background: var(--color__fire);
+    transform:  rotateY(-90deg) translateX(-100%);
+    transform-origin: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    &::before {
+      content: "";
+      height: 15vw;
+      width: 15vw;
+      margin-top: 33vh;
+      border-radius: 50%;
+      border: 1vw dotted white;
+      border-bottom: 0 none;
+      animation: spinner 3s backwards infinite linear;
+    }
+  }
+  &__face-2 {
+    backface-visibility: hidden;
+  }
+}
+
+
 .cv {
+  max-width: 1200px;
+  margin: auto;
   &__grid {
     display: grid;
-    max-width: 1200px;
     margin: 0;
     background: var(--color__subtle-off-white);
     padding: 4vw;
     @media (--break-horizontal-min) {
-      margin: 1em auto;
       padding: 4em;
     }
     @media print {

@@ -29,13 +29,19 @@ class App extends Component {
 
   render() {
     return (
-      <main className="cv">
-        <article className="cv__grid"> 
-          <Contact {...this.state.content.basics} />
-          <Experience work={this.state.content.work} />
-          <Education education={this.state.content.education} />
-          <Technologies technologies={this.state.content.skills[0].keywords} /> 
-        </article>
+      <main className="cv cube__perspective">
+        <div className="cv__cube cube">
+          <div className="cube__face-1">
+          </div>
+          <div className="cube__face-2">
+            <article className="cv__grid"> 
+              <Contact {...this.state.content.basics} />
+              <Experience work={this.state.content.work} />
+              <Education education={this.state.content.education} />
+              <Technologies technologies={this.state.content.skills[0].keywords} /> 
+            </article>
+          </div>
+        </div>
       </main>
     );
   }
