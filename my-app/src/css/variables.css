@@ -12,9 +12,11 @@
     --color__ice: #4db0c4;
     --color__fire: #c47333;
     --section-decoration: 0.075rem solid var(--color__ice);
+    --rhythm__vertical: 1.33rem;
   }
 
 @custom-media --break-horizontal-large-min (min-width: 1200px);
 @custom-media --break-horizontal-min (min-width: 1000px);
 @custom-media --break-vertical-max (max-width: 1000px);
 @custom-media --break-medium-min (min-width: 600px);
+@custom-media --break-medium-max (min-width: 599px);
