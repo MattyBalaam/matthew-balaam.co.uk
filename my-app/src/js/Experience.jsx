@@ -17,12 +17,13 @@ class Experience extends Component {
     
     role = role => (
       
-      <section key={role.startDate} className="role grid__sub">
+      <section key={role.startDate} className="role grid__sub divider">
         <header className="role__header grid__sub-info">
           <h3 className="role__company">{role.company}</h3>
           <p className="role__dates">
             <NiceDate className="role__start" date={role.start}/>
-              <> – </><NiceDate className="role__end" date={role.end}/>
+            <> – </>
+            <NiceDate className="role__end" date={role.end}/>
           </p>
           <p className="role__title">{role.position}</p>
           <p className="role__name">{role.name}</p>
