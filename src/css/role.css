@@ -8,6 +8,11 @@
         margin-bottom: 1.35rem;
       }
     }
+    &__website {
+      @media (--break-vertical-max) {
+        margin-bottom: 1.35rem;
+      }
+    }
     &__header {
       margin-bottom: 0;
     }
