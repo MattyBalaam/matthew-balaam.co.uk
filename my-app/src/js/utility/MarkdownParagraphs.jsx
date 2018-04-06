@@ -8,7 +8,7 @@ const root = props => (
           return {...child, 
             props: {
               ...child.props, 
-              className: 'paragraphs__p',
+              className: 'paragraphs__p balance-text',
             }
           }
         })
