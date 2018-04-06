@@ -9,22 +9,7 @@
 @import 'grid.css';
 @import 'contact.css';
 @import 'technology.css';
-
-
-.role {
-  margin-bottom: var(--rhythm__vertical);
-  &__title {
-    margin-bottom: 1.35rem;
-  }
-  &__name {
-    &:not(:last-of-type){
-      margin-bottom: 1.35rem;
-    }
-  }
-  &__header {
-    margin-bottom: 0;
-  }
-}
+@import 'role.css';
 
 .section-header {
   font-size: var(--header-size);
