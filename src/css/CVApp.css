@@ -17,7 +17,12 @@
     margin-bottom: 1.35rem;
   }
   &__name {
-    margin-bottom: 1.35rem;
+    &:not(:last-of-type){
+      margin-bottom: 1.35rem;
+    }
+  }
+  &__header {
+    margin-bottom: 0;
   }
 }
 

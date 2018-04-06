@@ -1,5 +1,8 @@
 .grid {
-  margin-bottom: var(--rhythm__vertical);
+  margin-bottom: calc(var(--rhythm__vertical) * 2);
+  &--tight-bottom {
+    margin-bottom: 0;
+  }
   /* background-position-y: -6px;
   background-image: linear-gradient(#ddd 0, #ddd 1px, transparent 1px);
   background-size: 21.55px 21.55px; */

@@ -5,7 +5,7 @@ import Profiles from './Profiles';
 function Contact(props) {
     return (
       <header className="contact">
-        <div className="grid">
+        <div className="grid grid--tight-bottom">
           <section className="contact__primary">
             <h1 className="section-header contact__name ">{props.name}</h1>
           </section>
@@ -21,7 +21,7 @@ function Contact(props) {
             <Profiles content={props.profiles}/>
             <p className="contact__phone">{props.phone}</p>
           </div>
-          <div className="grid__main grid__sub divider">
+          <div className="grid__main grid__sub">
             <p className="contact__address grid__sub-info">
               <span className="contact__address-line">{props.location.address}</span>
               <span className="contact__address-line">{props.location.city}</span>
