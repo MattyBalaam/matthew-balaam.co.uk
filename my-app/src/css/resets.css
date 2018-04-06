@@ -27,6 +27,11 @@ h6 {
     margin: 0;
 }
 
+ul, li {
+    list-style: none;
+    padding-left: 0;
+  }
+
 :link:not(:hover) {
     text-decoration: none;
 }
