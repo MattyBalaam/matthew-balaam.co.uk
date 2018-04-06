@@ -1,0 +1,29 @@
+.technology {
+    grid-template-areas:
+    "one two-three two-three two-three";
+    margin-bottom: var(--rhythm__vertical);
+    &__list {
+      grid-area: two-three;
+      column-count: 2;
+      column-gap: var(--column-gap);
+      @media (--break-medium-min ) {
+        column-count: 3;
+      }
+      position: relative; /* toDo: Make DRY */
+      &::before { /* toDo: Make DRY */
+        content: ""; 
+        position: absolute;
+        left: 0;
+        top: -0.45rem;
+        width: 100%;
+        border-top: var(--section-decoration);
+      }
+    }
+    &__item {
+      list-style: outside;
+      color: var(--color__fire);
+    }
+    &__item-text {
+      color: var(--color__body);
+    }
+  }

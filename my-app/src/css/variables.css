@@ -1,5 +1,5 @@
 :root {
-    --header-size: 1.75rem;
+    --header-size: 1.6rem;
     --header-margin-top: 0.15rem;
     --line-height__body: 1.35rem;
     --line-height__header: 2.7rem;
@@ -11,8 +11,9 @@
     --color__subtle-off-white: #fafcfa;
     --color__ice: #4db0c4;
     --color__fire: #c47333;
+    --color__prince: #c53fa6;
     --section-decoration: 0.075rem solid var(--color__ice);
-    --rhythm__vertical: 1.33rem;
+    --rhythm__vertical: 1.35rem;
   }
 
 @custom-media --break-horizontal-large-min (min-width: 1200px);

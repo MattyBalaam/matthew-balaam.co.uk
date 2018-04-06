@@ -1,0 +1,37 @@
+html {
+  @media screen {
+    background: #888;
+    font-size: 17px;
+  }
+  @media print {
+    font-size: 8pt;
+  }
+}
+
+body {
+  font-family: "Theinhardt", sans-serif;
+  line-height: var(--line-height__body);
+  padding: 0;
+  color: var(--color__body);
+  @media (--break-horizontal-min) {
+    margin: 1em auto;
+  }
+}
+
+.cv {
+  max-width: 1200px;
+  margin: auto;
+  &__grid {
+    margin: 0;
+    background: var(--color__subtle-off-white);
+    padding: 4vw;
+    @media (--break-horizontal-min) {
+      padding: 4em;
+    }
+    @media print {
+      width: 21cm;
+      padding: 0.5cm 2cm;
+      max-width: none;
+    }
+  }
+}
