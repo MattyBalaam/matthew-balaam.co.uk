@@ -22,7 +22,7 @@ class Education extends Component {
         <>
         {this.props.education.map((institution) => {
           return (
-            <article className="education grid" key={institution.startDate}>
+            <article className="education grid grid--tight-bottom" key={institution.startDate}>
               <h2 className="section-header education__header grid__header">Education</h2>
               <section className="education__content grid__main grid__sub divider">
                 <div className="grid__sub-info">

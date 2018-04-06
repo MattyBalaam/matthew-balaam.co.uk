@@ -1,7 +1,7 @@
 .technology {
     grid-template-areas:
     "one two-three two-three two-three";
-    margin-bottom: var(--rhythm__vertical);
+    /* margin-bottom: var(--rhythm__vertical); */
     &__list {
       grid-area: two-three;
       column-count: 2;

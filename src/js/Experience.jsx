@@ -27,7 +27,10 @@ class Experience extends Component {
           </p>
           <p className="role__title">{role.position}</p>
           <p className="role__name">{role.name}</p>
-          <a className="role__website" href={role.url} target="_blank">{role.url}</a>
+          {role.url ? 
+            <a className="role__website" href={role.url} target="_blank">{role.url}</a>
+            : null
+          }
         </header>
         <section className="role__descripton grid__sub-description">
           <Paragraphs content={role.highlights} />
