@@ -1,17 +1,17 @@
 
 .cube {
     display: flex;
-    &--loading {
-      @media (--break-horizontal-min) {
+    @media (--break-horizontal-min) {
+      &--loading {
+          transform-style: preserve-3d;
+          animation: spin-in 1s backwards 1 1s;
+          will-change: transform;
+        }
+      &__perspective {
+        perspective: 1000px;
         transform-style: preserve-3d;
-        animation: spin-in 1s backwards 1 1s;
-        will-change: transform;
+        transform-origin: top;
       }
-    }
-    &__perspective {
-      perspective: 1000px;
-      transform-style: preserve-3d;
-      transform-origin: top;
     }
     &__face-1 {
       @media (--break-vertical-max) {

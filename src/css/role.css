@@ -1,0 +1,14 @@
+.role {
+    margin-bottom: var(--rhythm__vertical);
+    &__title {
+      margin-bottom: 1.35rem;
+    }
+    &__name {
+      &:not(:last-child){ /* make more BEM? */
+        margin-bottom: 1.35rem;
+      }
+    }
+    &__header {
+      margin-bottom: 0;
+    }
+  }
