@@ -6,7 +6,8 @@
       grid-area: two-three;
       column-count: 2;
       column-gap: var(--column-gap);
-      @media (--break-medium-min ) {
+      @media (--break-medium-min ),
+      print {
         column-count: 3;
       }
       position: relative; /* toDo: Make DRY */

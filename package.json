@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "electron-html-to": "^2.6.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-custom-media": "6.0.0",
     "postcss-import": "11.1.0",
@@ -17,8 +18,9 @@
     "postinstall": "sed -i.bak \"s/[[:space:]]require('postcss-flexbugs-fixes')/require('postcss-import'),require('postcss-cssnext'),require('postcss-nested'),require('postcss-custom-media'),require('postcss-flexbugs-fixes')/g\" node_modules/react-scripts/config/webpack.config.dev.js && sed -i.bak \"s/[[:space:]]require('postcss-flexbugs-fixes')/require('postcss-import'),require('postcss-cssnext'),require('postcss-nested'),require('postcss-flexbugs-fixes'),require('postcss-custom-media')/g\" node_modules/react-scripts/config/webpack.config.prod.js",
     "start": "react-scripts start",
     "build": "react-scripts build && react-snapshot",
+    "postbuild": "npm run topdf",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "topdf": "node ./scripts/toPDF.js"
   },
   "browserslist": {
     "development": [
@@ -35,6 +37,7 @@
   },
   "devDependencies": {
     "balance-text": "^3.2.0",
+    "electron": "^1.8.4",
     "html-pdf": "^2.2.0",
     "react-snapshot": "^1.3.0"
   }
