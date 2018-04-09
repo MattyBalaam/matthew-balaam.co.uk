@@ -7,8 +7,6 @@ import balanceText from 'balance-text';
 
 import cvJSON from '../json/cv.json';
 
-import '../css/CVApp.css';
-
 
 class App extends Component {
 
