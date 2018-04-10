@@ -20,7 +20,7 @@ fs.readFile('./build/index.html', 'utf8', (err, htmlString) => {
     if (err) return console.error(err);
     // console.log(result.numberOfPages);
     // console.log(result.logs);
-    result.stream.pipe(fs.createWriteStream(`${builddir}/anywhere.pdf`));
+    result.stream.pipe(fs.createWriteStream(`${builddir}/Matthew-Balaam_Developer.pdf`));
     conversion.kill(); // necessary if you use the electron-server strategy, see bellow for details
   });
 });

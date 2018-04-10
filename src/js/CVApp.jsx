@@ -36,6 +36,15 @@ class App extends Component {
 
   render() {
     return (
+      <>
+      <aside className="download-pdf">
+        <a href={`${process.env.PUBLIC_URL}/pdf/Matthew-Balaam_Developer.pdf`} 
+          target="_blank" 
+          className="download-pdf__link">
+          <span className="download-pdf__text">Download CV as PDF</span><> </>
+          <span className="download-pdf__icon"></span>
+        </a>
+      </aside>
       <main className="cv cube__perspective">
         <div ref={this.cubeRef} className={`cv__cube cube ${this.state.cubeAnimClass}`}>
           <div className="cube__face-1">
@@ -50,6 +59,7 @@ class App extends Component {
           </div>
         </div>
       </main>
+      </>
     );
   }
 }
