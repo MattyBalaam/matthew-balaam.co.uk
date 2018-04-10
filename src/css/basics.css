@@ -67,7 +67,6 @@ body {
       display: inline-block;
       vertical-align: middle;
       width: 6em;
-      font-size: 1.2em;
     }
   }
   &__icon { /* from icono font */

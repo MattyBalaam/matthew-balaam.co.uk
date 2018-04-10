@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const convertFactory = require('electron-html-to');
-const builddir = './build/static/pdf';
+const builddir = './build/pdf';
 
 if (!fs.existsSync(builddir)){
     fs.mkdirSync(builddir);
