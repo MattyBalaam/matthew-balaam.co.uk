@@ -1,11 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-snapshot';
 import './index.css';
 import CVApp from './js/CVApp';
 import registerServiceWorker from './registerServiceWorker';
 
+import './css/CVApp.css';
 
 console.log('make sure the PDF is added');
 
-ReactDOM.render(<CVApp />, document.getElementById('root'));
+render(
+    <CVApp />, document.getElementById('root')
+);
 registerServiceWorker();
