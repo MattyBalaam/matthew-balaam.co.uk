@@ -18,7 +18,12 @@
         "network": "Twitter",
         "username": "@matthewbalaam",
         "url": "https://twitter.com/matthewbalaam"
+      }, {
+        "network": "GitHub",
+        "username": "mattybalaam",
+        "url": "https://github.com/MattyBalaam"
       }
+
     ]
   },
   "work": [
@@ -38,8 +43,8 @@
       "name": "New Era Education Ltd.",
       "position": "Front-end developer",
       "url": "neweraed.co.uk",
-      "startDate": "2017-07-20",
-      "endDate": "2013-07-07",
+      "startDate": "2013-07-07",
+      "endDate": "2017-07-20",
       "highlights": [
         "Sole developer on all company public-facing websites using JavaScript, CSS (SASS/PostCSS) and webpack, with SilverStripe (PHP) providing an MVC framework (HTML templating, SQL, and an easy-to-use CMS for content editors.",
         "Working in a team on DB Primary, a safe, easy-to-use internet experience for pupils and teachers with a Java backend.",
