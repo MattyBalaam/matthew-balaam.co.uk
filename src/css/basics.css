@@ -111,4 +111,11 @@ body {
   }
 }
 
+.education {
+ &__institution,
+ &__area {
+  margin-bottom: 1.35rem;
+ }
+}
+
 
