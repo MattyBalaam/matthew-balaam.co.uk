@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Paragraphs from './utility/Paragraphs';
+import MarkdownParagraphs from './utility/MarkdownParagraphs';
 import {NiceDate} from './utility/DateFormat';
 
 class Experience extends Component {
@@ -33,7 +33,7 @@ class Experience extends Component {
           }
         </header>
         <section className="role__descripton grid__sub-description">
-          <Paragraphs content={role.highlights} />
+          <MarkdownParagraphs source={role.highlights} />
         </section>
       </section>
     )

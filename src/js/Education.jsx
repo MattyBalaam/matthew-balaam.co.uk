@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Paragraphs from './utility/Paragraphs';
+import MarkdownParagraphs from './utility/MarkdownParagraphs';
 import {NiceDate} from './utility/DateFormat';
 
 class Education extends Component {
@@ -33,7 +33,7 @@ class Education extends Component {
                 <> – </><NiceDate className="education__end" date={institution.end}/></p>
                 </div>
                 <div className="grid__sub-description">
-                  <Paragraphs content={institution.summary}/>
+                  <MarkdownParagraphs source={institution.summary}/>
                 </div>
               </section>  
             </article>
