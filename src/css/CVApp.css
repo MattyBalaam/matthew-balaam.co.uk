@@ -25,16 +25,34 @@
   }
 }
 
-.paragraphs {
-  &__p {
-    font-family: 'Calluna', serif; 
+.mkd {
+  :root {
+    --list { /* depreceated, change when better standard created */
+      font-size: 105%;
+      margin: 0 0 var(--rhythm__vertical);
+      padding-top: var(--rhythm__vertical);
+    };
+  }
+
+  font-family: 'Calluna', serif;
+  &--p {
     font-size: 105%; 
-    &:not(:first-of-type) {
+    + .mkd--p:not(:first-of-type) {
       text-indent: 1em;
     }
   }
+  &--ol {
+    list-style: decimal;
+    @apply --list;
+  }
+  &--ul {
+    list-style: disc;
+    @apply --list;
+  }
+  &--li {
+    margin: 0;
+  }
 }
-
 .divider {
   position: relative; 
   &::before { 
