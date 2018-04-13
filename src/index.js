@@ -6,8 +6,6 @@ import registerServiceWorker from './registerServiceWorker';
 
 import './css/CVApp.css';
 
-console.log('make sure the PDF is added');
-
 render(
   <CVApp />, document.getElementById('root')
 );
