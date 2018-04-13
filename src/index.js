@@ -5,8 +5,9 @@ import CVApp from './js/CVApp';
 import registerServiceWorker from './registerServiceWorker';
 
 import './css/CVApp.css';
+import cvJSON from './json/cv.json';
 
 render(
-  <CVApp />, document.getElementById('root')
+  <CVApp cvJSON={cvJSON} />, document.getElementById('root')
 );
 registerServiceWorker();
