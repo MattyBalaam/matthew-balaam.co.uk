@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MarkdownParagraphs from './utility/MarkdownParagraphs';
+import parseDates from './utility/ParseDates';
 import {NiceDate} from './utility/DateFormat';
 
 const Institution = institution => (
@@ -25,19 +26,13 @@ const Institions = instiutions => (
 )
 
 class Education extends Component {
-
+  
   constructor(props) {
     super(props);
-    this.state = {education: this.parseDates(this.props.education)};
+    this.state = {};
   }
-  
-  parseDates = education => {
-    return education.map(institution => {
-      institution.start = new Date(institution.startDate);
-      institution.end = new Date(institution.endDate);
-      return institution;
-    });
-  }
+
+  static getDerivedStateFromProps = nextProps => ({content: parseDates(nextProps.education)});
 
   render() { 
     return Institions(this.props.education);

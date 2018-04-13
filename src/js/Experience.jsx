@@ -1,25 +1,22 @@
 import React, { Component } from 'react';
 import MarkdownParagraphs from './utility/MarkdownParagraphs';
+import parseDates from './utility/ParseDates';
 import {NiceDate} from './utility/DateFormat';
 
 class Experience extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {work: this.parseDates(this.props.work)};
+    this.state = {};
   }
-  
-  parseDates = work => work.map(role => {
-    role.start = new Date(role.startDate);
-    role.end = new Date(role.endDate);
-    return role;
-  });
-  
+
+  static getDerivedStateFromProps = nextProps => ({work: parseDates(nextProps.content)});
+
   role = role => (
-    
-    <section key={role.startDate} className="role grid__sub divider">
-      <header className="role__header grid__sub-info">
-        <h3 className="role__company">{role.company}</h3>
+
+  <section key={role.startDate} className="role grid__sub divider">
+    <header className="role__header grid__sub-info">
+      <h3 className="role__company">{role.company}</h3>
         <p className="role__dates">
           <NiceDate className="role__start" date={role.start}/>
           <> – </>
