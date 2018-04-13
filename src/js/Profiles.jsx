@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Profiles = props => props.content.map((profile, i) => Profile(profile,i));
 
@@ -9,5 +10,15 @@ const Profile = (profile, i) => (
     </a>
   </p>
 )
+
+Profiles.propTypes = {
+  content: PropTypes.array.isRequired,
+}
+
+Profile.propTypes = {
+  content: PropTypes.string.isRequired,
+  network: PropTypes.string.isRequired,
+  url: PropTypes.string,
+}
 
 export default Profiles;

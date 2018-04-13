@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import MarkdownParagraphs from './utility/MarkdownParagraphs';
 import parseDates from './utility/ParseDates';
 import {NiceDate} from './utility/DateFormat';
@@ -29,25 +30,37 @@ const Role = role => (
   <section key={role.startDate} className="role grid__sub divider">
     <header className="role__header grid__sub-info">
       <h3 className="role__company">{role.company}</h3>
-        <p className="role__dates">
-          <NiceDate className="role__start" date={role.start}/>
-          <> – </>
-          <NiceDate className="role__end" date={role.end}/>
-        </p>
-        <p className="role__title">{role.position}</p>
-        <p className="role__name">{role.name}</p>
-        {role.url ? 
-          <a className="role__website" href={role.url} target="_blank">{role.url}</a>
-          : null
-        }
-      </header>
-      <section className="role__descripton grid__sub-description">
-        <MarkdownParagraphs source={role.highlights} />
-      </section>
+      <p className="role__dates">
+        <NiceDate className="role__start" date={role.start}/>
+        <> – </>
+        <NiceDate className="role__end" date={role.end}/>
+      </p>
+      <p className="role__title">{role.position}</p>
+      <p className="role__name">{role.name}</p>
+      {role.url ? 
+        <a className="role__website" href={role.url} target="_blank">{role.url}</a>
+        : null
+      }
+    </header>
+    <section className="role__descripton grid__sub-description">
+      <MarkdownParagraphs source={role.highlights} />
+    </section>
   </section>
 )
 
+Role.propTypes = {
+  startDate: PropTypes.Date,
+  endDate: PropTypes.Date,
+  company: PropTypes.string,
+  start: PropTypes.string,
+  end: PropTypes.string,
+  position: PropTypes.string,
+  name: PropTypes.string,
+  url: PropTypes.number
 }
+
+Experience.propTypes = {
+  work: PropTypes.array
 }
 
 export default Experience;

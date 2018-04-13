@@ -1,5 +1,6 @@
 import React from 'react';
 import MarkdownParagraphs from './utility/MarkdownParagraphs';
+import PropTypes from 'prop-types';
 import Profiles from './Profiles';
 
 function Contact(props) {
@@ -32,6 +33,16 @@ function Contact(props) {
       </div>
     </header>
   )
+}
+
+Contact.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  profiles: PropTypes.array.isRequired,
+  phone: PropTypes.string.isRequired,
+  location: PropTypes.objectOf(PropTypes.string).isRequired,
+  summary: PropTypes.string.isRequired,
 }
 
 export default Contact;

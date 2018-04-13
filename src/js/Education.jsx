@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import MarkdownParagraphs from './utility/MarkdownParagraphs';
 import parseDates from './utility/ParseDates';
 import {NiceDate} from './utility/DateFormat';
@@ -19,11 +20,20 @@ const Institution = institution => (
   </article>
 );
 
+Institution.propTypes = {
+  startDate: PropTypes.number.isRequired,
+  institution: PropTypes.string.isRequired,
+}
+
 const Institutions = institutions => (
   <>
     {institutions.map(institution => Institution(institution))}
   </>
 )
+
+Institutions.propTypes = {
+  institutions: PropTypes.array.isRequired,
+}
 
 class Education extends Component {
   
@@ -39,5 +49,8 @@ class Education extends Component {
   }
 }
 
+Education.propTypes = {
+  education: PropTypes.array.isRequired,
+}
 
 export default Education;

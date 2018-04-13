@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Technologies = ({tech}) => (
   <article className="technology grid">
@@ -14,5 +15,14 @@ const TechnologyItem = (item, i) => (
     <span className="technology__item-text">{item}</span>
   </li>
 );
+
+Technologies.propTypes = {
+  tech: PropTypes.array.isRequired,
+}
+
+TechnologyItem.propTypes = {
+  i: PropTypes.number.isRequired,
+  item: PropTypes.string.isRequired,
+}
 
 export default Technologies;
