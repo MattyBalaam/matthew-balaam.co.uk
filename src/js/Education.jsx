@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import MarkdownParagraphs from './utility/MarkdownParagraphs';
+import parseDates from './utility/ParseDates';
 import {NiceDate} from './utility/DateFormat';
 
 const Institution = institution => (
@@ -18,31 +20,37 @@ const Institution = institution => (
   </article>
 );
 
-const Institions = instiutions => (
+Institution.propTypes = {
+  startDate: PropTypes.number.isRequired,
+  institution: PropTypes.string.isRequired,
+}
+
+const Institutions = institutions => (
   <>
-    {instiutions.map(institution => Institution(institution))}
+    {institutions.map(institution => Institution(institution))}
   </>
 )
 
-class Education extends Component {
+Institutions.propTypes = {
+  institutions: PropTypes.array.isRequired,
+}
 
+class Education extends Component {
+  
   constructor(props) {
     super(props);
-    this.state = {education: this.parseDates(this.props.education)};
-  }
-  
-  parseDates = education => {
-    return education.map(institution => {
-      institution.start = new Date(institution.startDate);
-      institution.end = new Date(institution.endDate);
-      return institution;
-    });
+    this.state = {};
   }
 
+  static getDerivedStateFromProps = nextProps => ({content: parseDates(nextProps.education)});
+
   render() { 
-    return Institions(this.props.education);
+    return Institutions(this.state.content);
   }
 }
 
+Education.propTypes = {
+  education: PropTypes.array.isRequired,
+}
 
 export default Education;

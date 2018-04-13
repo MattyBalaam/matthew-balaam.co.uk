@@ -5,9 +5,6 @@ import Experience from './Experience';
 import Technologies from './Technologies';
 import balanceText from 'balance-text';
 
-import cvJSON from '../json/cv.json';
-
-
 class App extends Component {
 
   constructor(props) {
@@ -19,11 +16,7 @@ class App extends Component {
     this.cubeRef = React.createRef();
   }
 
-  componentWillMount() {
-    this.setState({
-      content: cvJSON,
-    })
-  }
+  static getDerivedStateFromProps = nextProps => ({content: nextProps.cvJSON});
 
   componentDidMount() {
     balanceText();
@@ -52,8 +45,8 @@ class App extends Component {
           <div className="cube__face-2">
             <article className="cv__grid"> 
               <Contact {...this.state.content.basics} />
-              <Technologies technologies={this.state.content.skills[0].keywords} /> 
-              <Experience work={this.state.content.work} />
+              <Technologies tech={this.state.content.skills[0].keywords} /> 
+              <Experience content={this.state.content.work} />
               <Education education={this.state.content.education} />
             </article>
           </div>

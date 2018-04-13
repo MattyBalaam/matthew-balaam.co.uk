@@ -1,5 +1,6 @@
 import React from 'react';
 import MarkdownParagraphs from './utility/MarkdownParagraphs';
+import PropTypes from 'prop-types';
 import Profiles from './Profiles';
 
 function Contact(props) {
@@ -27,13 +28,21 @@ function Contact(props) {
             <span className="contact__address-line">{props.location.city}</span>
             <span className="contact__address-line">{props.location.postalCode}</span>
           </p>
-          <section className="contact__summary grid__sub-description"> 
-            <MarkdownParagraphs source={props.summary}/>
-          </section>
+          <MarkdownParagraphs className="contact__summary grid__sub-description" source={props.summary}/>
         </div>
       </div>
     </header>
   )
+}
+
+Contact.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  profiles: PropTypes.array.isRequired,
+  phone: PropTypes.string.isRequired,
+  location: PropTypes.objectOf(PropTypes.string).isRequired,
+  summary: PropTypes.string.isRequired,
 }
 
 export default Contact;
