@@ -1,4 +1,4 @@
-import React, {createElement} from 'react';
+import React, {createElement, cloneElement} from 'react';
 import ReactMarkdown, {renderers} from 'react-markdown';
 import mapObj from './MapObj';
 
@@ -6,27 +6,17 @@ const BASECLS = 'mkd mkd--';
 
 const addBemToMarkdown = type => props => createElement(type, {...props, className: `${BASECLS}${type}`}, props.children);
 
-const addBemToFunc = oldFunc => props => {
-  const component = oldFunc(props); 
-  return {
-    ...component, 
-    props: {
-      ...component.props,
-      className: `${BASECLS}${component.type}`,
-    }
-  };
+const addBemToGetReactElement = getReactEl => props => {
+  const el = getReactEl(props);
+  const className = `${BASECLS}${el.type}${el.props.className ? ` ${el.props.className}` : null}`
+  return cloneElement(el,{className});
 }
 
-const bemRenderers = mapObj(renderers, ([k, v]) => {
-    if (typeof v === 'function') {
-      v = addBemToFunc(v)
-    } else {
-      v = addBemToMarkdown(v);
-    }
-    return {[k]: v};
-  }
-);
+const addBemToAll = ([k, v]) => {
+  return {[k]: typeof v === 'function' ? addBemToGetReactElement(v) : addBemToMarkdown(v) };
+};
 
+const bemRenderers = mapObj(renderers, addBemToAll);
 
 const MarkdownParagraphs = props => {
   let source = props.source;
