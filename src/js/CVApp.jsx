@@ -45,8 +45,8 @@ class App extends Component {
           <div className="cube__face-2">
             <article className="cv__grid"> 
               <Contact {...this.state.content.basics} />
-              <Technologies technologies={this.state.content.skills[0].keywords} /> 
-              <Experience work={this.state.content.work} />
+              <Technologies tech={this.state.content.skills[0].keywords} /> 
+              <Experience content={this.state.content.work} />
               <Education education={this.state.content.education} />
             </article>
           </div>

@@ -12,8 +12,20 @@ class Experience extends Component {
 
   static getDerivedStateFromProps = nextProps => ({work: parseDates(nextProps.content)});
 
-  role = role => (
+  render() {
+    return (
+      <article className="experience grid">
+        <h2 className="section-header experience__header grid__header">Experience</h2>
+        <section className="experience__roles grid__main">
+          {this.state.work.map((role, i) => Role(role, i))}
+        </section>
+      </article>
+    )
+  }
 
+}
+
+const Role = role => (
   <section key={role.startDate} className="role grid__sub divider">
     <header className="role__header grid__sub-info">
       <h3 className="role__company">{role.company}</h3>
@@ -32,20 +44,10 @@ class Experience extends Component {
       <section className="role__descripton grid__sub-description">
         <MarkdownParagraphs source={role.highlights} />
       </section>
-    </section>
-  )
-  
+  </section>
+)
 
-  render() {
-    return (
-      <article className="experience grid">
-        <h2 className="section-header experience__header grid__header">Experience</h2>
-        <section className="experience__roles grid__main">
-          {this.props.work.map((role, i) => this.role(role, i))}
-        </section>
-      </article>
-    )
-  }
+}
 }
 
 export default Experience;

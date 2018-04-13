@@ -19,9 +19,9 @@ const Institution = institution => (
   </article>
 );
 
-const Institions = instiutions => (
+const Institutions = institutions => (
   <>
-    {instiutions.map(institution => Institution(institution))}
+    {institutions.map(institution => Institution(institution))}
   </>
 )
 
@@ -35,7 +35,7 @@ class Education extends Component {
   static getDerivedStateFromProps = nextProps => ({content: parseDates(nextProps.education)});
 
   render() { 
-    return Institions(this.props.education);
+    return Institutions(this.state.content);
   }
 }
 

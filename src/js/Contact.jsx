@@ -27,9 +27,7 @@ function Contact(props) {
             <span className="contact__address-line">{props.location.city}</span>
             <span className="contact__address-line">{props.location.postalCode}</span>
           </p>
-          <section className="contact__summary grid__sub-description"> 
-            <MarkdownParagraphs source={props.summary}/>
-          </section>
+          <MarkdownParagraphs className="contact__summary grid__sub-description" source={props.summary}/>
         </div>
       </div>
     </header>
