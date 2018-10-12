@@ -1,20 +1,30 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
-const dateOptions = {  
-  weekday: "long", 
-  year: "numeric", 
-  month: "short",  
+const dateOptions = {
+  weekday: "long",
+  year: "numeric",
+  month: "short",
   day: "numeric"
-};  
+};
 
-const dateFormat = new Intl.DateTimeFormat('en-GB', dateOptions);
+const dateFormat = new Intl.DateTimeFormat("en-GB", dateOptions);
 const getLongDate = date => dateFormat.format(date);
 const getYear = date => date.getFullYear();
 
-const NiceDate = props => (
-  <span {...props } title={getLongDate(props.date)}>
-    {getYear(props.date)}
-  </span>
-)
+class NiceDate extends React.PureComponent {
+  static propTypes = {
+    date: PropTypes.instanceOf(Date).isRequired
+  };
+  render() {
+    const { date, ...props } = this.props;
 
-export {NiceDate, getLongDate, getYear};
+    return (
+      <span {...props} title={getLongDate(date)}>
+        {getYear(date)}
+      </span>
+    );
+  }
+}
+
+export { NiceDate, getLongDate, getYear };
