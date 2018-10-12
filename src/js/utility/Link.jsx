@@ -14,7 +14,6 @@ export default class Link extends React.PureComponent {
   };
   render() {
     const { children, className, title, to, external } = this.props;
-    console.log(find(to));
     return (
       <a
         className={className}

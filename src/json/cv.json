@@ -28,13 +28,24 @@
   },
   "work": [
     {
+      "name": "Simpplr",
+      "position": "JavaScript Engineer",
+      "url": "simpplr.com",
+      "startDate": "2018-05-01",
+      "endDate": "2018-11-10",
+      "highlights": [
+        "Building features on two React single page web apps in the corporate intranet sector. One an established product using React and Redux, and a more modern product using React with Apollo/GraphQL.",
+        "Working in an Agile enviroment using elements borrowed from Scrum and Kanban methodologies"
+      ]
+    },
+    {
       "name": "Filmstro",
       "position": "Software developer",
       "url": "filmstro.com",
       "startDate": "2017-07-21",
       "endDate": "2018-03-23",
       "highlights": [
-        "Full-stack developer at a startup working on cross-platform adaptive-music desktop app Filmstro Pro: A React/Redux app inside Electron communicating with a lower-level audio binary.",
+        "Building cross-platform adaptive-music desktop app Filmstro Pro: A React/Redux app inside Electron communicating with a lower-level audio binary.",
         "Building new features, improving performance and fixing bugs. Providing input on UI and UX from prototype to final feature. Migrated build from Gulp to Webpack, writing automated end-to-end testing from specs by lead tester.",
         "Working on corporate website built using Laravel with the Voyager CMS, primarily helping with cross-browser consistency.",
         "Working using a Kanban Agile framework with daily stand-ups. Meeting with the product owner and 4 other devs to prioritise stories, tasks and bugs, sub-tasks then decided among devs."

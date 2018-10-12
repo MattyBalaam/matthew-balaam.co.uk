@@ -22,7 +22,6 @@ export default class Institution extends React.Component {
       studyType,
       summary
     } = this.props;
-    console.log(this.props);
     return (
       <article className="education grid grid--tight-bottom" key={startDate}>
         <h2 className="section-header education__header grid__header">

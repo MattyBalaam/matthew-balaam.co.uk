@@ -19,7 +19,6 @@ export default class Role extends React.Component {
     return (
       <section className="role grid__sub divider">
         <header className="role__header grid__sub-info">
-          <h3 className="role__company">{name}</h3>
           <p className="role__dates">
             <NiceDate className="role__start" date={start} />
             <> – </>
