@@ -1,0 +1,30 @@
+@import "variables.css";
+
+.imageHolder {
+  grid-area: two;
+}
+.image {
+  height: 3em;
+  width: 3em;
+  margin-left: -0.33em;
+}
+.primary {
+  grid-area: one;
+  @media (--break-horizontal-min), print {
+    white-space: nowrap;
+    text-align: right;
+  }
+  &__methods {
+    margin-bottom: var(--rhythm__vertical);
+  }
+}
+.name {
+  padding-top: 0.5em;
+  font-size: var(--header-size);
+}
+.address {
+  grid-area: two;
+}
+.addressLine {
+  display: block;
+}

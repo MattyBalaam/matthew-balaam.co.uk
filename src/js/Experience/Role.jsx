@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import MarkdownParagraphs from "../utility/MarkdownParagraphs";
-import { NiceDate } from "../utility/DateFormat";
-import Link from "../utility/Link";
+import MarkdownParagraphs from "js/utility/MarkdownParagraphs";
+import { NiceDate } from "js/utility/DateFormat";
+import Link from "js/utility/Link";
 
 export default class Role extends React.Component {
   static propTypes = {

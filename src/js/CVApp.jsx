@@ -28,7 +28,7 @@ export default class App extends React.Component {
   render() {
     const { basics, education, skills, work } = this.props.cvJSON;
     return (
-      <>
+      <React.StrictMode>
         <aside className="download-pdf">
           <a
             href={`${process.env.PUBLIC_URL}/pdf/Matthew-Balaam_Developer.pdf`}
@@ -37,7 +37,6 @@ export default class App extends React.Component {
             className="download-pdf__link"
           >
             <span className="download-pdf__text">Download CV as PDF</span>
-            <> </>
             <span className="download-pdf__icon" />
           </a>
         </aside>
@@ -57,7 +56,7 @@ export default class App extends React.Component {
             </div>
           </div>
         </main>
-      </>
+      </React.StrictMode>
     );
   }
 }

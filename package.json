@@ -5,11 +5,12 @@
   "dependencies": {
     "electron-html-to": "^2.6.0",
     "linkifyjs": "^2.1.7",
+    "lodash": "^4.17.11",
     "postcss-custom-media": "6.0.0",
     "postcss-import": "11.1.0",
     "postcss-nested": "^3.0.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
     "react-markdown": "^3.3.0",
     "react-scripts": "^2.0.4"
   },
@@ -37,6 +38,7 @@
     "balance-text": "^3.2.0",
     "electron": "^1.8.4",
     "html-pdf": "^2.2.0",
+    "postcss-url": "^8.0.0",
     "react-app-rewire-eslint": "^0.2.3",
     "react-app-rewire-postcss": "^3.0.1",
     "react-app-rewired": "^2",

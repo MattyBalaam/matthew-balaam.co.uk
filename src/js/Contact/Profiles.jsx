@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Link from "../utility/Link";
+import Link from "js/utility/Link";
 
 export default class Profiles extends React.Component {
-  static PropTypes = {
+  static propTypes = {
     profiles: PropTypes.arrayOf(
       PropTypes.shape({
         network: PropTypes.string.isRequired,

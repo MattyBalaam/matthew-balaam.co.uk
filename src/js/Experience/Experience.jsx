@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import parseDates from "../utility/ParseDates";
+import parseDates from "js/utility/ParseDates";
 import Role from "./Role";
 
 export default class Experience extends React.Component {

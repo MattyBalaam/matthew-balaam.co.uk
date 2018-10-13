@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import MarkdownParagraphs from "../utility/MarkdownParagraphs";
-import { NiceDate } from "../utility/DateFormat";
+import MarkdownParagraphs from "js/utility/MarkdownParagraphs";
+import { NiceDate } from "js/utility/DateFormat";
 
 export default class Institution extends React.Component {
   static propTypes = {

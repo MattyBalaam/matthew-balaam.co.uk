@@ -1,8 +1,10 @@
 import React from "react";
-import MarkdownParagraphs from "../utility/MarkdownParagraphs";
+import MarkdownParagraphs from "js/utility/MarkdownParagraphs";
 import PropTypes from "prop-types";
 import Profiles from "./Profiles";
-import Link from "../utility/Link";
+import Grid from "js/Grid/Grid";
+import Link from "js/utility/Link";
+import styles from "css/contact.module.css";
 
 export default class Contact extends React.Component {
   static propTypes = {
@@ -11,7 +13,11 @@ export default class Contact extends React.Component {
     email: PropTypes.string.isRequired,
     profiles: PropTypes.array.isRequired,
     phone: PropTypes.string.isRequired,
-    location: PropTypes.objectOf(PropTypes.string).isRequired,
+    location: PropTypes.shape({
+      address: PropTypes.string.isRequired,
+      city: PropTypes.string.isRequired,
+      postalCode: PropTypes.string.isRequired
+    }).isRequired,
     summary: PropTypes.string.isRequired
   };
 
@@ -25,38 +31,41 @@ export default class Contact extends React.Component {
       profiles,
       summary
     } = this.props;
+    const addressLines = [address, city, postalCode];
     return (
-      <header className="contact">
-        <div className="grid grid--tight-bottom">
-          <section className="contact__primary">
-            <h1 className="section-header contact__name ">{name}</h1>
+      <header>
+        <Grid tightBottom={true}>
+          <section className={styles.primary}>
+            <h1 className={`section-header ${styles.name}`}>{name}</h1>
           </section>
           <div className="grid__main grid__sub">
-            <div className="contact__image-holder">
-              <img className="contact__image" src={image} alt={name} />
+            <div className={styles.imageHolder}>
+              <img className={styles.image} src={image} alt={name} />
             </div>
           </div>
-        </div>
-        <div className="grid">
-          <div className="contact__primary contact__primary--methods">
+        </Grid>
+        <Grid>
+          <div className={`${styles.primary} ${styles.primary__methods}`}>
             <p>
-              <Link className="contact__email" to={email} children={email} />
+              <Link className={styles.email} to={email} children={email} />
             </p>
             <Profiles content={profiles} />
-            <p className="contact__phone">{phone}</p>
+            <p className={styles.phone}>{phone}</p>
           </div>
           <div className="grid__main grid__sub">
-            <p className="contact__address grid__sub-info">
-              <span className="contact__address-line">{address}</span>
-              <span className="contact__address-line">{city}</span>
-              <span className="contact__address-line">{postalCode}</span>
+            <p className={`${styles.address} grid__sub-info`}>
+              {addressLines.map(line => (
+                <span className={styles.addressLine} key={line}>
+                  {line}
+                </span>
+              ))}
             </p>
             <MarkdownParagraphs
-              className="contact__summary grid__sub-description"
+              className={`${styles.address} grid__sub-description`}
               source={summary}
             />
           </div>
-        </div>
+        </Grid>
       </header>
     );
   }

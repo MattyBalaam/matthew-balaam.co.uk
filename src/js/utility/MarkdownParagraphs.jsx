@@ -1,6 +1,6 @@
 import React, { createElement, cloneElement } from "react";
 import ReactMarkdown, { renderers } from "react-markdown";
-import mapObj from "./MapObj";
+import mapValues from "lodash/mapValues";
 
 const BASECLS = "mkd mkd--";
 
@@ -14,14 +14,10 @@ const addBemToGetReactElement = getReactEl => props => {
 
 const addBemToMarkdown = type => addBemToGetReactElement(createEl(type));
 
-const addBemToAll = ([k, v]) => {
-  return {
-    [k]:
-      typeof v === "function" ? addBemToGetReactElement(v) : addBemToMarkdown(v)
-  };
-};
+const addBemToAll = v =>
+  typeof v === "function" ? addBemToGetReactElement(v) : addBemToMarkdown(v);
 
-const bemRenderers = mapObj(renderers, addBemToAll);
+const bemRenderers = mapValues(renderers, addBemToAll);
 
 const getCoercedString = v => {
   return typeof v.join === "function" ? v.join("\n\n") : v;

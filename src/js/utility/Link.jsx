@@ -2,8 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { find } from "linkifyjs";
 
-export default class Link extends React.PureComponent {
+export default class Link extends React.Component {
   static propTypes = {
+    children: PropTypes.node.isRequired,
     className: PropTypes.string,
     title: PropTypes.string,
     to: PropTypes.string.isRequired,

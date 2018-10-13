@@ -1,15 +1,14 @@
 /*@use postcss-cssnext;*/
 
-@import 'resets.css';
-@import 'variables.css';
-@import 'animations.css';
-@import 'typography.css';
-@import 'basics.css';
-@import 'cube.css';
-@import 'grid.css';
-@import 'contact.css';
-@import 'technology.css';
-@import 'role.css';
+@import "resets.css";
+@import "variables.css";
+@import "animations.css";
+@import "typography.css";
+@import "basics.css";
+@import "cube.css";
+@import "grid.css";
+@import "technology.css";
+@import "role.css";
 
 .section-header {
   font-size: var(--header-size);
@@ -17,9 +16,8 @@
   font-weight: lighter;
   white-space: nowrap;
   margin-top: -var(--header-margin-top);
-  padding-bottom: calc(var(--line-height__body) + var(--header-margin-top)) ;
-  @media (--break-horizontal-min),
-  print {
+  padding-bottom: calc(var(--line-height__body) + var(--header-margin-top));
+  @media (--break-horizontal-min), print {
     margin-top: var(--header-margin-top);
     text-align: right;
   }
@@ -27,16 +25,17 @@
 
 .mkd {
   :root {
-    --list { /* depreceated, change when better standard created */
+    --list {
+      /* depreceated, change when better standard created */
       font-size: 105%;
       margin: 0 0 var(--rhythm__vertical);
       padding-top: var(--rhythm__vertical);
-    };
+    }
   }
 
-  font-family: 'Calluna', serif;
+  font-family: "Calluna", serif;
   &--p {
-    font-size: 105%; 
+    font-size: 105%;
     + .mkd--p:not(:first-of-type) {
       text-indent: 1em;
     }
@@ -54,8 +53,8 @@
   }
 }
 .divider {
-  position: relative; 
-  &::before { 
+  position: relative;
+  &::before {
     content: "";
     position: absolute;
     left: 0;
@@ -64,7 +63,6 @@
     border-top: var(--section-decoration);
   }
 }
-
 
 @page {
   width: 21cm;
