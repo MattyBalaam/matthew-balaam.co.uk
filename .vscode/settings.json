@@ -1,0 +1,9 @@
+{
+	"editor.formatOnSave": true,
+	"prettier.eslintIntegration": true,
+	"eslint.autoFixOnSave": false,
+	"files.associations": {
+		"*.css": "scss"
+	},
+	"eslint.enable": true
+}

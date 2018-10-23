@@ -21,6 +21,6 @@ fs.readFile("./build/index.html", "utf8", (err, htmlString) => {
     result.stream.pipe(
       fs.createWriteStream(`${builddir}/Matthew-Balaam_Developer.pdf`)
     );
-    conversion.kill(); // necessary if you use the electron-server strategy, see bellow for details
+    conversion.kill();
   });
 });
