@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Link from "js/utility/Link";
+import Link from "js/Link/Link";
 
 export default class Profiles extends React.Component {
   static propTypes = {

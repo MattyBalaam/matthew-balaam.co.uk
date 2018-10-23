@@ -14,16 +14,13 @@
     white-space: nowrap;
     text-align: right;
   }
-  &__methods {
-    margin-bottom: var(--rhythm__vertical);
-  }
+}
+.primaryMethods {
+  margin-bottom: var(--rhythm__vertical);
 }
 .name {
   padding-top: 0.5em;
   font-size: var(--header-size);
-}
-.address {
-  grid-area: two;
 }
 .addressLine {
   display: block;

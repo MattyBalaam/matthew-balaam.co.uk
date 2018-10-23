@@ -1,0 +1,19 @@
+@import "variables";
+
+.list {
+  grid-area: two-three;
+  column-count: 2;
+  column-gap: var(--column-gap);
+  @media (--break-medium-min), print {
+    column-count: 3;
+  }
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -0.45rem;
+    width: 100%;
+    border-top: var(--section-decoration);
+  }
+}

@@ -1,8 +1,11 @@
-const parseDates = obj =>
-  obj.map(role => ({
-    ...role,
-    start: new Date(role.startDate),
-    end: new Date(role.endDate)
-  }));
-
-export default parseDates;
+export default function parseDates(obj) {
+  return obj.map(props => {
+    const { startDate, endDate, ...role } = props;
+    return {
+      ...role,
+      end: new Date(endDate),
+      key: startDate,
+      start: new Date(startDate)
+    };
+  });
+}

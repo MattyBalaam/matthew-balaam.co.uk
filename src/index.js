@@ -1,13 +1,11 @@
-import React from 'react';
-import { render } from 'react-snapshot';
-import './index.css';
-import CVApp from './js/CVApp';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import { render } from "react-snapshot";
+import "css/CVApp.css";
 
-import './css/CVApp.css';
-import cvJSON from './json/cv.json';
+import CVApp from "js/CVApp/CVApp";
+import registerServiceWorker from "./registerServiceWorker";
 
-render(
-  <CVApp cvJSON={cvJSON} />, document.getElementById('root')
-);
+import cvJSON from "./json/cv.json";
+
+render(<CVApp cvJSON={cvJSON} />, document.getElementById("root"));
 registerServiceWorker();

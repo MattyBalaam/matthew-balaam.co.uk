@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import parseDates from "js/utility/ParseDates";
+import parseDates from "js/utility/parseDates";
+import Grid from "js/Grid/Grid";
+import SectionHeader from "js/SectionHeader/SectionHeader";
 import Role from "./Role";
 
 export default class Experience extends React.Component {
@@ -20,16 +22,14 @@ export default class Experience extends React.Component {
   render() {
     const work = parseDates(this.props.work);
     return (
-      <article className="experience grid">
-        <h2 className="section-header experience__header grid__header">
-          Experience
-        </h2>
+      <Grid className="experience" Component={React.article}>
+        <SectionHeader className="grid__header">Experience</SectionHeader>
         <section className="experience__roles grid__main">
-          {work.map(role => (
-            <Role {...role} key={role.startDate} />
+          {work.map(({ key, ...props }) => (
+            <Role {...props} key={key} />
           ))}
         </section>
-      </article>
+      </Grid>
     );
   }
 }

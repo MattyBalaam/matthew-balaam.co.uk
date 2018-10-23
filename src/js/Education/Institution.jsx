@@ -1,49 +1,43 @@
 import React from "react";
 import PropTypes from "prop-types";
-import MarkdownParagraphs from "js/utility/MarkdownParagraphs";
-import { NiceDate } from "js/utility/DateFormat";
+import MD from "js/Markdown/MD";
+import NiceDate from "js/NiceDate/NiceDate";
+import Grid from "js/Grid/Grid";
+import BalancedText from "js/BalancedText/BalancedText";
+import SectionHeader from "js/SectionHeader/SectionHeader";
 
-export default class Institution extends React.Component {
+import styles from "./Institution.module.css";
+
+export default class Institution extends React.PureComponent {
   static propTypes = {
     area: PropTypes.string.isRequired,
     end: PropTypes.instanceOf(Date).isRequired,
     institution: PropTypes.string.isRequired,
     start: PropTypes.instanceOf(Date).isRequired,
-    startDate: PropTypes.string.isRequired,
     summary: PropTypes.arrayOf(PropTypes.string).isRequired
   };
   render() {
-    const {
-      area,
-      end,
-      institution,
-      start,
-      startDate,
-      studyType,
-      summary
-    } = this.props;
+    const { area, end, institution, start, studyType, summary } = this.props;
+
     return (
-      <article className="education grid grid--tight-bottom" key={startDate}>
-        <h2 className="section-header education__header grid__header">
-          Education
-        </h2>
-        <section className="education__content grid__main grid__sub divider">
+      <Grid Component={React.article} tightBottom>
+        <SectionHeader className="grid__header">Education</SectionHeader>
+        <section className="grid__main grid__sub divider">
           <div className="grid__sub-info">
-            <p className="education__institution balance-text">{institution}</p>
-            <p className="education__area balance-text">{area}</p>
-            <p className="education__study-type balance-text">{studyType}</p>
+            <BalancedText className={styles.institution}>
+              {institution}
+            </BalancedText>
+            <BalancedText className={styles.area}>{area}</BalancedText>
+            <BalancedText>{studyType}</BalancedText>
             <p>
-              <NiceDate className="education__start" date={start} />
+              <NiceDate date={start} />
               <> – </>
-              <NiceDate className="education__end" date={end} />
+              <NiceDate date={end} />
             </p>
           </div>
-          <MarkdownParagraphs
-            className="grid__sub-description"
-            source={summary}
-          />
+          <MD className="grid__sub-description" source={summary} />
         </section>
-      </article>
+      </Grid>
     );
   }
 }

@@ -1,0 +1,24 @@
+@import "variables.css";
+
+.role {
+  margin-bottom: var(--rhythm__vertical);
+}
+
+.header {
+  margin-bottom: 0;
+}
+
+.title {
+  margin-bottom: 1.35rem;
+}
+
+.name {
+  &:not(:last-child) {
+    margin-bottom: 1.35rem;
+  }
+}
+.website {
+  @media (--break-vertical-max) {
+    margin-bottom: 1.35rem;
+  }
+}

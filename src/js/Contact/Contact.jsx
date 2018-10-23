@@ -1,10 +1,12 @@
 import React from "react";
-import MarkdownParagraphs from "js/utility/MarkdownParagraphs";
+import MD from "js/Markdown/MD";
 import PropTypes from "prop-types";
 import Profiles from "./Profiles";
 import Grid from "js/Grid/Grid";
-import Link from "js/utility/Link";
-import styles from "css/contact.module.css";
+import Link from "js/Link/Link";
+import SectionHeader from "js/SectionHeader/SectionHeader";
+
+import styles from "./Contact.module.css";
 
 export default class Contact extends React.Component {
   static propTypes = {
@@ -32,11 +34,14 @@ export default class Contact extends React.Component {
       summary
     } = this.props;
     const addressLines = [address, city, postalCode];
+
     return (
       <header>
         <Grid tightBottom={true}>
           <section className={styles.primary}>
-            <h1 className={`section-header ${styles.name}`}>{name}</h1>
+            <SectionHeader className={styles.name} Component="h1">
+              {name}
+            </SectionHeader>
           </section>
           <div className="grid__main grid__sub">
             <div className={styles.imageHolder}>
@@ -45,7 +50,7 @@ export default class Contact extends React.Component {
           </div>
         </Grid>
         <Grid>
-          <div className={`${styles.primary} ${styles.primary__methods}`}>
+          <div className={`${styles.primary} ${styles.primaryMethods}`}>
             <p>
               <Link className={styles.email} to={email} children={email} />
             </p>
@@ -53,17 +58,14 @@ export default class Contact extends React.Component {
             <p className={styles.phone}>{phone}</p>
           </div>
           <div className="grid__main grid__sub">
-            <p className={`${styles.address} grid__sub-info`}>
+            <p className="grid__sub-info">
               {addressLines.map(line => (
                 <span className={styles.addressLine} key={line}>
                   {line}
                 </span>
               ))}
             </p>
-            <MarkdownParagraphs
-              className={`${styles.address} grid__sub-description`}
-              source={summary}
-            />
+            <MD className="grid__sub-description" source={summary} />
           </div>
         </Grid>
       </header>

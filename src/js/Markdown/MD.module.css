@@ -1,0 +1,25 @@
+.md {
+  font-family: "Calluna", serif;
+}
+
+.paragraph {
+  font-size: 105%;
+  + .paragraph:not(:first-of-type) {
+    text-indent: 1em;
+  }
+}
+
+.list {
+  font-size: 105%;
+  margin: 0 0 var(--rhythm__vertical);
+  padding-top: var(--rhythm__vertical);
+  :global(ol)& {
+    list-style: decimal;
+  }
+  :global(li)& {
+    list-style: disc;
+  }
+}
+.listItem {
+  margin: 0;
+}

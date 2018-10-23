@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import parseDates from "js/utility/ParseDates";
+import parseDates from "js/utility/parseDates";
 import Institution from "./Institution";
 
 export default class Education extends React.Component {
@@ -13,8 +13,8 @@ export default class Education extends React.Component {
   };
 
   render() {
-    return parseDates(this.props.education).map(props => (
-      <Institution {...props} key={props.startDate} />
+    return parseDates(this.props.education).map(({ key, ...props }) => (
+      <Institution {...props} key={key} />
     ));
   }
 }

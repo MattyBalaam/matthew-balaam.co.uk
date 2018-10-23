@@ -1,0 +1,8 @@
+.item {
+  list-style: outside;
+  color: var(--color__fire);
+}
+
+.itemText {
+  color: var(--color__body);
+}
