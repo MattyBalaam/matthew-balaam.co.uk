@@ -1,28 +1,31 @@
 import React from "react";
 import MD from "js/Markdown/MD";
-import PropTypes from "prop-types";
-import Profiles from "./Profiles";
+import Profiles, { ProfileProps } from "./Profiles";
 import Grid from "js/Grid/Grid";
 import Link from "js/Link/Link";
 import SectionHeader from "js/SectionHeader/SectionHeader";
 
 import styles from "./Contact.module.css";
 
-export default class Contact extends React.Component {
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    profiles: PropTypes.array.isRequired,
-    phone: PropTypes.string.isRequired,
-    location: PropTypes.shape({
-      address: PropTypes.string.isRequired,
-      city: PropTypes.string.isRequired,
-      postalCode: PropTypes.string.isRequired
-    }).isRequired,
-    summary: PropTypes.string.isRequired
-  };
+export type LocationProps = {
+  address: string;
+  city: string;
+  postalCode: string;
+  countryCode: string;
+};
 
+export type ContactProps = {
+  className?: string;
+  email: string;
+  image: string;
+  name: string;
+  profiles: ProfileProps[];
+  phone: string;
+  location: LocationProps;
+  summary: string;
+};
+
+export default class Contact extends React.Component<any> {
   render() {
     const {
       email,
@@ -54,7 +57,7 @@ export default class Contact extends React.Component {
             <p>
               <Link className={styles.email} to={email} children={email} />
             </p>
-            <Profiles content={profiles} />
+            <Profiles profiles={profiles} />
             <p className={styles.phone}>{phone}</p>
           </div>
           <div className="grid__main grid__sub">

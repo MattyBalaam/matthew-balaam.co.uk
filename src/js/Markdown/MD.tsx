@@ -1,19 +1,25 @@
-import React, { createElement, cloneElement } from "react";
+import React, { createElement, cloneElement, ReactNode } from "react";
 import ReactMarkdown, { renderers } from "react-markdown";
 import mapValues from "lodash/mapValues";
 import classes from "js/utility/classes";
-
 import styles from "./MD.module.css";
 
-const createRenderer = type => ({ children, ...props }) =>
-  createElement(type, props, children);
+const createRenderer = (type: string) => ({
+  children,
+  ...props
+}: {
+children: ReactNode;
+props?: any;
+}) => createElement(type, props, children);
 
-const addBemToGetReactElement = (getReactEl, type) => props => {
+const addBemToGetReactElement = (
+  getReactEl: Function,
+  type: string
+) => (props: {}) => {
   const el = getReactEl(props);
   if (typeof el === "string") {
     return el;
   }
-
   const className = classes([
     styles.md,
     styles[type] ? styles[type] : type,
@@ -21,19 +27,22 @@ const addBemToGetReactElement = (getReactEl, type) => props => {
   ]);
   return cloneElement(el, { ...el.props, className });
 };
-
-const addBemToRenderers = (val, type) => {
+const addBemToRenderers = (val: Function | string, type: string) => {
   const renderer = typeof val === "function" ? val : createRenderer(val);
   return addBemToGetReactElement(renderer, type);
 };
-
 const bemRenderers = mapValues(renderers, addBemToRenderers);
-
-const getCoercedString = v => {
-  return typeof v.join === "function" ? v.join("\n\n") : v;
+const getCoercedString = (v: string[] | string) => {
+  if (typeof v === "string") {
+    return v;
+  }
+  return v.reduce((prev, cur) => prev + "\n\n" + cur);
 };
-
-export default class MD extends React.Component {
+export interface MDProps {
+  source: string[];
+  className?: string;
+}
+export default class MD extends React.Component<MDProps, {}> {
   render() {
     const { source, ...props } = this.props;
     return (

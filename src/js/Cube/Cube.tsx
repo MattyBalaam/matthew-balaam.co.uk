@@ -2,19 +2,30 @@ import React from "react";
 
 import styles from "./Cube.module.css";
 
-export default class Cube extends React.Component {
+export interface CubeProps {
+  className: string;
+  renderFace: React.ReactNode;
+}
+
+export interface CubeState {
+  cubeAnimClass: string;
+}
+
+export default class Cube extends React.Component<CubeProps, CubeState> {
   state = {
     cubeAnimClass: styles.loading
   };
   componentDidMount() {
-    this.cubeRef.current.addEventListener("animationend", () => {
-      this.setState({
-        cubeAnimClass: styles.loaded
+    if (this.cubeRef.current !== null) {
+      this.cubeRef.current.addEventListener("animationend", () => {
+        this.setState({
+          cubeAnimClass: styles.loaded
+        });
       });
-    });
+    }
   }
 
-  cubeRef = React.createRef();
+  cubeRef = React.createRef<HTMLDivElement>();
 
   render() {
     const { className, renderFace } = this.props;

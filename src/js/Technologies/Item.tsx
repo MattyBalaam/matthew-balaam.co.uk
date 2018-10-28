@@ -1,12 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
-
 import styles from "./Item.module.css";
-
-export default class Item extends React.PureComponent {
-  static propTypes = {
-    item: PropTypes.string.isRequired
-  };
+type ItemProps = {
+  item: string;
+};
+export default class Item extends React.PureComponent<ItemProps, {}> {
   render() {
     const { item } = this.props;
     return (
