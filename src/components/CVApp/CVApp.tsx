@@ -1,23 +1,23 @@
 import React from "react";
-import Cube from "js/Cube/Cube";
-import Contact from "js/Contact/Contact";
-import Education, { EducationProps } from "js/Education/Education";
-import Experience from "js/Experience/Experience";
-import Technologies from "js/Technologies/Technologies";
-import Download from "js/Download/Download";
+import Cube from "../Cube/Cube";
+import Contact from "../Contact/Contact";
+import Education, { EducationProps } from "../Education/Education";
+import Experience from "../Experience/Experience";
+import Technologies from "../Technologies/Technologies";
+import Download from "../Download/Download";
 import styles from "./CVApp.module.css";
 
 export type Profile = {
-  network?: string;
-  username?: string;
-  url?: string;
+  network: string;
+  username: string;
+  url: string;
 };
 
 export type Location = {
-  address?: string;
-  postalCode?: string;
-  city?: string;
-  countryCode?: string;
+  address: string;
+  postalCode: string;
+  city: string;
+  countryCode: string;
 };
 
 export type Basics = {
@@ -40,7 +40,7 @@ export type Skills = {
 export type Work = {
   name: string;
   position: string;
-  url: string;
+  url?: string;
   startDate: string;
   endDate: string;
   highlights: string[];
@@ -58,6 +58,7 @@ export type AppProps = {
 
 export default class App extends React.Component<AppProps> {
   render() {
+    console.log(this.props.cvJSON);
     const { basics, education, skills, work } = this.props.cvJSON;
     return (
       <React.StrictMode>

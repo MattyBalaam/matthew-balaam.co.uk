@@ -1,5 +1,5 @@
 import React from "react";
-import parseDates from "js/utility/parseDates";
+import parseDates from "../../utility/parseDates";
 import Institution, { InstitutionProps } from "./Institution";
 
 export type EducationProps = {

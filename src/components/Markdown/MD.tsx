@@ -1,7 +1,7 @@
 import React, { createElement, cloneElement, ReactNode } from "react";
 import ReactMarkdown, { renderers } from "react-markdown";
 import mapValues from "lodash/mapValues";
-import classes from "js/utility/classes";
+import classes from "../../utility/classes";
 import styles from "./MD.module.css";
 
 const createRenderer = (type: string) => ({

@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
     "target": "es5",
     "allowJs": true,
     "skipLibCheck": true,
@@ -12,14 +11,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "**/__tests__/**",
-    "**/?*test.*",
-    "**/?*spec.*"
-  ]
+  "include": ["src"]
 }

@@ -1,10 +1,12 @@
 import React from "react";
-import classes from "js/utility/classes";
+import classes from "../../utility/classes";
+
 type GridProps = {
   className?: string;
   Component: React.ReactType;
   tightBottom: boolean;
 };
+
 export default class Grid extends React.Component<GridProps, {}> {
   static defaultProps = {
     Component: "section",
@@ -14,7 +16,7 @@ export default class Grid extends React.Component<GridProps, {}> {
     const { children, className, tightBottom, Component } = this.props;
     const classNames = classes([
       "grid",
-      tightBottom ? "grid--tight-bottom" : null,
+      tightBottom ? "grid--tight-bottom" : undefined,
       className
     ]);
     return <Component className={classNames}>{children}</Component>;

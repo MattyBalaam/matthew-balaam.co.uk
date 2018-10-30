@@ -1,20 +1,19 @@
 {
   "name": "my-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "electron-html-to": "^2.6.0",
-    "fork-ts-checker-webpack-plugin": "^0.4.11",
     "linkifyjs": "^2.1.7",
     "lodash": "^4.17.11",
     "postcss-custom-media": "7.0.7",
     "postcss-import": "12.0.0",
     "postcss-nested": "^4.1.0",
-    "react": "^16.5.1",
+    "react": "^16.6.0",
     "react-balance-text": "Khan/react-balance-text",
-    "react-dom": "^16.5.1",
+    "react-dom": "^16.6.0",
     "react-markdown": "^4.0.3",
-    "react-scripts": "^2.0.5",
+    "react-scripts": "2.1.0",
     "react-snapshot": "^1.3.0",
     "typescript": "^3.1.3"
   },
@@ -41,10 +40,10 @@
   "devDependencies": {
     "@types/lodash": "^4.14.117",
     "@types/react": "^16.4.18",
+    "customize-cra": "^0.2.0",
     "electron": "^3.0.5",
     "html-pdf": "^2.2.0",
     "postcss-url": "^8.0.0",
-    "react-app-rewire-eslint": "^0.2.3",
     "react-app-rewire-postcss": "^3.0.1",
     "react-app-rewired": "^2"
   }

@@ -1,9 +1,9 @@
 import React from "react";
 import BalanceText from "react-balance-text";
-import MD from "js/Markdown/MD";
-import NiceDate from "js/NiceDate/NiceDate";
-import Grid from "js/Grid/Grid";
-import SectionHeader from "js/SectionHeader/SectionHeader";
+import MD from "../Markdown/MD";
+import NiceDate from "../NiceDate/NiceDate";
+import Grid from "../Grid/Grid";
+import SectionHeader from "../SectionHeader/SectionHeader";
 import styles from "./Institution.module.css";
 
 export type InstitutionProps = {

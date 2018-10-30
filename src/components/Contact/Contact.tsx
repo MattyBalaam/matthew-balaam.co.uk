@@ -1,9 +1,9 @@
 import React from "react";
-import MD from "js/Markdown/MD";
+import MD from "../Markdown/MD";
 import Profiles, { ProfileProps } from "./Profiles";
-import Grid from "js/Grid/Grid";
-import Link from "js/Link/Link";
-import SectionHeader from "js/SectionHeader/SectionHeader";
+import Grid from "../Grid/Grid";
+import Link from "../Link/Link";
+import SectionHeader from "../SectionHeader/SectionHeader";
 
 import styles from "./Contact.module.css";
 

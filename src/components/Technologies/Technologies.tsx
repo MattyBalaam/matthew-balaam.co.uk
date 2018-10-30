@@ -1,11 +1,13 @@
 import React from "react";
-import Grid from "js/Grid/Grid";
-import SectionHeader from "js/SectionHeader/SectionHeader";
+import Grid from "../Grid/Grid";
+import SectionHeader from "../SectionHeader/SectionHeader";
 import Item from "./Item";
 import styles from "./Technologies.module.css";
+
 type TechnologiesProps = {
   tech: any[];
 };
+
 export default class Technologies extends React.Component<
   TechnologiesProps,
   {}

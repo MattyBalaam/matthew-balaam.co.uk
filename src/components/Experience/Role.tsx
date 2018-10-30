@@ -1,8 +1,9 @@
 import React from "react";
-import MD from "js/Markdown/MD";
-import NiceDate from "js/NiceDate/NiceDate";
-import Link from "js/Link/Link";
+import MD from "../Markdown/MD";
+import NiceDate from "../NiceDate/NiceDate";
+import Link from "../Link/Link";
 import styles from "./Role.module.css";
+
 type RoleProps = {
   start: Date;
   end: Date;
@@ -11,6 +12,7 @@ type RoleProps = {
   name: string;
   url?: string;
 };
+
 export default class Role extends React.Component<RoleProps, {}> {
   render() {
     const { start, end, highlights, position, name, url } = this.props;

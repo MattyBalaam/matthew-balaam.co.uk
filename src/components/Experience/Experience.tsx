@@ -1,7 +1,7 @@
 import React from "react";
-import parseDates from "js/utility/parseDates";
-import Grid from "js/Grid/Grid";
-import SectionHeader from "js/SectionHeader/SectionHeader";
+import parseDates from "../../utility/parseDates";
+import Grid from "../Grid/Grid";
+import SectionHeader from "../SectionHeader/SectionHeader";
 import Role from "./Role";
 
 type Work = {

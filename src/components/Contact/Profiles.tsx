@@ -1,6 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
-import Link from "js/Link/Link";
+import Link from "../Link/Link";
 
 export interface ProfileProps {
   network: string;

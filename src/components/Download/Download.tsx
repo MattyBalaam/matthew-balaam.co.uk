@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "js/Link/Link";
+import Link from "../Link/Link";
 
 import styles from "./Download.module.css";
 

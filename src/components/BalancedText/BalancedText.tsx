@@ -1,6 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
-import classes from "js/utility/classes";
+import classes from "../../utility/classes";
 
 export interface BalancedTextProps {
   children: React.ReactNode;

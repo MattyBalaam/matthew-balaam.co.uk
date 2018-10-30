@@ -1,8 +1,10 @@
 import React from "react";
-import { getYear, getLongDate } from "js/utility/DateFormat";
+import { getYear, getLongDate } from "../../utility/DateFormat";
+
 type NiceDateProps = {
   date: any;
 };
+
 export default class NiceDate extends React.PureComponent<NiceDateProps, {}> {
   render() {
     const { date, ...props } = this.props;
