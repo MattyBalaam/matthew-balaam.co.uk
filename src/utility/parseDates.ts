@@ -5,9 +5,11 @@ export type Obj = {
 
 export default function parseDates(obj: Obj): any {
   const { startDate, endDate, ...props } = obj;
+  const current = endDate.toLowerCase() === "current";
   return {
     ...props,
-    end: new Date(endDate),
+    current,
+    end: !current && new Date(endDate),
     key: startDate,
     start: new Date(startDate)
   };

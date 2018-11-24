@@ -5,6 +5,7 @@ import Link from "../Link/Link";
 import styles from "./Role.module.css";
 
 type RoleProps = {
+  current: Boolean;
   start: Date;
   end: Date;
   highlights: string[];
@@ -15,14 +16,14 @@ type RoleProps = {
 
 export default class Role extends React.Component<RoleProps, {}> {
   render() {
-    const { start, end, highlights, position, name, url } = this.props;
+    const { current, start, end, highlights, position, name, url } = this.props;
     return (
       <section className={`${styles.role} grid__sub divider`}>
         <header className={`${styles.header} grid__sub-info`}>
           <p>
             <NiceDate date={start} />
             <> – </>
-            <NiceDate date={end} />
+            {current ? <span>Current</span> : <NiceDate date={end} />}
           </p>
           <p className={styles.title}>{position}</p>
           <p className={styles.name}>{name}</p>
