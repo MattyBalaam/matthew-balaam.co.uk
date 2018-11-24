@@ -28,6 +28,14 @@
   },
   "work": [
     {
+      "name": "Pure360",
+      "position": "Software Developer",
+      "url": "pure360.com",
+      "startDate": "2018-11-12",
+      "endDate": "current",
+      "highlights": ["Building a React SPA with Redux"]
+    },
+    {
       "name": "Simpplr",
       "position": "JavaScript Engineer",
       "url": "simpplr.com",
