@@ -1,17 +1,14 @@
 import React from "react";
 import { getYear, getLongDate } from "../../utility/DateFormat";
 
-type NiceDateProps = {
-  date: any;
-};
-
-export default class NiceDate extends React.PureComponent<NiceDateProps, {}> {
-  render() {
-    const { date, ...props } = this.props;
-    return (
-      <span {...props} title={getLongDate(date)}>
-        {getYear(date)}
-      </span>
-    );
-  }
+interface Props {
+  date: Date;
 }
+
+const NiceDate = ({ date, ...props }: Props) => (
+  <span {...props} title={getLongDate(date)}>
+    {getYear(date)}
+  </span>
+);
+
+export default NiceDate;

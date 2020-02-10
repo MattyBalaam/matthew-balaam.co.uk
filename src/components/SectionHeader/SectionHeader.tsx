@@ -1,25 +1,16 @@
 import React from "react";
 import styles from "./SectionHeader.module.css";
 
-type SectionHeaderProps = {
+type Props = {
   children: React.ReactNode;
   className?: string;
-  Component: React.ReactType;
+  Component?: React.ReactType;
 };
 
-export default class SectionHeader extends React.PureComponent<
-  SectionHeaderProps,
-  {}
-  > {
-  static defaultProps = {
-    Component: "h2"
-  };
-  render() {
-    const { children, className, Component } = this.props;
-    return (
-      <Component className={`${styles.header} ${className ? className : ""}`}>
-        {children}
-      </Component>
-    );
-  }
-}
+const SectionHeader = ({ children, className, Component = "h2" }: Props) => (
+  <Component className={`${styles.header} ${className ? className : ""}`}>
+    {children}
+  </Component>
+);
+
+export default SectionHeader;

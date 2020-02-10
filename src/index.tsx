@@ -7,8 +7,6 @@ import registerServiceWorker from "./registerServiceWorker";
 
 import cv from "./json/cv.json";
 
-console.log(cv);
-
 const cvv: cvJSON = cv;
 
 render(<CVApp cvJSON={cvv} />, document.getElementById("root"));

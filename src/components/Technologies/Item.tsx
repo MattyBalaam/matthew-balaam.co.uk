@@ -1,15 +1,14 @@
 import React from "react";
 import styles from "./Item.module.css";
-type ItemProps = {
+
+interface Props {
   item: string;
-};
-export default class Item extends React.PureComponent<ItemProps, {}> {
-  render() {
-    const { item } = this.props;
-    return (
-      <li className={styles.item}>
-        <span className={styles.itemText}>{item}</span>
-      </li>
-    );
-  }
 }
+
+const Item = ({ item }: Props) => (
+  <li className={styles.item}>
+    <span className={styles.itemText}>{item}</span>
+  </li>
+);
+
+export default Item;

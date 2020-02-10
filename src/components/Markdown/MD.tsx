@@ -8,8 +8,8 @@ const createRenderer = (type: string) => ({
   children,
   ...props
 }: {
-children: ReactNode;
-props?: any;
+  children: ReactNode;
+  props?: any;
 }) => createElement(type, props, children);
 
 const addBemToGetReactElement = (
@@ -38,19 +38,17 @@ const getCoercedString = (v: string[] | string) => {
   }
   return v.reduce((prev, cur) => prev + "\n\n" + cur);
 };
-export interface MDProps {
-  source: string[];
+export interface Props {
+  source: string | string[];
   className?: string;
 }
-export default class MD extends React.Component<MDProps, {}> {
-  render() {
-    const { source, ...props } = this.props;
-    return (
-      <ReactMarkdown
-        {...props}
-        source={getCoercedString(source)}
-        renderers={bemRenderers}
-      />
-    );
-  }
-}
+
+const MD = ({ source, ...props }: Props) => (
+  <ReactMarkdown
+    {...props}
+    source={getCoercedString(source)}
+    // renderers={bemRenderers}
+  />
+);
+
+export default MD;

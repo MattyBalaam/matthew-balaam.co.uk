@@ -7,16 +7,18 @@ export interface ProfileProps {
   url: string;
 }
 
-export interface ProfilesProps {
+export interface Props {
   profiles: ProfileProps[];
 }
 
-export default class Profiles extends React.Component<ProfilesProps> {
-  render() {
-    return this.props.profiles.map(({ network, url, username }) => (
+const Profiles = ({ profiles }: Props) => (
+  <>
+    {profiles.map(({ network, url, username }) => (
       <p key={url} className="contact__profile">
         <Link title={network} to={url} children={username} />
       </p>
-    ));
-  }
-}
+    ))}
+  </>
+);
+
+export default Profiles;

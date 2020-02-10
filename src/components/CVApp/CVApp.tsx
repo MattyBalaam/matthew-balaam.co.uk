@@ -1,7 +1,7 @@
 import React from "react";
 import Cube from "../Cube/Cube";
 import Contact from "../Contact/Contact";
-import Education, { EducationProps } from "../Education/Education";
+import Education, { Props as EducationProps } from "../Education/Education";
 import Experience from "../Experience/Experience";
 import Technologies from "../Technologies/Technologies";
 import Download from "../Download/Download";
@@ -52,29 +52,22 @@ export type cvJSON = EducationProps & {
   work: Work[];
 };
 
-export type AppProps = {
+interface Props {
   cvJSON: cvJSON;
-};
-
-export default class App extends React.Component<AppProps> {
-  render() {
-    console.log(this.props.cvJSON);
-    const { basics, education, skills, work } = this.props.cvJSON;
-    return (
-      <React.StrictMode>
-        <Download />
-        <Cube
-          className={styles.cv}
-          renderFace={
-            <article className={styles.cvGrid}>
-              <Contact {...basics} />
-              <Technologies tech={skills[0].keywords} />
-              <Experience work={work} />
-              <Education education={education} />
-            </article>
-          }
-        />
-      </React.StrictMode>
-    );
-  }
 }
+
+const App = ({ cvJSON: { basics, education, skills, work } }: Props) => (
+  <React.StrictMode>
+    <Download />
+    <Cube className={styles.cv}>
+      <article className={styles.cvGrid}>
+        <Contact {...basics} />
+        <Technologies tech={skills[0].keywords} />
+        <Experience work={work} />
+        <Education education={education} />
+      </article>
+    </Cube>
+  </React.StrictMode>
+);
+
+export default App;

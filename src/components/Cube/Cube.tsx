@@ -1,44 +1,33 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 import styles from "./Cube.module.css";
 
-export interface CubeProps {
+export interface Props {
   className: string;
-  renderFace: React.ReactNode;
+  children: React.ReactNode;
 }
 
-export interface CubeState {
-  cubeAnimClass: string;
-}
+const Cube = ({ children, className }: Props) => {
+  const [cubeAnimClass, setCubeAnimClass] = useState(styles.loading);
 
-export default class Cube extends React.Component<CubeProps, CubeState> {
-  state = {
-    cubeAnimClass: styles.loading
-  };
-  componentDidMount() {
-    if (this.cubeRef.current !== null) {
-      this.cubeRef.current.addEventListener("animationend", () => {
-        this.setState({
-          cubeAnimClass: styles.loaded
-        });
+  const cubeRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (cubeRef.current !== null) {
+      cubeRef.current.addEventListener("animationend", () => {
+        setCubeAnimClass(styles.loaded);
       });
     }
-  }
+  }, [cubeRef]);
 
-  cubeRef = React.createRef<HTMLDivElement>();
+  return (
+    <main className={`${className} ${styles.perspective}`}>
+      <div ref={cubeRef} className={`${styles.cube} ${cubeAnimClass}`}>
+        <div className={styles.face1} />
+        <div className={styles.face2}>{children}</div>
+      </div>
+    </main>
+  );
+};
 
-  render() {
-    const { className, renderFace } = this.props;
-    return (
-      <main className={`${className} ${styles.perspective}`}>
-        <div
-          ref={this.cubeRef}
-          className={`${styles.cube} ${this.state.cubeAnimClass}`}
-        >
-          <div className={styles.face1} />
-          <div className={styles.face2}>{renderFace}</div>
-        </div>
-      </main>
-    );
-  }
-}
+export default Cube;
