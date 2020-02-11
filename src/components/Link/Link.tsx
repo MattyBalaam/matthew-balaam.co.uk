@@ -21,7 +21,7 @@ const Link = ({
   <a
     className={className}
     title={title}
-    href={href || find(to)[0].href}
+    href={href || (to && find(to)[0].href)}
     target={external ? "_blank" : undefined}
     rel={external ? "noopener noreferrer" : undefined}
   >

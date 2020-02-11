@@ -21,8 +21,8 @@ const Experience = ({ work }: Props) => (
   <Grid className="experience" Component="article">
     <SectionHeader className="grid__header">Experience</SectionHeader>
     <section className="experience__roles grid__main">
-      {work.map(parseDates).map(({ key, ...props }) => (
-        <Role {...props} key={key} />
+      {work.map(({ startDate, endDate, ...props }) => (
+        <Role {...props} {...parseDates({ startDate, endDate })} />
       ))}
     </section>
   </Grid>

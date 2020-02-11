@@ -8,10 +8,14 @@ export interface Props {
 
 const Education = ({ education }: Props) => (
   <>
-    {education.map(inst => {
-      const { key, ...props } = parseDates(inst);
-      return <Institution {...props} key={key} />;
-    })}
+    {education.map(({ startDate, endDate, ...instProps }) => (
+      <Institution
+        startDate={startDate}
+        endDate={endDate}
+        {...parseDates({ startDate, endDate })}
+        {...instProps}
+      />
+    ))}
   </>
 );
 

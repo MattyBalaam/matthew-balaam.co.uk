@@ -1,5 +1,3 @@
-type mightBeClass = string | undefined;
-
-export default function classes(classNames: mightBeClass[]) {
-  return classNames.filter((val: mightBeClass) => !!val).join(" ");
+export default function classes(classNames: (string | undefined)[]) {
+  return classNames.filter(val => !!val).join(" ");
 }

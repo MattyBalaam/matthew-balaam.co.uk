@@ -7,7 +7,7 @@ import styles from "./Role.module.css";
 type Props = {
   current: Boolean;
   start: Date;
-  end: Date;
+  end: Date | false;
   highlights: string[];
   position: string;
   name: string;
@@ -28,7 +28,7 @@ const Role = ({
       <p>
         <NiceDate date={start} />
         <> – </>
-        {current ? <span>Current</span> : <NiceDate date={end} />}
+        {end ? <NiceDate date={end} /> : <span>Current</span>}
       </p>
       <p className={styles.title}>{position}</p>
       <p className={styles.name}>{name}</p>

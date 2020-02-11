@@ -1,16 +1,18 @@
-export type Obj = {
+interface DateObject {
   startDate: string;
   endDate: string;
-};
-
-export default function parseDates(obj: Obj): any {
-  const { startDate, endDate, ...props } = obj;
-  const current = endDate.toLowerCase() === "current";
-  return {
-    ...props,
-    current,
-    end: !current && new Date(endDate),
-    key: startDate,
-    start: new Date(startDate)
-  };
+  current?: boolean;
 }
+
+const parseDates = ({
+  startDate,
+  endDate,
+  current = endDate.toLowerCase() === "current"
+}: DateObject) => ({
+  current,
+  end: !current && new Date(endDate),
+  key: startDate,
+  start: new Date(startDate)
+});
+
+export default parseDates;

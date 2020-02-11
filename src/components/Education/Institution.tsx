@@ -16,7 +16,7 @@ export interface InstitutionProps {
 }
 
 export interface Props extends InstitutionProps {
-  end: Date;
+  end: Date | false;
   start: Date;
 }
 
@@ -37,8 +37,13 @@ const Institution = ({
         <BalanceText>{studyType}</BalanceText>
         <p>
           <NiceDate date={start} />
-          <> – </>
-          <NiceDate date={end} />
+          {end && (
+            <>
+              {" "}
+              –
+              <NiceDate date={end} />
+            </>
+          )}
         </p>
       </div>
       <MD className="grid__sub-description" source={summary} />

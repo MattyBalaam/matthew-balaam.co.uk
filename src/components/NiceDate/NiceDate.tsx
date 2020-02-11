@@ -5,10 +5,8 @@ interface Props {
   date: Date;
 }
 
-const NiceDate = ({ date, ...props }: Props) => (
-  <span {...props} title={getLongDate(date)}>
-    {getYear(date)}
-  </span>
+const NiceDate = ({ date }: Props) => (
+  <span title={getLongDate(date)}>{getYear(date)}</span>
 );
 
 export default NiceDate;
