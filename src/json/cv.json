@@ -6,7 +6,7 @@
     "email": "info@matthewbalaam.co.uk",
     "phone": "07730 953 486",
     "url": "matthewbalaam.co.uk",
-    "summary": "Strong front-end developer able to adapt to full-stack within team projects. Agile learner with a curiousness toward innovative problem solving, and eagerness to update skills.\n\nMain skill set in JavaScript, CSS, HTML with experience using reactive frameworks and cross-browser knowledge.\n\nPrevious background in graphic design and multimedia with an eye for accuracy and the little details to make projects stand-out.\n\nThis CV is built as a bespoke React app, [review the code on Bitbucket](https://bitbucket.org/mattybalaam/matthewbalaam-co-uk).",
+    "summary": "Strong front-end developer able to adapt to full-stack within team projects. Agile learner with a curiousness toward innovative problem solving, and eagerness to update skills.\n\nMain skill set in JavaScript, CSS, HTML with experience using reactive frameworks and cross-browser knowledge.\n\nPrevious background in graphic design and multimedia with an eye for accuracy and the little details to make projects stand-out.\n\nThis CV is built as a bespoke React app, [review on Bitbucket](https://bitbucket.org/mattybalaam/matthewbalaam-co-uk).",
     "location": {
       "address": "111 Wick Hall, Furze Hill",
       "postalCode": "BN3 1NH",
@@ -29,20 +29,19 @@
   "work": [
     {
       "name": "Pure360",
-      "position": "Software Developer",
+      "position": "Software developer",
       "url": "pure360.com",
       "startDate": "2018-11-12",
       "endDate": "current",
       "highlights": [
         "Building a React/Redux/Typescript SPA interfacing with the API layer using REST for handling customer creation and scheduling of multi-channel marketing campaigns.",
-        "Notable projects included building a graph-style decision tree with a clear simple graphic interface for multiple journeys of customer engagement and working with UX to create a new image editor.",
-        "Writing automated testing for all code.",
+        "Notable projects included building a graph-style decision tree with a clear simple graphic interface for multiple journeys of customer engagement and working with UX to create a new image editor. Writing automated testing for all code.",
         "Initially working in a 2-week sprint SCRUM sytem, before using a 6-week cycle inspired by Basecamp‘s Shape Up methodology."
       ]
     },
     {
       "name": "Simpplr",
-      "position": "JavaScript Engineer",
+      "position": "JavaScript engineer",
       "url": "simpplr.com",
       "startDate": "2018-05-01",
       "endDate": "2018-11-10",
@@ -83,8 +82,7 @@
       "endDate": "2013-07-07",
       "highlights": [
         "Building bespoke responsive websites with concise, accessible, standards compliant, device responsive HTML and CSS, JavaScript and PHP to work over all major browsers.",
-        "Designing and developing interactive E-learning courses at all stages from art-direction to final built course.",
-        "Creating a wide range of printed materials, emails and animated banners. Sourcing and liasing with print suppliers. "
+        "Designing and developing interactive E-learning courses at all stages from art-direction to final built course. Creating a wide range of printed materials, emails and animated banners."
       ]
     },
     {
@@ -122,13 +120,13 @@
     {
       "name": "Development",
       "keywords": [
-        "JavaScript",
+        "JavaScript, TypeScript",
         "CSS and processors",
         "HTML",
         "React",
         "Redux",
         "GraphQL, Apollo",
-        "TypeScript",
+        "Jest",
         "Node",
         "Webpack"
       ]
