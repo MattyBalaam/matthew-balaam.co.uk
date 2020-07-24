@@ -1,8 +1,9 @@
 import React from "react";
 import parseDates from "../../utility/parseDates";
-import Grid from "../Grid/Grid";
+import Grid, { gridStyles } from "../Grid/Grid";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import Role from "./Role";
+import classes from "../../utility/classes";
 
 interface Work {
   endDate: string;
@@ -19,8 +20,8 @@ type Props = {
 
 const Experience = ({ work }: Props) => (
   <Grid className="experience" Component="article">
-    <SectionHeader className="grid__header">Experience</SectionHeader>
-    <section className="experience__roles grid__main">
+    <SectionHeader className={gridStyles.header}>Experience</SectionHeader>
+    <section className={classes(["experience__roles", gridStyles.main])}>
       {work.map(({ startDate, endDate, ...props }) => (
         <Role {...props} {...parseDates({ startDate, endDate })} />
       ))}

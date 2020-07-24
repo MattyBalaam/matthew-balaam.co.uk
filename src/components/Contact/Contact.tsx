@@ -1,7 +1,9 @@
 import React from "react";
-import MD from "../Markdown/MD";
+import classes from "../../utility/classes";
+
+import Paragraphs from "../Paragraphs/Paragraphs";
 import Profiles, { ProfileProps } from "./Profiles";
-import Grid from "../Grid/Grid";
+import Grid, { gridStyles } from "../Grid/Grid";
 import Link from "../Link/Link";
 import SectionHeader from "../SectionHeader/SectionHeader";
 
@@ -34,7 +36,7 @@ const Contact = ({
   phone,
   profiles,
   summary,
-  addressLines = [address, city, postalCode]
+  addressLines = [address, city, postalCode],
 }: Props) => (
   <header>
     <Grid tightBottom={true}>
@@ -43,7 +45,7 @@ const Contact = ({
           {name}
         </SectionHeader>
       </section>
-      <div className="grid__main grid__sub">
+      <div className={classes([gridStyles.main, gridStyles.sub])}>
         <div className={styles.imageHolder}>
           <img className={styles.image} src={image} alt={name} />
         </div>
@@ -57,15 +59,15 @@ const Contact = ({
         <Profiles profiles={profiles} />
         <p className={styles.phone}>{phone}</p>
       </div>
-      <div className="grid__main grid__sub">
-        <p className="grid__sub-info">
-          {addressLines.map(line => (
+      <div className={classes([gridStyles.main, gridStyles.sub])}>
+        <p className={gridStyles.subInfo}>
+          {addressLines.map((line) => (
             <span className={styles.addressLine} key={line}>
               {line}
             </span>
           ))}
         </p>
-        <MD className="grid__sub-description" source={summary} />
+        <Paragraphs className={gridStyles.subDescription} source={summary} />
       </div>
     </Grid>
   </header>

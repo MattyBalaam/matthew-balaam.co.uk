@@ -7,12 +7,11 @@ interface DateObject {
 const parseDates = ({
   startDate,
   endDate,
-  current = endDate.toLowerCase() === "current"
+  current = endDate.toLowerCase() === "current",
 }: DateObject) => ({
-  current,
-  end: !current && new Date(endDate),
+  end: !current ? new Date(endDate) : undefined,
   key: startDate,
-  start: new Date(startDate)
+  start: new Date(startDate),
 });
 
 export default parseDates;

@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { find } from "linkifyjs";
+import linkifyjs from "linkifyjs";
 
 type Props = {
   children: ReactNode;
@@ -16,12 +16,12 @@ const Link = ({
   title,
   to,
   href,
-  external = true
+  external = true,
 }: Props) => (
   <a
     className={className}
     title={title}
-    href={href || (to && find(to)[0].href)}
+    href={href || (to && linkifyjs.find(to)[0].href)}
     target={external ? "_blank" : undefined}
     rel={external ? "noopener noreferrer" : undefined}
   >

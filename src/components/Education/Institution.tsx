@@ -1,9 +1,10 @@
 import React from "react";
-import MD from "../Markdown/MD";
+import Paragraphs from "../Paragraphs/Paragraphs";
 import NiceDate from "../NiceDate/NiceDate";
-import Grid from "../Grid/Grid";
+import Grid, { gridStyles } from "../Grid/Grid";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import styles from "./Institution.module.css";
+import classes from "../../utility/classes";
 
 export interface InstitutionProps {
   area: string;
@@ -25,12 +26,12 @@ const Institution = ({
   institution,
   start,
   studyType,
-  summary
+  summary,
 }: Props) => (
   <Grid Component="article" tightBottom>
-    <SectionHeader className="grid__header">Education</SectionHeader>
-    <section className="grid__main grid__sub divider">
-      <div className="grid__sub-info">
+    <SectionHeader className={gridStyles.header}>Education</SectionHeader>
+    <section className={classes([gridStyles.main, gridStyles.sub, "divider"])}>
+      <div className={gridStyles.subInfo}>
         <p className={styles.institution}>{institution}</p>
         <p className={styles.area}>{area}</p>
         <p>{studyType}</p>
@@ -45,7 +46,7 @@ const Institution = ({
           )}
         </p>
       </div>
-      <MD className="grid__sub-description" source={summary} />
+      <Paragraphs className={gridStyles.subDescription} source={summary} />
     </section>
   </Grid>
 );

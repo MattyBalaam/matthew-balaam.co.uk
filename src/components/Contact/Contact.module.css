@@ -1,5 +1,3 @@
-@import "variables.css";
-
 .imageHolder {
   grid-area: two;
 }
@@ -10,7 +8,9 @@
 }
 .primary {
   grid-area: one;
-  @media (--break-horizontal-min), print {
+}
+@media (--break-horizontal-min), print {
+  .primary {
     white-space: nowrap;
     text-align: right;
   }

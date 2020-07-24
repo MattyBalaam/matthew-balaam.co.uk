@@ -1,27 +1,10 @@
 {
-  "name": "my-app",
-  "version": "1.0.0",
-  "private": true,
-  "dependencies": {
-    "@types/linkifyjs": "^2.1.3",
-    "electron-html-to": "^2.6.0",
-    "linkifyjs": "^2.1.7",
-    "postcss-custom-media": "7.0.7",
-    "postcss-import": "12.0.0",
-    "postcss-nested": "^4.1.0",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
-    "react-markdown": "^4.0.3",
-    "react-scripts": "2.1.0",
-    "react-snapshot": "^1.3.0",
-    "typescript": "^3.1.3"
-  },
+  "name": "mb-vite",
+  "version": "0.0.0",
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build && react-snapshot",
-    "postbuild": "npm run topdf",
-    "test": "react-app-rewired test --env=jsdom",
-    "topdf": "node ./scripts/toPDF.js"
+    "dev": "vite",
+    "build": "vite build",
+    "topdf": "DEBUG=electron* electron-pdf  http://localhost:3000 ./build/new-invoice.pdf"
   },
   "browserslist": {
     "development": [
@@ -35,13 +18,29 @@
       "Firefox ESR"
     ]
   },
+  "dependencies": {
+    "@pika/react": "^16.13.1",
+    "@pika/react-dom": "^16.13.1",
+    "linkifyjs": "^2.1.9",
+    "markdown-to-jsx": "^6.11.4"
+  },
   "devDependencies": {
-    "@types/react": "^16.4.18",
-    "customize-cra": "^0.2.0",
-    "electron": "^3.0.5",
-    "html-pdf": "^2.2.0",
-    "postcss-url": "^8.0.0",
-    "react-app-rewire-postcss": "^3.0.1",
-    "react-app-rewired": "^2"
+    "@types/linkifyjs": "^2.1.3",
+    "@types/markdown-to-jsx": "^6.11.1",
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^3.7.0",
+    "@typescript-eslint/parser": "^3.7.0",
+    "electron-pdf": "^7.0.0",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.3",
+    "postcss-custom-media": "^7.0.8",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.7",
+    "typescript-plugin-css-modules": "^2.4.0",
+    "vite": "^1.0.0-rc.3",
+    "vite-plugin-react": "^3.0.2"
   }
 }

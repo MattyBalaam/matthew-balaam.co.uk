@@ -1,8 +1,5 @@
 {
-	"editor.formatOnSave": true,
-	"eslint.autoFixOnSave": false,
-	"files.associations": {
-		"*.css": "scss"
-	},
-	"eslint.enable": true
+  "editor.formatOnSave": true,
+
+  "eslint.enable": true
 }

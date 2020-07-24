@@ -1,0 +1,40 @@
+.grid {
+  margin-bottom: calc(var(--rhythm__vertical) * 2);
+}
+
+@media (--break-horizontal-min), print {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: var(--column-gap);
+    grid-template-areas: "one two-three two-three two-three";
+  }
+}
+
+.tightBottom {
+  margin-bottom: 0;
+}
+
+.header {
+  grid-area: one;
+}
+.main {
+  grid-area: two-three;
+}
+
+@media (--break-medium-min), print {
+  .sub {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: var(--column-gap);
+    grid-template-areas: "two three three";
+  }
+}
+
+.subInfo {
+  grid-area: two;
+  margin-bottom: var(--rhythm__vertical);
+}
+.subDescription {
+  grid-area: three;
+}

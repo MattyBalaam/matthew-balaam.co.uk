@@ -1,20 +1,35 @@
-@import "resets.css";
-@import "variables.css";
-@import "animations.css";
-@import "typography.css";
-@import "basics.css";
-@import "grid.css";
+@media screen {
+  html {
+    background: #888;
+    font-size: 17px;
+  }
+}
+
+@media print {
+  html {
+    font-size: 8pt;
+  }
+}
+
+body {
+  color: var(--color__body);
+  font-family: "Theinhardt", sans-serif;
+  line-height: var(--line-height__body);
+  margin: var(--body-margin);
+  padding: 0;
+}
 
 .divider {
   position: relative;
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: -0.45rem;
-    width: 100%;
-    border-top: var(--section-decoration);
-  }
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -0.45rem;
+  width: 100%;
+  border-top: var(--section-decoration);
 }
 
 @page {

@@ -1,3 +1,3 @@
-toDo: Readme
+A simple React app example – I agree it is possibly overblown to use React for such a simple site, but I ues this as a place to try new approaches from time to time.
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+https://jsonresume.org/

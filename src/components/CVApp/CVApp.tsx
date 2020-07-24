@@ -5,6 +5,7 @@ import Education, { Props as EducationProps } from "../Education/Education";
 import Experience from "../Experience/Experience";
 import Technologies from "../Technologies/Technologies";
 import Download from "../Download/Download";
+
 import styles from "./CVApp.module.css";
 
 export type Profile = {
