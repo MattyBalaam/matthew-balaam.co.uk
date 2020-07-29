@@ -15,7 +15,9 @@ const Profiles = ({ profiles }: Props) => (
   <>
     {profiles.map(({ network, url, username }) => (
       <p key={url} className="contact__profile">
-        <Link title={network} to={url} children={username} />
+        <Link title={network} to={url}>
+          {username}
+        </Link>
       </p>
     ))}
   </>

@@ -7,7 +7,7 @@ const reactPlugin = require("vite-plugin-react");
 const config = {
   jsx: "react",
   plugins: [reactPlugin],
-  optimizeDeps: { allowNodeBuiltins: ["fs"] },
+  optimizeDeps: { allowNodeBuiltins: ["fs"], include: ["linkifyjs/react"] },
 };
 
 module.exports = config;

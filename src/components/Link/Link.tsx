@@ -1,32 +1,39 @@
 import React, { ReactNode } from "react";
-import linkifyjs from "linkifyjs";
+import Linkify, { LinkifyProps } from "linkifyjs/react";
 
-type Props = {
+type Props = LinkifyProps & {
   children: ReactNode;
   className?: string;
   title?: string;
   to?: string;
   href?: string;
   external?: boolean;
+  securityProps?: {
+    target?: string;
+    rel?: string;
+  };
 };
 
 const Link = ({
   children,
   className,
   title,
-  to,
   href,
   external = true,
-}: Props) => (
-  <a
-    className={className}
-    title={title}
-    href={href || (to && linkifyjs.find(to)[0].href)}
-    target={external ? "_blank" : undefined}
-    rel={external ? "noopener noreferrer" : undefined}
-  >
-    {children}
-  </a>
-);
+  securityProps = {
+    target: external ? "_blank" : undefined,
+    rel: external ? "noopener noreferrer" : undefined,
+  },
+  ...props
+}: Props) =>
+  href ? (
+    <a className={className} title={title} href={href} {...securityProps}>
+      {children}
+    </a>
+  ) : (
+    <Linkify {...securityProps} {...props} options={{ className }}>
+      {children}
+    </Linkify>
+  );
 
 export default Link;

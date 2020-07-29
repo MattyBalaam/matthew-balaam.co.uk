@@ -1,10 +1,10 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, ReactNode } from "react";
 
 import styles from "./Cube.module.css";
 
 export interface Props {
   className: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const Cube = ({ children, className }: Props) => {
@@ -15,10 +15,14 @@ const Cube = ({ children, className }: Props) => {
   useEffect(() => {
     if (cubeRef.current !== null) {
       cubeRef.current.addEventListener("animationend", () => {
+        console.log("loaded");
+
         setCubeAnimClass(styles.loaded);
       });
     }
   }, [cubeRef]);
+
+  console.log("cubeAnimClass", cubeAnimClass);
 
   return (
     <main className={`${className} ${styles.perspective}`}>

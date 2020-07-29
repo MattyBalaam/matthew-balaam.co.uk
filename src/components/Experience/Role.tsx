@@ -27,7 +27,7 @@ const Role = ({ start, end, highlights, position, name, url }: Props) => (
       </p>
       <p className={styles.title}>{position}</p>
       <p className={styles.name}>{name}</p>
-      {url && <Link className={styles.website} to={url} children={url} />}
+      {url && <Link className={styles.website}>{url}</Link>}
     </header>
     <section className={gridStyles.subDescription}>
       <Paragraphs source={highlights} />

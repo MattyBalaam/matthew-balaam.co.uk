@@ -54,10 +54,10 @@ const Contact = ({
     <Grid>
       <div className={`${styles.primary} ${styles.primaryMethods}`}>
         <p>
-          <Link className={styles.email} to={email} children={email} />
+          <Link>{email}</Link>
         </p>
         <Profiles profiles={profiles} />
-        <p className={styles.phone}>{phone}</p>
+        <p>{phone}</p>
       </div>
       <div className={classes([gridStyles.main, gridStyles.sub])}>
         <p className={gridStyles.subInfo}>

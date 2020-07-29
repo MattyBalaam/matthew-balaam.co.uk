@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, ReactType } from "react";
 import classes from "../../utility/classes";
 
 import styles from "./Grid.module.css";
@@ -6,7 +6,7 @@ import styles from "./Grid.module.css";
 type Props = {
   children: ReactNode;
   className?: string;
-  Component?: React.ReactType;
+  Component?: ReactType;
   tightBottom?: boolean;
 };
 
@@ -20,7 +20,7 @@ const Grid = ({
     className={classes([
       styles.grid,
       tightBottom ? styles.tightBottom : undefined,
-      styles[className],
+      className && styles[className],
     ])}
   >
     {children}

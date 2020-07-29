@@ -1,10 +1,10 @@
-import React from "react";
+import React, { ReactNode, ReactType } from "react";
 import styles from "./SectionHeader.module.css";
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
-  Component?: React.ReactType;
+  Component?: ReactType;
 };
 
 const SectionHeader = ({ children, className, Component = "h2" }: Props) => (

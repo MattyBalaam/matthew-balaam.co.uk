@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Paragraphs.module.css";
+import Link from "../Link/Link";
 
 export interface Props {
   source: string | string[];
@@ -17,9 +18,9 @@ const Paragraphs = ({ source, className }: Props) => {
   return (
     <div className={className}>
       {normalisedValues.map((text: string, i) => (
-        <p className={styles.paragraph} key={i}>
+        <Link tagName="p" className={styles.paragraph} key={i}>
           {text}
-        </p>
+        </Link>
       ))}
     </div>
   );
