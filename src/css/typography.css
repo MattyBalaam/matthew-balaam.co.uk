@@ -1,18 +1,21 @@
 @font-face {
-  font-family: 'Calluna';
-  src: url('~//fonts/Calluna-Regular.woff') format('woff');
+  font-family: "Calluna";
+  src: url("../fonts/Calluna-Regular.woff2") format("woff2"),
+    url("../fonts/Calluna-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Theinhardt';
-  src: url('~//fonts/TheinhardtReg.woff') format('woff');
+  font-family: "Theinhardt";
+  src: url("../fonts/Theinhardt-Rg.woff2") format("woff2"),
+    url("../fonts/Theinhardt-Rg.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Theinhardt';
-  src: url('~//fonts/TheinhardtLight_alt.woff') format('woff');
+  font-family: "Theinhardt";
+  src: url("../fonts/Theinhardt-Lt.woff2") format("woff2"),
+    url("../fonts/Theinhardt-Lt.woff") format("woff");
   font-weight: lighter;
   font-style: normal;
 }

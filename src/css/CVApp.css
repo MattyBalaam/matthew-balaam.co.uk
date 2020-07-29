@@ -1,70 +1,36 @@
-/*@use postcss-cssnext;*/
-
-@import 'resets.css';
-@import 'variables.css';
-@import 'animations.css';
-@import 'typography.css';
-@import 'basics.css';
-@import 'cube.css';
-@import 'grid.css';
-@import 'contact.css';
-@import 'technology.css';
-@import 'role.css';
-
-.section-header {
-  font-size: var(--header-size);
-  font-family: var(--font__header);
-  font-weight: lighter;
-  white-space: nowrap;
-  margin-top: -var(--header-margin-top);
-  padding-bottom: calc(var(--line-height__body) + var(--header-margin-top)) ;
-  @media (--break-horizontal-min),
-  print {
-    margin-top: var(--header-margin-top);
-    text-align: right;
+@media screen {
+  html {
+    background: #888;
+    font-size: 17px;
   }
 }
 
-.mkd {
-  :root {
-    --list { /* depreceated, change when better standard created */
-      font-size: 105%;
-      margin: 0 0 var(--rhythm__vertical);
-      padding-top: var(--rhythm__vertical);
-    };
-  }
-
-  font-family: 'Calluna', serif;
-  &--p {
-    font-size: 105%; 
-    + .mkd--p:not(:first-of-type) {
-      text-indent: 1em;
-    }
-  }
-  &--ol {
-    list-style: decimal;
-    @apply --list;
-  }
-  &--ul {
-    list-style: disc;
-    @apply --list;
-  }
-  &--li {
-    margin: 0;
+@media print {
+  html {
+    font-size: 8pt;
   }
 }
+
+body {
+  color: var(--color__body);
+  font-family: "Theinhardt", sans-serif;
+  line-height: var(--line-height__body);
+  margin: var(--body-margin);
+  padding: 0;
+}
+
 .divider {
-  position: relative; 
-  &::before { 
-    content: "";
-    position: absolute;
-    left: 0;
-    top: -0.45rem;
-    width: 100%;
-    border-top: var(--section-decoration);
-  }
+  position: relative;
 }
 
+.divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -0.45rem;
+  width: 100%;
+  border-top: var(--section-decoration);
+}
 
 @page {
   width: 21cm;

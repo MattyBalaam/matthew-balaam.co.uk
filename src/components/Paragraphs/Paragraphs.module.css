@@ -1,0 +1,8 @@
+.paragraph {
+  font-family: "Calluna", serif;
+  font-size: 105%;
+}
+
+.paragraph + .paragraph:not(:first-of-type) {
+  text-indent: 1em;
+}

@@ -1,19 +1,19 @@
-
 html {
-    box-sizing: border-box;
-    
+  box-sizing: border-box;
 }
-*, *:before, *:after {
-box-sizing: inherit;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 main {
-    display: block;
+  display: block;
 }
 
-ul, 
-li, 
-dl, 
+ul,
+li,
+dl,
 dd,
 p,
 a,
@@ -23,15 +23,16 @@ h3,
 h4,
 h5,
 h6 {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
-ul, ol {
-    list-style: none;
-    padding-left: 0;
-  }
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+}
 
 :link:not(:hover) {
-    text-decoration: none;
+  text-decoration: none;
 }
