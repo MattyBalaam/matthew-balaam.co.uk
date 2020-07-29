@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "topdf": "DEBUG=electron* electron-pdf  http://localhost:3000 ./build/new-invoice.pdf"
+    "topdf": "DEBUG=electron* electron-pdf  http://localhost:3000 ./public/Matthew-Balaam_Developer.pdf"
   },
   "browserslist": {
     "development": [

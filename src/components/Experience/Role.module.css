@@ -10,10 +10,6 @@
   margin-bottom: 1.35rem;
 }
 
-.name:not(:last-child) {
-  margin-bottom: 1.35rem;
-}
-
 @media (--break-vertical-max) {
   .website {
     margin-bottom: 1.35rem;

@@ -32,9 +32,6 @@ const Institution = ({
     <SectionHeader className={gridStyles.header}>Education</SectionHeader>
     <section className={classes([gridStyles.main, gridStyles.sub, "divider"])}>
       <div className={gridStyles.subInfo}>
-        <p className={styles.institution}>{institution}</p>
-        <p className={styles.area}>{area}</p>
-        <p>{studyType}</p>
         <p>
           <NiceDate date={start} />
           {end && (
@@ -45,6 +42,9 @@ const Institution = ({
             </>
           )}
         </p>
+        <p className={styles.institution}>{institution}</p>
+        <p>{studyType}</p>
+        <p className={styles.area}>{area}</p>
       </div>
       <Paragraphs className={gridStyles.subDescription} source={summary} />
     </section>

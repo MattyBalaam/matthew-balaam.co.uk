@@ -27,12 +27,6 @@
   display: flex;
 }
 
-@media (--break-vertical-max) {
-  .face1 {
-    display: none;
-  }
-}
-
 .face1 {
   backface-visibility: hidden;
   background: var(--color__fire);
@@ -45,6 +39,12 @@
   height: 100%;
   display: flex;
   justify-content: space-around;
+}
+
+@media (--break-vertical-max), print {
+  .face1 {
+    display: none;
+  }
 }
 
 @keyframes spinner {
