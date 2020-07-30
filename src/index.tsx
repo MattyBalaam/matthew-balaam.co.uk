@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "react-dom";
+import { render, hydrate } from "react-dom";
 //Blow away any hanging CRA service workers. To be removed… later.
 import "./utility/unregisterworker";
 
@@ -15,4 +15,10 @@ import cv from "./json/cv.json";
 
 const cvv: cvJSON = cv;
 
-render(<CVApp cvJSON={cvv} />, document.getElementById("root"));
+const rootElement = document.getElementById("root") as HTMLElement;
+
+if (rootElement.hasChildNodes()) {
+  hydrate(<CVApp cvJSON={cvv} />, rootElement);
+} else {
+  render(<CVApp cvJSON={cvv} />, rootElement);
+}

@@ -15,9 +15,7 @@ const Profiles = ({ profiles }: Props) => (
   <>
     {profiles.map(({ network, url, username }) => (
       <p key={url} className="contact__profile">
-        <Linkatron title={network} href={url}>
-          {username}
-        </Linkatron>
+        <Linkatron visibleLink={username}>{url}</Linkatron>
       </p>
     ))}
   </>

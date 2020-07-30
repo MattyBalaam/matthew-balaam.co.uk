@@ -61,11 +61,13 @@ const Contact = ({
       </div>
       <div className={classes([gridStyles.main, gridStyles.sub])}>
         <p className={gridStyles.subInfo}>
-          {addressLines.map((line) => (
-            <span className={styles.addressLine} key={line}>
-              {line}
-            </span>
-          ))}
+          {addressLines
+            .filter((line) => !!line)
+            .map((line) => (
+              <span className={styles.addressLine} key={line}>
+                {line}
+              </span>
+            ))}
         </p>
         <Paragraphs className={gridStyles.subDescription} source={summary} />
       </div>
