@@ -1,4 +1,4 @@
-A simple React app example – I agree it is possibly overblown to use React for such a simple site, but I like JSX templating and also using this CV es this as a place to explore new libraries, approaches or build tools.
+A simple React app example – I agree it is possibly overblown to use React for such a simple site, but I like JSX templating and also using this CV as this as a place to explore new libraries, approaches or build tools.
 
 I’m currently using Vite to explore ESM dev builds.
 
