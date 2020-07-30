@@ -1,6 +1,9 @@
 import React from "react";
 import { render } from "react-dom";
-import "./css/animations.css";
+//Blow away any hanging CRA service workers. To be removed… later.
+import "./utility/unregisterworker";
+
+// Import global styles.
 import "./css/resets.css";
 import "./css/variables.css";
 import "./css/typography.css";

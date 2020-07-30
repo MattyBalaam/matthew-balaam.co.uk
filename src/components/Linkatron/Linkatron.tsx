@@ -14,7 +14,7 @@ type Props = LinkifyProps & {
   };
 };
 
-const Link = ({
+const Linkatron = ({
   children,
   className,
   title,
@@ -36,4 +36,4 @@ const Link = ({
     </Linkify>
   );
 
-export default Link;
+export default Linkatron;

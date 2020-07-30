@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "../Link/Link";
+import Linkatron from "../Linkatron/Linkatron";
 
 export interface ProfileProps {
   network: string;
@@ -15,9 +15,9 @@ const Profiles = ({ profiles }: Props) => (
   <>
     {profiles.map(({ network, url, username }) => (
       <p key={url} className="contact__profile">
-        <Link title={network} to={url}>
+        <Linkatron title={network} href={url}>
           {username}
-        </Link>
+        </Linkatron>
       </p>
     ))}
   </>
