@@ -7,7 +7,7 @@ const Download = () => (
   <aside className={styles.downloadPDF}>
     <Linkatron
       className={styles.link}
-      href={`${process.env.PUBLIC_URL}/pdf/Matthew-Balaam_Developer.pdf`}
+      href={`Matthew-Balaam_Developer.pdf`}
       children={
         <>
           <span className={styles.text}>Download CV as PDF</span>
