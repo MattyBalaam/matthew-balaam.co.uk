@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Paragraphs.module.css";
-import Link from "../Link/Link";
+import Linkatron from "../Linkatron/Linkatron";
 
 export interface Props {
   source: string | string[];
@@ -18,9 +18,9 @@ const Paragraphs = ({ source, className }: Props) => {
   return (
     <div className={className}>
       {normalisedValues.map((text: string, i) => (
-        <Link tagName="p" className={styles.paragraph} key={i}>
-          {text}
-        </Link>
+        <p className={styles.paragraph} key={i}>
+          <Linkatron>{text}</Linkatron>
+        </p>
       ))}
     </div>
   );

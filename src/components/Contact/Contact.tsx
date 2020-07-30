@@ -4,7 +4,7 @@ import classes from "../../utility/classes";
 import Paragraphs from "../Paragraphs/Paragraphs";
 import Profiles, { ProfileProps } from "./Profiles";
 import Grid, { gridStyles } from "../Grid/Grid";
-import Link from "../Link/Link";
+import Link from "../Linkatron/Linkatron";
 import SectionHeader from "../SectionHeader/SectionHeader";
 
 import styles from "./Contact.module.css";

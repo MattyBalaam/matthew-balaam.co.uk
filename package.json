@@ -1,8 +1,10 @@
 {
-  "name": "mb-vite",
-  "version": "0.0.0",
+  "name": "matthewbalaam.co.uk",
+  "version": "0.2.3",
   "scripts": {
     "dev": "vite",
+    "typecheck": "tsc --noEmit",
+    "typecheck:watch": "tsc --noEmit --watch",
     "build": "vite build",
     "topdf": "DEBUG=electron* electron-pdf  http://localhost:3000 ./public/Matthew-Balaam_Developer.pdf"
   },

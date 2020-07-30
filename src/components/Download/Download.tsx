@@ -1,11 +1,11 @@
 import React from "react";
-import Link from "../Link/Link";
+import Linkatron from "../Linkatron/Linkatron";
 
 import styles from "./Download.module.css";
 
 const Download = () => (
   <aside className={styles.downloadPDF}>
-    <Link
+    <Linkatron
       className={styles.link}
       href={`${process.env.PUBLIC_URL}/pdf/Matthew-Balaam_Developer.pdf`}
       children={

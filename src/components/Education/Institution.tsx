@@ -16,7 +16,7 @@ export interface InstitutionProps {
 }
 
 export interface Props extends InstitutionProps {
-  end: Date | false;
+  end?: Date;
   start: Date;
 }
 
@@ -34,13 +34,13 @@ const Institution = ({
       <div className={gridStyles.subInfo}>
         <p>
           <NiceDate date={start} />
-          {end && (
+          {!!end ? (
             <>
               {" "}
               –
               <NiceDate date={end} />
             </>
-          )}
+          ) : null}
         </p>
         <p className={styles.institution}>{institution}</p>
         <p>{studyType}</p>

@@ -6,10 +6,8 @@
     "email": "info@matthewbalaam.co.uk",
     "phone": "07730 953 486",
     "url": "matthewbalaam.co.uk",
-    "summary": "Strong front-end developer able to adapt to full-stack within team projects. Agile learner with a curiousness toward innovative problem solving, and eagerness to update skills.\n\nMain skill set in JavaScript, CSS, HTML with experience using reactive frameworks and cross-browser knowledge.\n\nPrevious background in graphic design and multimedia with an thirst for creating great user experience.\n\nThis CV is built as a bespoke React app, review at https://github.com/MattyBalaam/matthew-balaam.co.uk.",
+    "summary": "Strong front-end developer able to adapt to full-stack within team projects. Agile learner with a curiousness toward innovative problem solving, and eagerness to update skills.\n\nMain skill set in JavaScript, CSS, HTML with experience using reactive frameworks and cross-browser knowledge.\n\nPrevious background in graphic design and multimedia drives satisfaction in creating great user experience.\n\nThis CV is built as a bespoke React app, review at https://github.com/MattyBalaam/matthew-balaam.co.uk.",
     "location": {
-      "address": "111 Wick Hall, Furze Hill",
-      "postalCode": "BN3 1NH",
       "city": "Brighton and Hove",
       "countryCode": "GB"
     },
@@ -70,8 +68,7 @@
       "endDate": "2017-07-20",
       "highlights": [
         "Working in a team on DB Primary, a safe, easy-to-use internet experience for pupils and teachers with a Java backend.",
-        "Creating interactive learning materials and assessed games. Developing an easy-to-use activity builder tool allowing teachers to set their own quizzes and surveys.",
-        "Developer custom public-facing corporate websites with a CMS & MVC framework."
+        "Creating interactive learning materials and assessed games. Developing an easy-to-use activity builder tool allowing teachers to set their own quizzes and surveys. Developing custom public-facing corporate websites with a CMS & MVC framework."
       ]
     },
     {

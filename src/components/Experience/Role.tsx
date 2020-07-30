@@ -1,7 +1,7 @@
 import React from "react";
 import Paragraphs from "../Paragraphs/Paragraphs";
 import NiceDate from "../NiceDate/NiceDate";
-import Link from "../Link/Link";
+import Linkatron from "../Linkatron/Linkatron";
 
 import classes from "../../utility/classes";
 
@@ -26,8 +26,8 @@ const Role = ({ start, end, highlights, position, name, url }: Props) => (
         {!!end ? <NiceDate date={end} /> : <span>Current</span>}
       </p>
       <p className={styles.title}>{position}</p>
-      <p className={styles.name}>{name}</p>
-      {url && <Link className={styles.website}>{url}</Link>}
+      <p>{name}</p>
+      {url && <Linkatron className={styles.website}>{url}</Linkatron>}
     </header>
     <section className={gridStyles.subDescription}>
       <Paragraphs source={highlights} />
