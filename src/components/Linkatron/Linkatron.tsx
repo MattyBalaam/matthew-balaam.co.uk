@@ -6,7 +6,7 @@ type Props = LinkifyProps & {
   className?: string;
   title?: string;
   to?: string;
-  href?: string;
+  visibleLink?: string;
   external?: boolean;
   securityProps?: {
     target?: string;
@@ -17,23 +17,27 @@ type Props = LinkifyProps & {
 const Linkatron = ({
   children,
   className,
-  title,
-  href,
+  visibleLink,
   external = true,
   securityProps = {
     target: external ? "_blank" : undefined,
     rel: external ? "noopener noreferrer" : undefined,
   },
   ...props
-}: Props) =>
-  href ? (
-    <a className={className} title={title} href={href} {...securityProps}>
-      {children}
-    </a>
-  ) : (
-    <Linkify {...securityProps} {...props} options={{ className }}>
-      {children}
-    </Linkify>
-  );
+}: Props) => (
+  <Linkify
+    {...securityProps}
+    {...props}
+    options={{
+      className,
+      defaultProtocol: "https",
+      format: (val) => {
+        return visibleLink ? visibleLink : val;
+      },
+    }}
+  >
+    {children}
+  </Linkify>
+);
 
 export default Linkatron;

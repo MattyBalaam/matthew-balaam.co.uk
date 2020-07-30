@@ -15,14 +15,10 @@ const Cube = ({ children, className }: Props) => {
   useEffect(() => {
     if (cubeRef.current !== null) {
       cubeRef.current.addEventListener("animationend", () => {
-        console.log("loaded");
-
         setCubeAnimClass(styles.loaded);
       });
     }
   }, [cubeRef]);
-
-  console.log("cubeAnimClass", cubeAnimClass);
 
   return (
     <main className={`${className} ${styles.perspective}`}>
