@@ -1,20 +1,19 @@
 import React from "react";
-import Linkatron from "../Linkatron/Linkatron";
 
 import styles from "./Download.module.css";
 
 const Download = () => (
   <aside className={styles.downloadPDF}>
-    <Linkatron
+    <a
       className={styles.link}
-      href={`Matthew-Balaam_Developer.pdf`}
-      children={
-        <>
-          <span className={styles.text}>Download CV as PDF</span>
-          <span className={styles.icon} />
-        </>
-      }
-    />
+      href="Matthew-Balaam_Developer.pdf"
+      target="_blank"
+    >
+      <>
+        <span className={styles.text}>Download CV as PDF</span>
+        <span className={styles.icon} />
+      </>
+    </a>
   </aside>
 );
 
