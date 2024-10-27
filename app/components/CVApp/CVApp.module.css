@@ -1,0 +1,24 @@
+.cv {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.cvGrid {
+  margin: 0;
+  background: var(--color__subtle-off-white);
+  padding: 4vw;
+}
+
+@media (--break-horizontal-min) {
+  .cvGrid {
+    padding: 4em;
+  }
+}
+
+@media print {
+  .cvGrid {
+    width: 21cm;
+    padding: 0.5cm 2cm;
+    max-width: none;
+  }
+}

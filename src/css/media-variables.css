@@ -1,5 +1,0 @@
-@custom-media --break-horizontal-large-min (min-width: 1200px);
-@custom-media --break-horizontal-min (min-width: 1000px);
-@custom-media --break-vertical-max (max-width: 1000px);
-@custom-media --break-medium-min (min-width: 600px);
-@custom-media --break-medium-max (min-width: 599px);
