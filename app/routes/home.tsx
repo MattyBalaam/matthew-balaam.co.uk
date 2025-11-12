@@ -1,4 +1,4 @@
-import type * as Route from "./+types.home";
+import  {Route} from "./+types/home";
 
 import type { MetaFunction } from "react-router";
 import { zResume } from "~/schema";
@@ -31,8 +31,7 @@ export const loader = async () => {
 		.parse(jsonData);
 };
 
-export default function Index({ loaderData }: Route.ComponentProps) {
-	const { basics, skills, work, education } = loaderData;
+export default function Index({ loaderData: { basics, skills, work, education } }: Route.ComponentProps) {
 
 	return (
 		<>

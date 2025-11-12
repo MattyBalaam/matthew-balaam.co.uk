@@ -6,6 +6,11 @@
 # testing
 /coverage
 
+# React Router
+/.react-router
+/build
+
+
 # misc
 .DS_Store
 .env.local
