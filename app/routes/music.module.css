@@ -1,0 +1,35 @@
+.layout {
+    display: grid;
+    gap: var(--rhythm__vertical_2) var(--column-gap);
+}
+
+.posts {
+    display: grid;
+    gap: var(--rhythm__vertical);
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: var(--rhythm__vertical_half);
+    border-top: var(--section-decoration);
+    padding: var(--rhythm__vertical_half);
+}
+
+.listenMatey {
+    vertical-align: middle;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    background: var(--color__fire);
+    color: white;
+
+    &:hover {
+        background: var(--color__prince);
+    }
+
+    &::after {
+        content: "  ▶";
+    }
+}

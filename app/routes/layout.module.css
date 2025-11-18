@@ -1,0 +1,27 @@
+.nav {
+    display: flex;
+    position: fixed;
+    inset: 0 0 auto 0;
+    background: rgb(55 55 55 / 0.8);
+
+}
+
+.list {
+    display: flex;
+    gap: 1rem;
+}
+
+.item {
+    padding: 0.5em 1em;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+        background: rgb(100 100 100 / 0.8);
+    }
+
+    &:visited {
+        color: white;
+    }
+}

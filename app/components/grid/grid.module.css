@@ -1,0 +1,43 @@
+  .grid,
+  .main {
+    display: grid;
+    gap: var(--rhythm__vertical) var(--column-gap);
+  }
+
+  @media (--break-horizontal-min),
+  print {
+    .grid {
+      grid-template-columns: [start] 1fr [main] 1fr [sub] 1.5fr 1.5fr [end];
+    }
+
+    .start {
+      grid-column: start;
+    }
+
+    .main-to-sub {
+      display: grid;
+      grid-column: main / sub;
+    }
+
+
+    .main {
+      grid-template-columns: subgrid;
+      grid-column: main / end;
+      position: relative;
+
+      &.divider::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -0.45rem;
+        width: 100%;
+        border-top: var(--section-decoration);
+      }
+    }
+
+    .sub {
+      display: grid;
+      grid-column: sub / end;
+    }
+
+  }

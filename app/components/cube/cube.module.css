@@ -1,0 +1,17 @@
+.cubeWrapper {
+  max-width: 1200px;
+  min-height: 100lvh;
+  margin: auto;
+}
+
+.cube {
+  background: var(--color__subtle-off-white);
+  min-height: 100lvh;
+}
+
+@media (--break-horizontal-min) {
+  .cube {
+    padding: 4em;
+    view-transition-name: cube
+  }
+}

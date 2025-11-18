@@ -1,5 +1,27 @@
 {
   "editor.formatOnSave": true,
-  "eslint.enable": true,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.experimental.useTsgo": true,
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "oxc.fmt.experimental": true,
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "cSpell.words": [
+    "catchall",
+    "matthewbalaam",
+    "oxlint",
+    "reactrouter",
+    "reactrouterdom",
+    "remixrun",
+    "StringToLink",
+    "Theinhardt",
+    "tsgo",
+    "tsgolint",
+    "zodresume"
+  ],
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  }
 }

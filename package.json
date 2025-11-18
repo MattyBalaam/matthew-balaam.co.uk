@@ -1,56 +1,55 @@
 {
-  "name": "matthewbalaam.co.uk",
-  "version": "0.2.3",
-  "scripts": {
-    "dev": "vite",
-    "typecheck": "tsc --noEmit",
-    "typecheck:watch": "tsc --noEmit --watch",
-    "build": "vite build",
-    "postbuild": "react-snap",
-    "topdf": "DEBUG=electron* electron-pdf  http://localhost:3000 ./public/Matthew-Balaam_Developer.pdf"
-  },
-  "reactSnap": {
-    "source": "dist",
-    "minifyHtml": {
-      "collapseWhitespace": true,
-      "removeComments": true
-    }
-  },
-  "browserslist": {
-    "development": [
-      "last 2 chrome versions",
-      "last 2 firefox versions",
-      "last 2 edge versions"
-    ],
-    "production": [
-      ">1%",
-      "last 4 versions",
-      "Firefox ESR"
-    ]
-  },
-  "dependencies": {
-    "@pika/react": "^16.13.1",
-    "@pika/react-dom": "^16.13.1",
-    "linkifyjs": "^2.1.9"
-  },
-  "devDependencies": {
-    "@types/linkifyjs": "^2.1.3",
-    "@types/markdown-to-jsx": "^6.11.1",
-    "@types/react": "^16.9.43",
-    "@types/react-dom": "^16.9.8",
-    "@typescript-eslint/eslint-plugin": "^3.7.1",
-    "@typescript-eslint/parser": "^3.7.1",
-    "electron-pdf": "^7.0.0",
-    "eslint": "^7.5.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.20.5",
-    "postcss-custom-media": "^7.0.8",
-    "prettier": "^2.0.5",
-    "react-snap": "^1.23.0",
-    "typescript": "^3.9.7",
-    "typescript-plugin-css-modules": "^2.4.0",
-    "vite": "^1.0.0-rc.3",
-    "vite-plugin-react": "^3.0.2"
-  }
+	"name": "matthewbalaam.co.uk",
+	"version": "0.4.0",
+	"sideEffects": false,
+	"type": "module",
+	"scripts": {
+		"dev": "react-router dev",
+		"build": "react-router build",
+		"start": "react-router-serve ./build/server/index.js",
+		"lint": "pnpm oxlint --type-aware",
+		"typecheck": "react-router typegen && tsgo --noEmit",
+		"typegen": "react-router typegen"
+	},
+	"browserslist": {
+		"development": [
+			"last 2 chrome versions",
+			"last 2 firefox versions",
+			"last 2 edge versions"
+		],
+		"production": [
+			">1%",
+			"last 4 versions",
+			"Firefox ESR"
+		]
+	},
+	"dependencies": {
+		"@react-router/node": "7.9.6",
+		"@react-router/serve": "7.9.6",
+		"isbot": "5.1.32",
+		"linkify-react": "4.3.2",
+		"linkifyjs": "4.3.2",
+		"react": "19.2.0",
+		"react-dom": "19.2.0",
+		"react-router": "7.9.6"
+	},
+	"devDependencies": {
+		"@react-router/dev": "7.9.6",
+		"@types/react": "19.2.5",
+		"@types/react-dom": "19.2.3",
+		"@typescript/native-preview": "7.0.0-dev.20251117.1",
+		"autoprefixer": "10.4.22",
+		"lint-staged": "16.2.6",
+		"oxlint": "1.28.0",
+		"oxlint-tsgolint": "^0.7.0",
+		"postcss-custom-media-generator": "1.1.0",
+		"postcss-preset-env": "10.4.0",
+		"vite": "7.2.2",
+		"vite-tsconfig-paths": "5.1.4",
+		"zod": "4.1.12"
+	},
+	"lint-staged": {
+		"**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,vue,astro,svelte}": "oxlint"
+	},
+	"packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c"
 }
