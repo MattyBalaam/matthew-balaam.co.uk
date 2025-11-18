@@ -1,12 +1,3 @@
-html {
-  box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
 main {
   display: block;
 }
@@ -31,8 +22,4 @@ ul,
 ol {
   list-style: none;
   padding-left: 0;
-}
-
-:link:not(:hover) {
-  text-decoration: none;
 }

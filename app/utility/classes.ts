@@ -1,3 +1,3 @@
-export default function classes(classNames: (string | undefined)[]) {
-  return classNames.filter(val => !!val).join(" ");
+export function classes(classNames: (string | unknown)[]) {
+  return classNames.filter((val) => typeof val === "string" && !!val).join(" ");
 }

@@ -1,13 +1,14 @@
 {
 	"name": "matthewbalaam.co.uk",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"sideEffects": false,
 	"type": "module",
 	"scripts": {
 		"dev": "react-router dev",
 		"build": "react-router build",
 		"start": "react-router-serve ./build/server/index.js",
-		"typecheck": "react-router typegen && tsc",
+		"lint": "pnpm oxlint --type-aware",
+		"typecheck": "react-router typegen && tsgo --noEmit",
 		"typegen": "react-router typegen"
 	},
 	"browserslist": {
@@ -23,26 +24,32 @@
 		]
 	},
 	"dependencies": {
-		"@react-router/node": "7.9.5",
-		"@react-router/serve": "7.9.5",
+		"@react-router/node": "7.9.6",
+		"@react-router/serve": "7.9.6",
 		"isbot": "5.1.32",
 		"linkify-react": "4.3.2",
 		"linkifyjs": "4.3.2",
 		"react": "19.2.0",
 		"react-dom": "19.2.0",
-		"react-router": "7.9.5"
+		"react-router": "7.9.6"
 	},
 	"devDependencies": {
-		"@react-router/dev": "7.9.5",
-		"@types/react": "19.2.2",
-		"@types/react-dom": "19.2.2",
+		"@react-router/dev": "7.9.6",
+		"@types/react": "19.2.5",
+		"@types/react-dom": "19.2.3",
+		"@typescript/native-preview": "7.0.0-dev.20251117.1",
 		"autoprefixer": "10.4.22",
+		"lint-staged": "16.2.6",
+		"oxlint": "1.28.0",
+		"oxlint-tsgolint": "^0.7.0",
 		"postcss-custom-media-generator": "1.1.0",
 		"postcss-preset-env": "10.4.0",
-		"typescript": "5.9.3",
 		"vite": "7.2.2",
 		"vite-tsconfig-paths": "5.1.4",
 		"zod": "4.1.12"
+	},
+	"lint-staged": {
+		"**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,vue,astro,svelte}": "oxlint"
 	},
 	"packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c"
 }

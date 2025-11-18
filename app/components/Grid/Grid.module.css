@@ -1,40 +1,40 @@
-.grid {
-  margin-bottom: calc(var(--rhythm__vertical) * 2);
-}
-
-@media (--break-horizontal-min), print {
+@media (--break-horizontal-min),
+print {
   .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: var(--column-gap);
-    grid-template-areas: "one two-three two-three two-three";
+    grid-template-columns: [start] 1fr [main] 1fr [sub] 1.5fr 1.5fr [end];
+    gap: var(--rhythm__vertical) var(--column-gap);
   }
-}
 
-.tightBottom {
-  margin-bottom: 0;
-}
+  .start {
+    grid-column: start;
+  }
 
-.header {
-  grid-area: one;
-}
-.main {
-  grid-area: two-three;
-}
-
-@media (--break-medium-min), print {
-  .sub {
+  .main-to-sub {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: var(--column-gap);
-    grid-template-areas: "two three three";
+    grid-column: main / sub;
+  }
+
+
+  .main {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: main / end;
+    position: relative;
+    gap: var(--rhythm__vertical) var(--column-gap);
+
+    &.divider::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -0.45rem;
+      width: 100%;
+      border-top: var(--section-decoration);
+    }
   }
 }
 
-.subInfo {
-  grid-area: two;
-  margin-bottom: var(--rhythm__vertical);
-}
-.subDescription {
-  grid-area: three;
+.sub {
+  display: grid;
+  grid-column: sub / end;
 }
