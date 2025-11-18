@@ -24,7 +24,4 @@
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   }
-  // "editor.codeActionsOnSave": {
-  //   "quickfix.biome": "explicit"
-  // }
 }

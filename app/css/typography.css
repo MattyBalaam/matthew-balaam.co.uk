@@ -5,6 +5,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Theinhardt";
   src: url("../fonts/Theinhardt-Rg.woff2") format("woff2"),
@@ -12,6 +13,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Theinhardt";
   src: url("../fonts/Theinhardt-Lt.woff2") format("woff2"),
