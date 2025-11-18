@@ -35,7 +35,7 @@ export default function Home() {
           </Paragraph>
           <img
             src="MoMotorCitySpeedway1656construct.gif"
-            alt="Under construction"
+            alt="This page is under construction"
           />
 
           <Link to={href("/music")} viewTransition>

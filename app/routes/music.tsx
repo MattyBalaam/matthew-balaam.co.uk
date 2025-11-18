@@ -46,7 +46,7 @@ export default function Music({ loaderData: { posts } }: Route.ComponentProps) {
 
       <img
         src="MoMotorCitySpeedway1656construct.gif"
-        alt="Under construction"
+        alt="This page is under construction"
       />
 
       <ul className={styles.posts}>
