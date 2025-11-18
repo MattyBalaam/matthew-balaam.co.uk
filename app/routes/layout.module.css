@@ -3,12 +3,18 @@
     position: fixed;
     inset: 0 0 auto 0;
     background: rgb(55 55 55 / 0.8);
+}
 
+@media print {
+    .nav {
+        display: none;
+    }
 }
 
 .list {
     display: flex;
     gap: 1rem;
+
 }
 
 .item {

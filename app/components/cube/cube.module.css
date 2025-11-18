@@ -1,7 +1,10 @@
-.cubeWrapper {
-  max-width: 1200px;
-  min-height: 100lvh;
-  margin: auto;
+@media screen {
+  .cubeWrapper {
+    max-width: 1200px;
+    min-height: 100lvh;
+    margin: auto;
+  }
+
 }
 
 .cube {
@@ -9,7 +12,7 @@
   min-height: 100lvh;
 }
 
-@media (--break-horizontal-min) {
+@media screen and (--break-horizontal-min) {
   .cube {
     padding: 4em;
     view-transition-name: cube
