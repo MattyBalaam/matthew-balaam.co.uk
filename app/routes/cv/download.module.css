@@ -11,12 +11,11 @@
 
 @media (--break-horizontal-min) {
   .downloadPDF {
-    view-transition-name: none;
     position: fixed;
     z-index: 9999;
     transform: rotate(45deg);
-    top: 2rem;
-    right: -7rem;
+    top: 0rem;
+    right: 0rem;
   }
 }
 
@@ -44,7 +43,6 @@
 }
 
 .icon {
-  /* from icono font */
   border: 2px solid;
   display: inline-block;
   vertical-align: middle;

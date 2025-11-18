@@ -15,6 +15,11 @@
     padding: 0.5em 1em;
     display: inline-block;
     color: white;
+    text-decoration: none;
+
+    &:hover {
+        background: rgb(100 100 100 / 0.8);
+    }
 
     &:visited {
         color: white;

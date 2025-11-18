@@ -4,20 +4,17 @@ import { Outlet, type MetaDescriptor } from "react-router";
 import { zResume } from "~/schema";
 
 import jsonData from "~/json/cv.json";
-import Download from "~/components/download/Download";
+import { Download } from "./download";
 import { Experience } from "./experience";
 import { Education } from "./education";
 
 import styles from "./cv.module.css";
-import Contact from "./contact";
+import { Contact } from "./contact";
 import { CvSection } from "./cv-section";
-import { TextList } from "../../components/typography/typography";
+import { TextList } from "~/components/typography/typography";
 
 export function meta() {
-  return [
-    { title: "Matthew Balaam - CV" },
-    { name: "description", content: "Welcome to React Router!" },
-  ] satisfies Array<MetaDescriptor>;
+  return [{ title: "Matthew Balaam - CV" }] satisfies Array<MetaDescriptor>;
 }
 
 export async function loader() {
@@ -37,25 +34,25 @@ export default function CV({
   return (
     <>
       <Download />
-      <div className={styles.cv}>
-        <article className={styles.cvGrid}>
-          <Contact {...basics} />
 
-          <CvSection>
-            <CvSection.Heading>Technologies</CvSection.Heading>
+      <article className={styles.cvGrid}>
+        <Contact {...basics} />
 
-            <CvSection.Child variant="main">
-              <TextList className={styles.technologyList}>
-                {[...skills[0].keywords.slice(0, 11), <>And many more…</>]}
-              </TextList>
-            </CvSection.Child>
-          </CvSection>
+        <CvSection>
+          <CvSection.Heading>Technologies</CvSection.Heading>
 
-          <Experience work={work} />
+          <CvSection.Child variant="main">
+            <TextList className={styles.technologyList}>
+              {[...skills[0].keywords.slice(0, 11), <>And many more…</>]}
+            </TextList>
+          </CvSection.Child>
+        </CvSection>
 
-          <Education education={education} />
-        </article>
-      </div>
+        <Experience work={work} />
+
+        <Education education={education} />
+      </article>
+
       <Outlet />
     </>
   );

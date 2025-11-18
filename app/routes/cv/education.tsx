@@ -2,7 +2,7 @@ import { gridStyles } from "~/components/grid/grid";
 import styles from "./education.module.css";
 
 import type { Resume } from "~/schema";
-import { Paragraphs } from "../../components/typography/typography";
+import { Paragraphs } from "~/components/typography/typography";
 import { CvSection } from "./cv-section";
 
 export interface EducationProps {

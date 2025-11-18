@@ -3,14 +3,13 @@ import { type ReactNode } from "react";
 import styles from "./cube.module.css";
 
 export interface CubeProps {
-  className?: string;
   children: ReactNode;
 }
 
-export function Cube({ children, className }: CubeProps) {
+export function Cube({ children }: CubeProps) {
   return (
-    <main className={`${className} ${styles.cube}`}>
-      <div style={{ viewTransitionName: "cube" }}>{children}</div>
+    <main className={styles.cubeWrapper}>
+      <div className={styles.cube}>{children}</div>
     </main>
   );
 }

@@ -1,6 +1,6 @@
-import { Paragraphs } from "../../components/typography/typography";
+import { Paragraphs } from "~/components/typography/typography";
 
-import { StringToLink } from "./string-to-link";
+import { StringToLink } from "../../components/string-to-link";
 
 import styles from "./contact.module.css";
 import type { Resume } from "~/schema";
@@ -9,7 +9,7 @@ import { CvSection } from "./cv-section";
 
 export type ContactProps = Resume["basics"];
 
-const Contact = ({
+export function Contact({
   email,
   image,
   location: { address, city, postalCode },
@@ -17,44 +17,44 @@ const Contact = ({
   phone,
   profiles,
   summary,
-}: ContactProps) => (
-  <CvSection tightBottom Component="header">
-    <CvSection.Heading className={styles.name} Component="h1">
-      {name}
-    </CvSection.Heading>
-    <CvSection.Child variant="main" divider={false}>
-      <img className={styles.image} src={image} alt={name} />
-    </CvSection.Child>
+}: ContactProps) {
+  return (
+    <CvSection tightBottom Component="header">
+      <CvSection.Heading className={styles.name} Component="h1">
+        {name}
+      </CvSection.Heading>
+      <CvSection.Child variant="main" divider={false}>
+        <img className={styles.image} src={image} alt={name} />
+      </CvSection.Child>
 
-    <CvSection.Child variant="profiles">
-      <ul className={styles.profiles}>
-        <li>
-          <StringToLink>{email}</StringToLink>
-        </li>
-        {profiles.map(({ network, url, username }) => (
-          <li key={url}>
-            <a href={url} title={network}>
-              {username} <Icon network={network} />
-            </a>
+      <CvSection.Child variant="profiles">
+        <ul className={styles.profiles}>
+          <li>
+            <StringToLink>{email}</StringToLink>
           </li>
-        ))}
-        <li>{phone}</li>
-      </ul>
-    </CvSection.Child>
+          {profiles.map(({ network, url, username }) => (
+            <li key={url}>
+              <a href={url} title={network}>
+                {username} <Icon network={network} />
+              </a>
+            </li>
+          ))}
+          <li>{phone}</li>
+        </ul>
+      </CvSection.Child>
 
-    <CvSection.Child variant="info">
-      {[address, city, postalCode]
-        .filter((line) => !!line)
-        .map((line) => (
-          <span className={styles.addressLine} key={line}>
-            {line}
-          </span>
-        ))}
-    </CvSection.Child>
-    <CvSection.Child variant="sub">
-      <Paragraphs>{summary}</Paragraphs>
-    </CvSection.Child>
-  </CvSection>
-);
-
-export default Contact;
+      <CvSection.Child variant="info">
+        {[address, city, postalCode]
+          .filter((line) => !!line)
+          .map((line) => (
+            <span className={styles.addressLine} key={line}>
+              {line}
+            </span>
+          ))}
+      </CvSection.Child>
+      <CvSection.Child variant="sub">
+        <Paragraphs>{summary}</Paragraphs>
+      </CvSection.Child>
+    </CvSection>
+  );
+}

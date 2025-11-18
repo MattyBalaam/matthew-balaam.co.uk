@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import styles from "./typography.module.css";
-import { StringToLink } from "../../routes/cv/string-to-link";
+import { StringToLink } from "../string-to-link";
 import { classes } from "~/utility/classes";
 
 export interface ParagraphsProps {

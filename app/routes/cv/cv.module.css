@@ -1,15 +1,6 @@
 .cvGrid {
-  margin: 0;
-  background: var(--color__subtle-off-white);
-  padding: 4vw;
   display: grid;
   gap: var(--rhythm__vertical_2) var(--column-gap);
-}
-
-@media (--break-horizontal-min) {
-  .cvGrid {
-    padding: 4em;
-  }
 }
 
 @media print {

@@ -1,8 +1,8 @@
 import { classes } from "~/utility/classes";
 import type { Resume } from "~/schema";
 
-import { Paragraph, TextList } from "../../components/typography/typography";
-import { StringToLink } from "./string-to-link";
+import { Paragraph, TextList } from "~/components/typography/typography";
+import { StringToLink } from "../../components/string-to-link";
 
 import styles from "./experience.module.css";
 import { CvSection } from "./cv-section";
