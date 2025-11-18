@@ -33,6 +33,9 @@ importers:
         specifier: 7.9.6
         version: 7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
     devDependencies:
+      '@netlify/vite-plugin-react-router':
+        specifier: 2.1.2
+        version: 2.1.2(react-router@7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(vite@7.2.2(yaml@2.8.1))
       '@react-router/dev':
         specifier: 7.9.6
         version: 7.9.6(@react-router/serve@7.9.6(react-router@7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3))(react-router@7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(typescript@5.9.3)(vite@7.2.2(yaml@2.8.1))(yaml@2.8.1)
@@ -63,9 +66,6 @@ importers:
       postcss-preset-env:
         specifier: 10.4.0
         version: 10.4.0(postcss@8.5.6)
-      typescript:
-        specifier: 5.9.3
-        version: 5.9.3
       vite:
         specifier: 7.2.2
         version: 7.2.2(yaml@2.8.1)
@@ -661,6 +661,25 @@ packages:
 
   '@mjackson/node-fetch-server@0.2.0':
     resolution: {integrity: sha512-EMlH1e30yzmTpGLQjlFmaDAjyOeZhng1/XCd7DExR8PNAnG/G1tyruZxEoUe11ClnwGhGrtsdnyyUx1frSzjng==}
+
+  '@netlify/edge-functions@3.0.2':
+    resolution: {integrity: sha512-1vW3R+Rc2JxL6qITndlT87N94GPjJ6gH2ntXW3IDdLzSABoU9XCHw4lRzDw+bhgSLTm0oyOwQA2+hhFvstznNQ==}
+    engines: {node: '>=18.0.0'}
+
+  '@netlify/functions@5.1.0':
+    resolution: {integrity: sha512-LZtiQtf/QzPHIeNDZuIBxx04kmU7lCipWqZ26ejX7mYSB3yj2wvpZfF49kD8B8FoKTydSvgFmBpIcCO5FvpEXA==}
+    engines: {node: '>=18.0.0'}
+
+  '@netlify/types@2.2.0':
+    resolution: {integrity: sha512-XOWlZ2wPpdRKkAOcQbjIf/Qz7L4RjcSVINVNQ9p3F6U8V6KSEOsB3fPrc6Ly8EOeJioHUepRPuzHzJE/7V5EsA==}
+    engines: {node: ^18.14.0 || >=20}
+
+  '@netlify/vite-plugin-react-router@2.1.2':
+    resolution: {integrity: sha512-cPJiD6WbJuVAZwSEMS0A4F+ymnuyaw7ZzrYSD0X+WcTsxySX46l72u8r80wwjL/p3lpC7ZJoyqHnANpbxlLNVA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      react-router: '>=7.9.0'
+      vite: '>=5.0.0'
 
   '@npmcli/git@4.1.0':
     resolution: {integrity: sha512-9hwoB3gStVfa0N31ymBmrX+GuDGdVA/QWShZVqE0HK2Af+7QGGrCTbZia/SW0ImUTjTne7SP91qxDmtXvDHRPQ==}
@@ -2715,6 +2734,25 @@ snapshots:
 
   '@mjackson/node-fetch-server@0.2.0': {}
 
+  '@netlify/edge-functions@3.0.2':
+    dependencies:
+      '@netlify/types': 2.2.0
+
+  '@netlify/functions@5.1.0':
+    dependencies:
+      '@netlify/types': 2.2.0
+
+  '@netlify/types@2.2.0': {}
+
+  '@netlify/vite-plugin-react-router@2.1.2(react-router@7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(vite@7.2.2(yaml@2.8.1))':
+    dependencies:
+      '@netlify/edge-functions': 3.0.2
+      '@netlify/functions': 5.1.0
+      isbot: 5.1.32
+      react-router: 7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      tinyglobby: 0.2.15
+      vite: 7.2.2(yaml@2.8.1)
+
   '@npmcli/git@4.1.0':
     dependencies:
       '@npmcli/promise-spawn': 6.0.2
@@ -4087,7 +4125,8 @@ snapshots:
       media-typer: 0.3.0
       mime-types: 2.1.35
 
-  typescript@5.9.3: {}
+  typescript@5.9.3:
+    optional: true
 
   unpipe@1.0.0: {}
 
