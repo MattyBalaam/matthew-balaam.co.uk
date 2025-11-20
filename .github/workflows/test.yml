@@ -22,10 +22,6 @@ jobs:
           node-version: '24'
           cache: 'pnpm'
 
-      # Uses packageManager field in package.json
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-
       - name: Install dependencies
         run: pnpm install
 
