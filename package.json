@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "react-router dev",
     "build": "react-router build",
+    "ci:build": "pnpm build && node --experimental-strip-types ./scripts/to-pdf.ts",
     "start": "react-router-serve ./build/server/server.js",
     "lint": "pnpm oxlint --type-aware",
     "lint:fix": "pnpm oxlint --type-aware --fix",
     "ci:test": "concurrently 'pnpm lint' 'pnpm typecheck'",
     "typecheck": "react-router typegen && tsgo --noEmit",
+    "postinstall": "playwright install",
     "typegen": "react-router typegen"
   },
   "browserslist": {
@@ -52,6 +54,7 @@
     "oxfmt": "0.14.0",
     "oxlint": "1.28.0",
     "oxlint-tsgolint": "^0.7.3",
+    "playwright": "1.56.1",
     "postcss-custom-media-generator": "1.1.0",
     "postcss-preset-env": "10.4.0",
     "prettier": "3.6.2",
