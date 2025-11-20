@@ -45,8 +45,7 @@
         "Added RBAC permissions for apps.",
         "Introduced Zod-based schemas for forms, closing the contract circle with the backend to reduce potential for data or API errors.",
         "Diagnosed and mitigated performance issues in relating to AWS IaC reducing app latency (in extreme cases) up to 10 times.",
-        "Migrated simulated jsdom/Jest component tests to browser-based Playwright tests with features like a mocked API layer using MSW for quick test development and easy DX.",
-        "Introduced visual snapshot testing for confidence against regressions across multiple browsers and automated web accessibility testing."
+        "Migrated simulated jsdom/Jest component tests to browser-based Playwright tests with features like a mocked API layer using MSW for quick test development and easy DX, visual snapshot testing for confidence against regressions across multiple browsers and automated web accessibility testing."
       ]
     },
     {
@@ -55,7 +54,7 @@
       "url": "pure360.com",
       "startDate": "2018-11-12",
       "endDate": "2021-02-15",
-      "summary": "Building a React/Typescript SPA interfacing with the API layer using REST for handling customer creation and scheduling of multi-channel marketing campaigns. Originally using Redux  for data fetching and state management, this was later migrated to Tanstack React Query. Working in an Agile/Scrum environment.",
+      "summary": "React/Typescript SPA with REST for handling customer creation and scheduling of multi-channel marketing campaigns. Redux for data fetching and state management, charts for data visualisation. Agile/Scrum environment.",
       "highlights": [
         "Building a graph-style decision tree with a clear simple graphic interface for multiple journeys of customer engagement",
         "working with UX to create a new image editor",
@@ -115,7 +114,7 @@
       "position": "Graphic designer",
       "startDate": "2001-07-08",
       "endDate": "2009-10-10",
-      "summary": "Design conception through to final artworking on a very broad range of print and digital projects. Working in a collaborative design team. Liaising with all departments, as well as external clients and printers."
+      "summary": "Design conception through to final artwork on a very broad range of print and digital projects. Working in a collaborative design team. Liaising with all departments, as well as external clients and printers."
     },
     {
       "name": "Archant Media",
@@ -154,7 +153,7 @@
         "tsdown",
         "Rollup",
         "Webpack",
-        "Redux, Redux Thunks"
+        "Redux, Redux Thunk"
       ]
     }
   ]

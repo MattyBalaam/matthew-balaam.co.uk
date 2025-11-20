@@ -66,6 +66,11 @@ export const cubeWrapper = style({
   margin: "auto",
   containerName: cubeContainerName,
   containerType: "size",
+  "@media": {
+    print: {
+      maxWidth: "unset",
+    },
+  },
 });
 
 export const cube = style({

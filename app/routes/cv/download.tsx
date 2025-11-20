@@ -10,7 +10,7 @@ export function Download() {
         rel="noreferrer"
       >
         <>
-          <span className={styles.text}>Download CV as PDF</span>
+          <span>Download CV as PDF</span>
           <span className={styles.icon} />
         </>
       </a>
