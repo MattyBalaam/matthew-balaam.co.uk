@@ -27,3 +27,6 @@ jobs:
 
       - name: Run tests
         run: pnpm ci:test
+
+      - name: test build step
+        run: pnpm ci:build      
