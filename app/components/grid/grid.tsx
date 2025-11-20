@@ -1,13 +1,13 @@
 import type { ElementType, ReactNode } from "react";
 import { classes } from "~/utility/classes";
 
-import styles from "./grid.module.css";
+import * as styles from "./grid.css";
 
 interface GridChildProps {
   children: ReactNode;
   Component?: ElementType;
   className?: string;
-  variant?: "start" | "main" | "sub" | "main-sub";
+  variant: keyof typeof styles.gridChildVariant;
   divider?: boolean;
 }
 
@@ -21,11 +21,7 @@ export function GridChild({
   return (
     <Component
       className={classes([
-        styles.gridChild,
-        variant === "start" && styles.start,
-        variant === "main" && styles.main,
-        variant === "sub" && styles.sub,
-        variant === "main-sub" && styles["main-to-sub"],
+        styles.gridChildVariant[variant],
         divider && styles.divider,
         className,
       ])}
@@ -45,22 +41,13 @@ interface GridProps {
 export function Grid({
   children,
   className,
-  tightBottom = false,
   Component = "section",
 }: GridProps) {
   return (
-    <Component
-      className={classes([
-        styles.grid,
-        tightBottom ? styles.tightBottom : undefined,
-        className && styles[className],
-      ])}
-    >
+    <Component className={classes([styles.grid, className])}>
       {children}
     </Component>
   );
 }
 
 Grid.Child = GridChild;
-
-export { styles as gridStyles };

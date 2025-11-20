@@ -4,9 +4,8 @@ import type { Resume } from "~/schema";
 import { Paragraph, TextList } from "~/components/typography/typography";
 import { StringToLink } from "../../components/string-to-link";
 
-import styles from "./experience.module.css";
+import * as styles from "./experience.css";
 import { CvSection } from "./cv-section";
-import { gridStyles } from "~/components/grid/grid";
 import { href, Link } from "react-router";
 
 interface ExperienceProps {
@@ -33,9 +32,7 @@ export function Experience({ work }: ExperienceProps) {
           ) => (
             <CvSection.Child variant="main" key={name}>
               <CvSection.Child variant="info">
-                <header
-                  className={classes([styles.header, gridStyles.subInfo])}
-                >
+                <header className={classes([styles.header])}>
                   <CvSection.Dates startDate={startDate} endDate={endDate} />
 
                   <p>{position}</p>

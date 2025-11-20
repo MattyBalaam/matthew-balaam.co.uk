@@ -1,5 +1,4 @@
-import { gridStyles } from "~/components/grid/grid";
-import styles from "./education.module.css";
+import * as styles from "./education.css";
 
 import type { Resume } from "~/schema";
 import { Paragraphs } from "~/components/typography/typography";
@@ -13,9 +12,7 @@ export function Education({ education }: EducationProps) {
   return education.map(
     ({ startDate, endDate, area, institution, studyType, summary }) => (
       <CvSection key={institution}>
-        <CvSection.Heading className={gridStyles.header}>
-          Education
-        </CvSection.Heading>
+        <CvSection.Heading>Education</CvSection.Heading>
 
         <CvSection.Child variant="main">
           <CvSection.Child variant="info">

@@ -1,6 +1,6 @@
 import { type ReactNode } from "react";
 
-import styles from "./cube.module.css";
+import * as styles from "./cube.css";
 
 export interface CubeProps {
   children: ReactNode;

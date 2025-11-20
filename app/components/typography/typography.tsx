@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import styles from "./typography.module.css";
+import * as styles from "./typography.css";
 import { StringToLink } from "../string-to-link";
 import { classes } from "~/utility/classes";
 
@@ -53,11 +53,7 @@ export function TextList({
 }) {
   return (
     <ul
-      className={classes([
-        styles.list,
-        className,
-        variant === "serif" && styles.paragraph,
-      ])}
+      className={classes([className, variant === "serif" && styles.paragraph])}
     >
       {children.map((child, index) => (
         <li

@@ -1,4 +1,4 @@
-import styles from "./download.module.css";
+import * as styles from "./download.css";
 
 export function Download() {
   return (

@@ -1,5 +1,5 @@
 import type { ElementType, ReactNode } from "react";
-import styles from "./cv-section.module.css";
+import * as styles from "./cv-section.css";
 import { Grid } from "~/components/grid/grid";
 import { FormattedDate } from "~/components/formatted-date/formatted-date";
 
@@ -34,7 +34,7 @@ const variantConfig = {
   profiles: "start",
   main: "main",
   sub: "sub",
-  info: "main-sub",
+  info: "mainToSub",
 } as const;
 
 function CvSectionChild({

@@ -2,7 +2,7 @@ import { BlueskyIcon } from "./bluesky";
 import { GitHubIcon } from "./github";
 import { LinkedInIcon } from "./linked-in";
 
-import styles from "./icon.module.css";
+import * as styles from "./icon.css";
 
 const icons = {
   LinkedIn: <LinkedInIcon />,

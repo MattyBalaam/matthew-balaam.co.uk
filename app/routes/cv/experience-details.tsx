@@ -1,7 +1,7 @@
 import { href, unstable_useRoute, useNavigate } from "react-router";
 import type { Route } from "./+types/experience-details";
 
-import styles from "./experience-details.module.css";
+import * as styles from "./experience-details.css";
 
 export default function ExperienceDetails({
   params: { experience },

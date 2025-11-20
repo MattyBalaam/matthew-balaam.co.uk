@@ -8,7 +8,7 @@ import { Download } from "./download";
 import { Experience } from "./experience";
 import { Education } from "./education";
 
-import styles from "./cv.module.css";
+import * as styles from "./cv.css";
 import { Contact } from "./contact";
 import { CvSection } from "./cv-section";
 import { TextList } from "~/components/typography/typography";

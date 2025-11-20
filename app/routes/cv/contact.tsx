@@ -2,7 +2,7 @@ import { Paragraphs } from "~/components/typography/typography";
 
 import { StringToLink } from "../../components/string-to-link";
 
-import styles from "./contact.module.css";
+import * as styles from "./contact.css";
 import type { Resume } from "~/schema";
 import { Icon } from "~/components/icons/icon";
 import { CvSection } from "./cv-section";
