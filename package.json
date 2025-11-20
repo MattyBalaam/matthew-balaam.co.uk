@@ -7,12 +7,12 @@
     "dev": "react-router dev",
     "build": "react-router build",
     "ci:build": "pnpm build && node --experimental-strip-types ./scripts/to-pdf.ts",
-    "start": "react-router-serve ./build/server/server.js",
+    "ci:test": "concurrently 'pnpm lint' 'pnpm typecheck'",
     "lint": "pnpm oxlint --type-aware",
     "lint:fix": "pnpm oxlint --type-aware --fix",
-    "ci:test": "concurrently 'pnpm lint' 'pnpm typecheck'",
-    "typecheck": "react-router typegen && tsgo --noEmit",
+    "start": "react-router-serve ./build/server/server.js",
     "postinstall": "playwright install",
+    "typecheck": "react-router typegen && tsgo --noEmit",
     "typegen": "react-router typegen"
   },
   "browserslist": {

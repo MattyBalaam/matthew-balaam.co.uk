@@ -29,12 +29,12 @@ async function savePDF(url: string, outputPath: string) {
 }
 
 async function main() {
-  const serveProcess = spawn("pnpm", ["start"], { stdio: "inherit" });
+  const child = spawn("pnpm", ["start"], { stdio: "inherit" });
 
   try {
     await savePDF(URL, PDF_PATH);
   } finally {
-    serveProcess.kill();
+    child.kill("SIGKILL");
   }
 }
 
