@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+import { style, globalStyle } from "@vanilla-extract/css";
 import { dimensions, vars } from "./css/theme.css";
 
 export const body = style({
@@ -25,4 +25,26 @@ export const html = style({
       height: "297mm",
     },
   },
+});
+
+globalStyle(":link", {
+  color: vars.colorIce,
+});
+
+globalStyle(":visited", {
+  color: vars.colorPrince,
+});
+
+globalStyle("main", {
+  display: "block",
+});
+
+globalStyle("ul,li,dl,dd,p,a,h1,h2,h3,h4,h5,h6", {
+  padding: 0,
+  margin: 0,
+});
+
+globalStyle("ul, ol", {
+  listStyle: "none",
+  paddingLeft: 0,
 });

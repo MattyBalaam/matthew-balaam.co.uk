@@ -11,7 +11,6 @@ import type { LayoutRouteProps } from "react-router";
 import { themeClass } from "~/css/theme.css";
 import * as styles from "./root.css";
 
-import "./css/global.css";
 import "./css/print.css";
 
 // TODO - migrate typography to Vanilla Extract
