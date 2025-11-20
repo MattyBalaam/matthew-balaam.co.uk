@@ -1,4 +1,4 @@
-import { href, Link, type MetaDescriptor } from "react-router";
+import { Link, type MetaDescriptor, href } from "react-router";
 import { Grid } from "~/components/grid/grid";
 import { Paragraph } from "~/components/typography/typography";
 

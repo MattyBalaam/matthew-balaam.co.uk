@@ -1,7 +1,7 @@
-import { href, Link, type MetaDescriptor } from "react-router";
-import type { Route } from "./+types/music";
 import { Paragraph, Paragraphs } from "~/components/typography/typography";
+import { href, Link, type MetaDescriptor } from "react-router";
 
+import type { Route } from "./+types/music";
 import * as styles from "./music.css";
 
 export function loader() {

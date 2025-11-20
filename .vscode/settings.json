@@ -4,10 +4,15 @@
   "typescript.experimental.useTsgo": true,
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "oxc.fmt.experimental": true,
+  "oxc.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.oxc": "always"
+  },
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "cSpell.words": [
     "catchall",
     "matthewbalaam",
+    "oxfmt",
     "oxlint",
     "reactrouter",
     "reactrouterdom",
@@ -18,11 +23,5 @@
     "tsgo",
     "tsgolint",
     "zodresume"
-  ],
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "vscode.css-language-features"
-  }
+  ]
 }

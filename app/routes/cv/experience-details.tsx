@@ -1,7 +1,7 @@
 import { href, unstable_useRoute, useNavigate } from "react-router";
-import type { Route } from "./+types/experience-details";
 
-import * as styles from "./experience-details.css";
+import type { Route } from "./+types/experience-details";
+import styles from "./experience-details.module.css";
 
 export default function ExperienceDetails({
   params: { experience },
@@ -15,7 +15,7 @@ export default function ExperienceDetails({
   if (!data) return null;
 
   const handleClose = () => {
-    navigate(href("/cv"), { preventScrollReset: true });
+    void navigate(href("/cv"), { preventScrollReset: true });
   };
 
   return (

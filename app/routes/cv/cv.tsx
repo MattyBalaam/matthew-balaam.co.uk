@@ -1,6 +1,6 @@
 import type { Route } from "./+types/cv";
 
-import { Outlet, type MetaDescriptor } from "react-router";
+import { type MetaDescriptor, Outlet } from "react-router";
 import { zResume } from "~/schema";
 
 import jsonData from "~/json/cv.json";

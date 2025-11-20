@@ -1,10 +1,9 @@
+import { Icon } from "~/components/icons/icon";
+import { StringToLink } from "~/components/string-to-link";
 import { Paragraphs } from "~/components/typography/typography";
-
-import { StringToLink } from "../../components/string-to-link";
+import type { Resume } from "~/schema";
 
 import * as styles from "./contact.css";
-import type { Resume } from "~/schema";
-import { Icon } from "~/components/icons/icon";
 import { CvSection } from "./cv-section";
 
 export type ContactProps = Resume["basics"];

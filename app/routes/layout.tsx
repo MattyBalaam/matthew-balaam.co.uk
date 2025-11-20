@@ -1,4 +1,4 @@
-import { href, NavLink, Outlet, useLocation } from "react-router";
+import { NavLink, Outlet, href, useLocation } from "react-router";
 import { Cube } from "~/components/cube/cube";
 import * as styles from "./layout.css";
 

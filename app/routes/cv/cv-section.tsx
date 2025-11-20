@@ -1,7 +1,9 @@
-import type { ElementType, ReactNode } from "react";
-import * as styles from "./cv-section.css";
-import { Grid } from "~/components/grid/grid";
 import { FormattedDate } from "~/components/formatted-date/formatted-date";
+import { Grid } from "~/components/grid/grid";
+import { classes } from "~/utility/classes";
+import type { ElementType, ReactNode } from "react";
+
+import * as styles from "./cv-section.css";
 
 interface CvSectionHeaderProps {
   children: ReactNode;
@@ -16,7 +18,7 @@ function CvSectionHeading({
 }: CvSectionHeaderProps) {
   return (
     <Grid.Child variant="start">
-      <Component className={`${styles.header} ${className ? className : ""}`}>
+      <Component className={classes([styles.header, className])}>
         {children}
       </Component>
     </Grid.Child>

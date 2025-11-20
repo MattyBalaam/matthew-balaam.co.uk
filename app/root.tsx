@@ -5,14 +5,14 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation,
+  type LayoutRouteProps,
 } from "react-router";
-import type { LayoutRouteProps } from "react-router";
 
-import { themeClass } from "~/css/theme.css";
 import * as styles from "./root.css";
 
-import "./css/print.css";
+import { themeClass } from "~/css/theme.css";
 
+import "./css/print.css";
 // TODO - migrate typography to Vanilla Extract
 import "./css/typography.css";
 

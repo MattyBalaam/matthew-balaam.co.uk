@@ -14,10 +14,7 @@ export const zResume = z
         address: z.string().optional(),
         postalCode: z.string().optional(),
         city: z.string().optional(),
-        countryCode: z
-          .string()
-
-          .optional(),
+        countryCode: z.string().optional(),
         region: z.string().optional(),
       }),
       profiles: z.array(

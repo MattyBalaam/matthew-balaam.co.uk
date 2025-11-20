@@ -1,8 +1,7 @@
 import { BlueskyIcon } from "./bluesky";
 import { GitHubIcon } from "./github";
-import { LinkedInIcon } from "./linked-in";
-
 import * as styles from "./icon.css";
+import { LinkedInIcon } from "./linked-in";
 
 const icons = {
   LinkedIn: <LinkedInIcon />,
@@ -11,7 +10,7 @@ const icons = {
 } as const;
 
 interface IconProps {
-  network: keyof typeof icons | string;
+  network: string;
 }
 
 export function Icon({ network }: IconProps) {

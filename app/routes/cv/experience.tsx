@@ -1,12 +1,11 @@
-import { classes } from "~/utility/classes";
-import type { Resume } from "~/schema";
-
+import { StringToLink } from "~/components/string-to-link";
 import { Paragraph, TextList } from "~/components/typography/typography";
-import { StringToLink } from "../../components/string-to-link";
-
-import * as styles from "./experience.css";
-import { CvSection } from "./cv-section";
+import type { Resume } from "~/schema";
+import { classes } from "~/utility/classes";
 import { href, Link } from "react-router";
+
+import { CvSection } from "./cv-section";
+import * as styles from "./experience.css";
 
 interface ExperienceProps {
   work: Resume["work"];

@@ -1,5 +1,5 @@
-import type { ElementType, ReactNode } from "react";
 import { classes } from "~/utility/classes";
+import type { ElementType, ReactNode } from "react";
 
 import * as styles from "./grid.css";
 

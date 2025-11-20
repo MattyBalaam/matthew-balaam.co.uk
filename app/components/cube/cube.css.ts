@@ -1,10 +1,10 @@
 import {
-  style,
   createContainer,
-  globalStyle,
   globalKeyframes,
+  globalStyle,
+  style,
 } from "@vanilla-extract/css";
-import { vars, dimensions } from "~/css/theme.css";
+import { dimensions, vars } from "~/css/theme.css";
 
 globalKeyframes("cubeSpinIn", {
   "0%": {
