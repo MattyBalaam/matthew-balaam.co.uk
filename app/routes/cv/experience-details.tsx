@@ -1,7 +1,7 @@
 import { href, unstable_useRoute, useNavigate } from "react-router";
 
 import type { Route } from "./+types/experience-details";
-import styles from "./experience-details.module.css";
+import * as styles from "./experience-details.css";
 
 export default function ExperienceDetails({
   params: { experience },
@@ -30,7 +30,7 @@ export default function ExperienceDetails({
         src="/MoMotorCitySpeedway1656construct.gif"
         alt="This feature is under construction"
       />
-      <pre>{JSON.stringify(data, undefined, 2)}</pre>
+      <pre className={styles.pre}>{JSON.stringify(data, undefined, 2)}</pre>
       <form method="dialog">
         <button type="submit">Back to CV</button>
       </form>

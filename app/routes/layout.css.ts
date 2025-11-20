@@ -23,8 +23,10 @@ export const list = style({
 });
 
 export const item = style({
-  padding: "0.5em 1em",
-  display: "inline-block",
+  height: "2em",
+  display: "inline-grid",
+  padding: "0 1em",
+  alignItems: "center",
   color: "white",
   textDecoration: "none",
   selectors: {
