@@ -2,7 +2,8 @@ import { spawn } from "node:child_process";
 import { join } from "node:path";
 import { chromium } from "playwright";
 
-const PUBLIC_DIR = join(process.cwd(), "public");
+// We need to save this in the build's public directory
+const PUBLIC_DIR = join(process.cwd(), "build/client");
 const PDF_PATH = join(PUBLIC_DIR, "Matthew-Balaam_Developer.pdf");
 const URL = "http://localhost:3000/cv"; // Change if your serve port is different
 
