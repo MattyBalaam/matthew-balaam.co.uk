@@ -25,5 +25,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run linter
-        run: pnpm lint
+      - name: Run tests
+        run: pnpm ci:test

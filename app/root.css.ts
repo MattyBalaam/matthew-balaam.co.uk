@@ -1,4 +1,5 @@
 import { globalStyle, style } from "@vanilla-extract/css";
+import { href } from "react-router";
 
 import { dimensions, vars } from "./css/theme.css";
 
@@ -19,6 +20,9 @@ export const body = style({
 export const html = style({
   fontSize: "17px",
   background: "#aaa",
+  [`&.\\${href("/cv")}`]: {
+    background: "#888",
+  },
   "@media": {
     print: {
       fontSize: "9pt",
