@@ -1,8 +1,8 @@
-import { StringToLink } from "~/components/string-to-link";
+import { Link } from "~/components/link/link";
 import { Paragraph, TextList } from "~/components/typography/typography";
 import type { Resume } from "~/schema";
-import { classes } from "~/utility/classes";
-import { href, Link } from "react-router";
+import { classes } from "~/utilities/classes";
+import { href, Link as RouterLink } from "react-router";
 
 import { CvSection } from "./cv-section";
 import * as styles from "./experience.css";
@@ -37,9 +37,9 @@ export function Experience({ work }: ExperienceProps) {
                   <p>{position}</p>
                   <p>
                     {url ? (
-                      <StringToLink className={styles.website} label={name}>
-                        {url}
-                      </StringToLink>
+                      <Link className={styles.website} href={name}>
+                        {name}
+                      </Link>
                     ) : (
                       name
                     )}
@@ -56,13 +56,13 @@ export function Experience({ work }: ExperienceProps) {
                 ) : (
                   <Paragraph>
                     {summary}{" "}
-                    <Link
+                    <RouterLink
                       className={styles.seeMore}
                       to={href("/cv/:experience", { experience: name })}
                       preventScrollReset
                     >
                       See full details
-                    </Link>
+                    </RouterLink>
                   </Paragraph>
                 )}
               </CvSection.Child>

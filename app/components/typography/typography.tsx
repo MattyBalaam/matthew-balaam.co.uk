@@ -1,7 +1,11 @@
+import { Link } from "~/components/link/link";
+import { Maskable } from "~/components/maskable/maskable";
+import { classes } from "~/utilities/classes";
 import type { ReactNode } from "react";
+import { useSearchParams } from "react-router";
+import Linkify from "linkify-react";
+
 import * as styles from "./typography.css";
-import { StringToLink } from "../string-to-link";
-import { classes } from "~/utility/classes";
 
 export interface ParagraphsProps {
   children?: Array<string> | string;
@@ -12,9 +16,18 @@ const NEW_PARAGRAPH_INDICATOR = "\n\n";
 interface ParagraphProps {
   children: ReactNode;
   bottomMargin?: boolean;
+  maskable?: boolean;
 }
 
-export function Paragraph({ children, bottomMargin = false }: ParagraphProps) {
+export function Paragraph({
+  children,
+  bottomMargin = false,
+  maskable,
+}: ParagraphProps) {
+  const [searchParams] = useSearchParams();
+
+  const mask = maskable && searchParams.get("mask") === "true";
+
   return (
     <p
       className={classes([
@@ -22,12 +35,26 @@ export function Paragraph({ children, bottomMargin = false }: ParagraphProps) {
         bottomMargin && styles.bottomMargin,
       ])}
     >
-      <StringToLink>{children}</StringToLink>
+      <Linkify
+        options={{
+          defaultProtocol: "https",
+          render: ({ attributes, content }) => {
+            if (mask) return <Maskable>{content}</Maskable>;
+
+            return <Link {...attributes}>{content}</Link>;
+          },
+        }}
+      >
+        {children}
+      </Linkify>
     </p>
   );
 }
 
-export function Paragraphs({ children }: ParagraphsProps) {
+export function Paragraphs({
+  children,
+  maskable,
+}: ParagraphsProps & { maskable?: boolean }) {
   if (!children) {
     return null;
   }
@@ -38,7 +65,9 @@ export function Paragraphs({ children }: ParagraphsProps) {
   ).flatMap((val: string) => val.split(NEW_PARAGRAPH_INDICATOR));
 
   return normalisedValues.map((text: string) => (
-    <Paragraph key={text}>{text}</Paragraph>
+    <Paragraph key={text} maskable={maskable}>
+      {text}
+    </Paragraph>
   ));
 }
 

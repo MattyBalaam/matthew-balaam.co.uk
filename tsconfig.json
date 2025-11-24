@@ -7,7 +7,11 @@
   ],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "types": ["node", "vite/client"],
+    "types": [
+      "node",
+      "vite/client",
+      "./app/utilities/vite-plugin-image-metadata"
+    ],
     "target": "ES2022",
     "module": "ES2022",
     "moduleResolution": "bundler",

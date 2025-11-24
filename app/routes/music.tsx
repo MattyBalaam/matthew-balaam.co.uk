@@ -1,4 +1,5 @@
 import { Paragraph, Paragraphs } from "~/components/typography/typography";
+import { UnderConstruction } from "~/components/under-construction/under-construction";
 import { href, Link, type MetaDescriptor } from "react-router";
 
 import type { Route } from "./+types/music";
@@ -47,10 +48,7 @@ export default function Music({ loaderData: { posts } }: Route.ComponentProps) {
 
       <Paragraph>This is the music page for Matthew Balaam</Paragraph>
 
-      <img
-        src="MoMotorCitySpeedway1656construct.gif"
-        alt="This page is under construction"
-      />
+      <UnderConstruction />
 
       <ul className={styles.posts}>
         {posts.map((item) => (

@@ -1,12 +1,15 @@
 import { Icon } from "~/components/icons/icon";
-import { StringToLink } from "~/components/string-to-link";
+import { Link } from "~/components/link/link";
+import { Maskable } from "~/components/maskable/maskable";
 import { Paragraphs } from "~/components/typography/typography";
 import type { Resume } from "~/schema";
 
 import * as styles from "./contact.css";
 import { CvSection } from "./cv-section";
 
-export type ContactProps = Resume["basics"];
+export type ContactProps = Resume["basics"] & {
+  mask?: boolean;
+};
 
 export function Contact({
   email,
@@ -16,29 +19,36 @@ export function Contact({
   phone,
   profiles,
   summary,
+  mask = true,
 }: ContactProps) {
   return (
     <CvSection tightBottom Component="header">
       <CvSection.Heading className={styles.name} Component="h1">
-        {name}
+        <Maskable>{name}</Maskable>
       </CvSection.Heading>
-      <CvSection.Child variant="main" divider={false}>
-        <img className={styles.image} src={image} alt={name} />
-      </CvSection.Child>
+      {!mask ? (
+        <CvSection.Child variant="main" divider={false}>
+          <img className={styles.image} src={image} alt={name} />
+        </CvSection.Child>
+      ) : null}
 
       <CvSection.Child variant="profiles">
         <ul className={styles.profiles}>
           <li>
-            <StringToLink>{email}</StringToLink>
+            <Link maskable href={`mailto:${email}`}>
+              {email}
+            </Link>
           </li>
           {profiles.map(({ network, url, username }) => (
             <li key={url}>
-              <a href={url} title={network}>
+              <Link maskable href={url} title={network}>
                 {username} <Icon network={network} />
-              </a>
+              </Link>
             </li>
           ))}
-          <li>{phone}</li>
+          <li>
+            <Maskable>{phone}</Maskable>
+          </li>
         </ul>
       </CvSection.Child>
 
@@ -52,7 +62,7 @@ export function Contact({
           ))}
       </CvSection.Child>
       <CvSection.Child variant="sub">
-        <Paragraphs>{summary}</Paragraphs>
+        <Paragraphs maskable>{summary}</Paragraphs>
       </CvSection.Child>
     </CvSection>
   );

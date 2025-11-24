@@ -53,3 +53,8 @@ globalStyle("ul, ol", {
   listStyle: "none",
   paddingLeft: 0,
 });
+
+globalStyle("img", {
+  maxWidth: "100%",
+  height: "auto",
+});

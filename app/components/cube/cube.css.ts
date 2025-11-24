@@ -4,6 +4,7 @@ import {
   globalStyle,
   style,
 } from "@vanilla-extract/css";
+
 import { dimensions, vars } from "~/css/theme.css";
 
 globalKeyframes("cubeSpinIn", {
@@ -29,7 +30,12 @@ globalKeyframes("cubeSpinOut", {
 globalStyle("::view-transition-new(cube)", {
   "@media": {
     "(prefers-reduced-motion: no-preference)": {
-      animation: "cubeSpinIn 1s forwards ease-in-out",
+      animation: [
+        "cubeSpinIn",
+        vars.sprungCubeDuration,
+        "forwards",
+        vars.sprungCubeEasing,
+      ].join(" "),
       backfaceVisibility: "hidden",
       transformOrigin: "center center",
     },
@@ -39,7 +45,13 @@ globalStyle("::view-transition-new(cube)", {
 globalStyle("::view-transition-old(cube)", {
   "@media": {
     "(prefers-reduced-motion: no-preference)": {
-      animation: "cubeSpinOut 1s forwards 0.09s ease-in-out",
+      animation: [
+        "cubeSpinOut",
+        vars.sprungCubeDuration,
+        "forwards",
+        "0.06s",
+        vars.sprungCubeEasing,
+      ].join(" "),
       backfaceVisibility: "hidden",
       transformOrigin: "center center",
     },

@@ -1,17 +1,15 @@
-import type { Route } from "./+types/cv";
-
-import { type MetaDescriptor, Outlet } from "react-router";
-import { zResume } from "~/schema";
-
+import { TextList } from "~/components/typography/typography";
 import jsonData from "~/json/cv.json";
-import { Download } from "./download";
-import { Experience } from "./experience";
-import { Education } from "./education";
+import { zResume } from "~/schema";
+import { Outlet, useSearchParams, type MetaDescriptor } from "react-router";
 
-import * as styles from "./cv.css";
+import type { Route } from "./+types/cv";
 import { Contact } from "./contact";
 import { CvSection } from "./cv-section";
-import { TextList } from "~/components/typography/typography";
+import * as styles from "./cv.css";
+import { Download } from "./download";
+import { Education } from "./education";
+import { Experience } from "./experience";
 
 export function meta() {
   return [{ title: "Matthew Balaam - CV" }] satisfies Array<MetaDescriptor>;
@@ -31,12 +29,16 @@ export async function loader() {
 export default function CV({
   loaderData: { basics, skills, work, education },
 }: Route.ComponentProps) {
+  const [searchParams] = useSearchParams();
+
+  const mask = searchParams.get("mask") === "true";
+
   return (
     <>
       <Download />
 
       <article className={styles.cvGrid}>
-        <Contact {...basics} />
+        <Contact {...basics} mask={mask} />
 
         <CvSection>
           <CvSection.Heading>Technologies</CvSection.Heading>

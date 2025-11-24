@@ -1,3 +1,4 @@
+import { UnderConstruction } from "~/components/under-construction/under-construction";
 import { href, unstable_useRoute, useNavigate } from "react-router";
 
 import type { Route } from "./+types/experience-details";
@@ -26,10 +27,8 @@ export default function ExperienceDetails({
       }}
       onClose={handleClose}
     >
-      <img
-        src="/MoMotorCitySpeedway1656construct.gif"
-        alt="This feature is under construction"
-      />
+      <UnderConstruction />
+
       <pre className={styles.pre}>{JSON.stringify(data, undefined, 2)}</pre>
       <form method="dialog">
         <button type="submit">Back to CV</button>

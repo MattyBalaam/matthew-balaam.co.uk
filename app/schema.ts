@@ -20,7 +20,7 @@ export const zResume = z
       profiles: z.array(
         z.object({
           network: z.string(),
-          username: z.string().optional(),
+          username: z.string(),
           url: z.string(),
         }),
       ),

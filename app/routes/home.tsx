@@ -1,6 +1,9 @@
-import { Link, type MetaDescriptor, href } from "react-router";
 import { Grid } from "~/components/grid/grid";
 import { Paragraph } from "~/components/typography/typography";
+import { UnderConstruction } from "~/components/under-construction/under-construction";
+import { href, Link, type MetaDescriptor } from "react-router";
+
+import TestMDX from "./test.mdx";
 
 export function meta() {
   return [{ title: "Matthew Balaam" }] satisfies Array<MetaDescriptor>;
@@ -19,6 +22,7 @@ export default function Home() {
             View my CV
           </Link>
         </Paragraph>
+        <TestMDX />
       </Grid.Child>
 
       <Grid.Child variant="main">
@@ -33,10 +37,7 @@ export default function Home() {
             This site is currently under construction, so please excuse the
             shabby appearance :D
           </Paragraph>
-          <img
-            src="MoMotorCitySpeedway1656construct.gif"
-            alt="This page is under construction"
-          />
+          <UnderConstruction />
 
           <Link to={href("/music")} viewTransition>
             Listen to my music

@@ -1,6 +1,6 @@
 import { FormattedDate } from "~/components/formatted-date/formatted-date";
 import { Grid } from "~/components/grid/grid";
-import { classes } from "~/utility/classes";
+import { classes } from "~/utilities/classes";
 import type { ElementType, ReactNode } from "react";
 
 import * as styles from "./cv-section.css";

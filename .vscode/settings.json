@@ -11,6 +11,8 @@
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "cSpell.words": [
     "catchall",
+    "imagetools",
+    "Maskable",
     "matthewbalaam",
     "oxfmt",
     "oxlint",
