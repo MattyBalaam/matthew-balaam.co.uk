@@ -6,7 +6,7 @@
     "email": "info@matthewbalaam.co.uk",
     "phone": "07730 953 486",
     "url": "https://www.matthewbalaam.co.uk",
-    "summary": "Hands-on frontend engineer able to assist in full-stack projects, has lead a team but thrives as an individual contributor. Loves CSS, TypesScript and web standards. Agile learner with a curiousness toward innovative problem solving.\n\n10+ years React experience  but framework agnostic; wants to use the platform where possible.\n\nSpeaks design language from previous background and loves creating great user experience. Web accessibility and automated testing.\n\nSee https://github.com/MattyBalaam/matthew-balaam.co.uk for the code behind this CV.",
+    "summary": "Hands-on frontend engineer able to assist in full-stack projects, has lead a team but thrives as an individual contributor. Loves CSS, TypesScript and web standards. Agile learner with a curiousness toward innovative problem solving.\n\n10+ years React experience but framework agnostic; aims to use the platform where possible and avoid needless abstractions.\n\nSpeaks design language from previous background and loves creating great user experience, web accessibility and automated testing.\n\nSee https://github.com/MattyBalaam/matthew-balaam.co.uk for the code behind this CV.",
     "location": {
       "city": "Brighton and Hove",
       "countryCode": "GB"
@@ -35,15 +35,17 @@
       "position": "Lead UI Engineer",
       "url": "www.shieldpay.com",
       "startDate": "2021-02-20",
-      "summary": "Hands-on code-focused technical lead for the UI stack managing and mentoring in a “chapter” of 4 inside larger cross-functional team. React Router 7 (Remix) SSR apps deployed to AWS infrastructure built using accessible (WCAG 2.1 AAA) component library.",
+      "summary": "Hands-on code-focused lead for the UI stack managing and mentoring in a “chapter” of 4 inside larger cross-functional team. Set of React Router 7 (Remix) SSR apps using accessible (WCAG 2.1 AAA) component library deployed to AWS infrastructure with Github actions and comprehensive automated testing.",
       "highlights": [
-        "React Router 7 SSR apps using shared platform hosted on Node functions in AWS Lambda calling microservices via REST API.",
-        "Themeable component library built using a mix of bespoke code and headless UI packages with a focus on web accessibility (WCAG 2.1 AAA) and performance.",
-        "Diagnosed and mitigated performance issues in relating to AWS IaC reducing app latency up to 10 times.",
-        "Successfully rolled out RBAC permissions for apps.",
-        "Introduced Zod-based schemas for forms, closing the contract circle with the backend to reduce potential for data or API errors.",
+        "Architected and built React Router 7 SSR apps using shared “Optimus” platform hosted on AWS Lambda NodeJS calling microservices via REST API.",
+        "Worked with product, design and backend teams to plan and deliver new features.",
         "Ensured timely delivery of new features pragmatically across the UI team balancing delivery and quality demands.",
-        "Migrated simulated component tests in Jest to browser-based Playwright tests with features like a mocked API layer using MSW for quick test development and easy DX.",
+        "Conducted Github code reviews taking a mentoring approach to help team members grow their skills, explaining the reasoning behind suggestions.",
+        "Themeable component library built from using a mix of bespoke code and headless UI packages with a focus on web accessibility (WCAG 2.1 AAA) and performance. Figma designs used as reference.",
+        "Added RBAC permissions for apps.",
+        "Introduced Zod-based schemas for forms, closing the contract circle with the backend to reduce potential for data or API errors.",
+        "Diagnosed and mitigated performance issues in relating to AWS IaC reducing app latency (in extreme cases) up to 10 times.",
+        "Migrated simulated jsdom/Jest component tests to browser-based Playwright tests with features like a mocked API layer using MSW for quick test development and easy DX.",
         "Introduced visual snapshot testing for confidence against regressions across multiple browsers and automated web accessibility testing."
       ]
     },
@@ -53,7 +55,7 @@
       "url": "pure360.com",
       "startDate": "2018-11-12",
       "endDate": "2021-02-15",
-      "summary": "Building a React/Redux/Typescript SPA interfacing with the API layer using REST for handling customer creation and scheduling of multi-channel marketing campaigns. Migrated to Tanstack React Query for data fetching and state management. Working in an Agile/Scrum environment.",
+      "summary": "Building a React/Typescript SPA interfacing with the API layer using REST for handling customer creation and scheduling of multi-channel marketing campaigns. Originally using Redux  for data fetching and state management, this was later migrated to Tanstack React Query. Working in an Agile/Scrum environment.",
       "highlights": [
         "Building a graph-style decision tree with a clear simple graphic interface for multiple journeys of customer engagement",
         "working with UX to create a new image editor",
@@ -68,7 +70,8 @@
       "endDate": "2018-11-10",
       "summary": "Building features on two React SPAs in the corporate intranet sector. An established product using React and Redux and a greenfield product using React with Apollo/GraphQL.",
       "highlights": [
-        "Working in an Agile environment using elements borrowed from Scrum and Kanban methodologies"
+        "Built mobile-friendly image uploader with cropping and resizing functionality.",
+        "Working in an Agile environment using elements borrowed from Scrum and Kanban methodologies."
       ]
     },
     {

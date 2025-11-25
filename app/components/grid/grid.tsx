@@ -1,5 +1,6 @@
-import { classes } from "~/utility/classes";
 import type { ElementType, ReactNode } from "react";
+
+import { classes } from "~/utilities/classes";
 
 import * as styles from "./grid.css";
 
@@ -33,21 +34,12 @@ export function GridChild({
 
 interface GridProps {
   children: ReactNode;
-  className?: string;
   Component?: ElementType;
   tightBottom?: boolean;
 }
 
-export function Grid({
-  children,
-  className,
-  Component = "section",
-}: GridProps) {
-  return (
-    <Component className={classes([styles.grid, className])}>
-      {children}
-    </Component>
-  );
+export function Grid({ children, Component = "section" }: GridProps) {
+  return <Component className={styles.grid}>{children}</Component>;
 }
 
 Grid.Child = GridChild;

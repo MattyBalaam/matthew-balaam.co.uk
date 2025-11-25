@@ -1,7 +1,10 @@
+import { ScreenReaderText } from "~/components/screen-reader-text/screen-reader-text";
+
 import { BlueskyIcon } from "./bluesky";
 import { GitHubIcon } from "./github";
-import * as styles from "./icon.css";
 import { LinkedInIcon } from "./linked-in";
+
+import * as styles from "./icon.css";
 
 const icons = {
   LinkedIn: <LinkedInIcon />,
@@ -17,7 +20,8 @@ export function Icon({ network }: IconProps) {
   const icon = network in icons && icons[network as keyof typeof icons];
 
   return icon ? (
-    <span className={styles.icon} aria-label={network}>
+    <span className={styles.icon}>
+      <ScreenReaderText>{network}</ScreenReaderText>
       {icon}
     </span>
   ) : (

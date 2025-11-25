@@ -1,10 +1,11 @@
-import { StringToLink } from "~/components/string-to-link";
+import { href, Link as RouterLink } from "react-router";
+
+import { Link } from "~/components/link/link";
 import { Paragraph, TextList } from "~/components/typography/typography";
 import type { Resume } from "~/schema";
-import { classes } from "~/utility/classes";
-import { href, Link } from "react-router";
 
 import { CvSection } from "./cv-section";
+
 import * as styles from "./experience.css";
 
 interface ExperienceProps {
@@ -31,38 +32,30 @@ export function Experience({ work }: ExperienceProps) {
           ) => (
             <CvSection.Child variant="main" key={name}>
               <CvSection.Child variant="info">
-                <header className={classes([styles.header])}>
+                <header>
                   <CvSection.Dates startDate={startDate} endDate={endDate} />
 
                   <p>{position}</p>
-                  <p>
-                    {url ? (
-                      <StringToLink className={styles.website} label={name}>
-                        {url}
-                      </StringToLink>
-                    ) : (
-                      name
-                    )}
-                  </p>
+                  <p>{url ? <Link href={name}>{name}</Link> : name}</p>
                 </header>
               </CvSection.Child>
               <CvSection.Child variant="sub">
                 {/* we only want to show the full highlights for the current role */}
                 {index === 0 ? (
                   <>
-                    <Paragraph bottomMargin>{summary}</Paragraph>
+                    <Paragraph>{summary}</Paragraph>
                     <TextList variant="serif">{highlights}</TextList>
                   </>
                 ) : (
                   <Paragraph>
                     {summary}{" "}
-                    <Link
+                    <RouterLink
                       className={styles.seeMore}
                       to={href("/cv/:experience", { experience: name })}
                       preventScrollReset
                     >
                       See full details
-                    </Link>
+                    </RouterLink>
                   </Paragraph>
                 )}
               </CvSection.Child>

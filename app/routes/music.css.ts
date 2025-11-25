@@ -2,11 +2,6 @@ import { style } from "@vanilla-extract/css";
 
 import { vars } from "~/css/theme.css";
 
-export const layout = style({
-  display: "grid",
-  gap: `${vars.rhythmVertical2} ${vars.columnGap}`,
-});
-
 export const posts = style({
   display: "grid",
   gap: vars.rhythmVertical,
@@ -18,8 +13,8 @@ export const post = style({
   alignItems: "start",
   justifyContent: "center",
   gap: vars.rhythmVerticalHalf,
-  borderTop: vars.sectionDecoration,
-  padding: vars.rhythmVerticalHalf,
+  borderBlockStart: vars.sectionDecoration,
+  paddingBlock: vars.rhythmVerticalHalf,
 });
 
 export const listenMatey = style({

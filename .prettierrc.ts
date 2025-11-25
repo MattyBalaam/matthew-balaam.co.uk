@@ -5,7 +5,12 @@ export default {
     "^react", // React imports first
     "^[a-zA-Z0-9]", // Package imports (node_modules)
     "", // (blank line)
-    "^[./]", // Relative imports (like "./cv-section")
+    "^[~/]", // App imports (like "~/components/...")
+    "", // (blank line)
+    // Parent imports. Anything that starts with '../'. (exclude .css so CSS matches last group)
+    "^(?!.*\\.css$)\\../",
+    // Relative imports. Anything that starts with './'. (exclude .css so CSS matches last group)
+    "^(?!.*\\.css$)\\./",
     "", // (blank line)
     ".*\\.css$", // CSS imports last
   ],

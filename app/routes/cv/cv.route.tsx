@@ -1,17 +1,17 @@
-import type { Route } from "./+types/cv";
+import { Outlet, type MetaDescriptor } from "react-router";
 
-import { type MetaDescriptor, Outlet } from "react-router";
+import { TextList } from "~/components/typography/typography";
+import jsonData from "~/json/cv.json";
 import { zResume } from "~/schema";
 
-import jsonData from "~/json/cv.json";
-import { Download } from "./download";
-import { Experience } from "./experience";
-import { Education } from "./education";
-
-import * as styles from "./cv.css";
+import type { Route } from "./+types/cv.route";
 import { Contact } from "./contact";
 import { CvSection } from "./cv-section";
-import { TextList } from "~/components/typography/typography";
+import { Download } from "./download";
+import { Education } from "./education";
+import { Experience } from "./experience";
+
+import * as styles from "./cv.css";
 
 export function meta() {
   return [{ title: "Matthew Balaam - CV" }] satisfies Array<MetaDescriptor>;
@@ -33,9 +33,9 @@ export default function CV({
 }: Route.ComponentProps) {
   return (
     <>
-      <Download />
-
       <article className={styles.cvGrid}>
+        <Download />
+
         <Contact {...basics} />
 
         <CvSection>

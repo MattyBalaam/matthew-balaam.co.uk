@@ -1,12 +1,15 @@
 import { href, unstable_useRoute, useNavigate } from "react-router";
 
-import type { Route } from "./+types/experience-details";
-import * as styles from "./experience-details.css";
+import { UnderConstruction } from "~/components/under-construction/under-construction";
+
+import type { Route } from "./+types/experience-details.route";
+
+import * as styles from "./experience-details.route.css";
 
 export default function ExperienceDetails({
   params: { experience },
 }: Route.ComponentProps) {
-  const data = unstable_useRoute("routes/cv/cv")?.loaderData?.work.find(
+  const data = unstable_useRoute("routes/cv/cv.route")?.loaderData?.work.find(
     (item) => item.name.toLowerCase() === experience.toLowerCase(),
   );
 
@@ -26,10 +29,8 @@ export default function ExperienceDetails({
       }}
       onClose={handleClose}
     >
-      <img
-        src="/MoMotorCitySpeedway1656construct.gif"
-        alt="This feature is under construction"
-      />
+      <UnderConstruction />
+
       <pre className={styles.pre}>{JSON.stringify(data, undefined, 2)}</pre>
       <form method="dialog">
         <button type="submit">Back to CV</button>

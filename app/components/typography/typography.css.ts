@@ -1,4 +1,5 @@
-import { globalStyle, style } from "@vanilla-extract/css";
+import { style, styleVariants } from "@vanilla-extract/css";
+
 import { vars } from "~/css/theme.css";
 
 export const paragraph = style({
@@ -6,12 +7,17 @@ export const paragraph = style({
   fontSize: "105%",
 });
 
-globalStyle(`${paragraph} + ${paragraph}:not(:first-of-type)`, {
-  textIndent: "2ch",
-});
-
-export const bottomMargin = style({
-  marginBottom: vars.rhythmVertical,
+export const variants = styleVariants({
+  default: {
+    marginBlockEnd: vars.rhythmVertical,
+  },
+  indent: {
+    selectors: {
+      "& + &:not(:first-of-type)": {
+        textIndent: "2ch",
+      },
+    },
+  },
 });
 
 export const item = style({

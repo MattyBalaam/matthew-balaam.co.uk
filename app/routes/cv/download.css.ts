@@ -6,26 +6,27 @@ export const downloadPDF = style({
   color: "white",
   textAlign: "center",
   display: "inline-block",
-
+  position: "absolute",
+  insetInlineEnd: vars.bodyMargin,
   "@media": {
     print: {
       display: "none",
     },
     [dimensions.breakHorizontalMin]: {
       position: "fixed",
-      zIndex: 9999,
+      zIndex: 10,
       transform: "rotate(45deg)",
-      top: "0rem",
-      right: "0rem",
+      insetBlockStart: 0,
+      insetInlineEnd: 0,
     },
   },
 });
 
 export const link = style({
-  borderTop: "2px solid white",
-  borderBottom: "2px solid white",
+  borderBlockStart: "2px solid white",
+  borderBlockEnd: "2px solid white",
   boxSizing: "border-box",
-  padding: "1rem 7em",
+  padding: "0.5rem 1rem",
   display: "block",
   width: "100%",
   color: "inherit",
@@ -39,6 +40,7 @@ export const link = style({
   "@media": {
     [dimensions.breakHorizontalMin]: {
       boxSizing: "unset",
+      padding: "1rem 7em",
     },
   },
 });
@@ -73,12 +75,12 @@ export const icon = style({
     position: "absolute",
     width: 0,
     height: 0,
-    left: "-3px",
-    bottom: "-3px",
+    insetInlineStart: "-3px",
+    insetBlockEnd: "-3px",
     borderWidth: "5px",
     borderStyle: "solid",
-    borderBottomColor: "transparent",
-    borderLeftColor: "transparent",
+    borderBlockEndColor: "transparent",
+    borderInlineStartColor: "transparent",
   },
   "::after": {
     content: "",
@@ -87,8 +89,8 @@ export const icon = style({
     height: "2px",
     boxShadow: "inset 0 0 0 32px, 0 -5px 0 0, 0 5px 0 0",
     position: "absolute",
-    left: " 50%",
-    top: "50%",
+    insetInlineStart: "50%",
+    insetBlockStart: "50%",
     transform: "translate(-50%, -50%)",
   },
 });

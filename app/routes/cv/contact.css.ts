@@ -1,10 +1,11 @@
-import { dimensions, vars } from "~/css/theme.css";
 import { style } from "@vanilla-extract/css";
+
+import { dimensions, vars } from "~/css/theme.css";
 
 export const image = style({
   height: "3em",
   width: "3em",
-  marginLeft: "-0.33em",
+  marginInlineStart: "-0.33em",
 });
 
 export const profiles = style({
@@ -17,10 +18,6 @@ export const profiles = style({
 });
 
 export const name = style({
-  paddingTop: "0.5em",
+  paddingBlockStart: "0.5em",
   fontSize: vars.headerSize,
-});
-
-export const addressLine = style({
-  display: "block",
 });

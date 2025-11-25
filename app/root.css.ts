@@ -7,12 +7,12 @@ export const body = style({
   color: vars.colorBody,
   fontFamily: "Theinhardt, sans-serif",
   lineHeight: vars.lineHeightBody,
-  margin: vars.bodyMargin,
+  margin: 0,
   padding: 0,
   minHeight: "100lvh",
   "@media": {
     [dimensions.breakHorizontalMin]: {
-      paddingTop: "6em",
+      paddingBlockStart: "6em",
     },
   },
 });
@@ -51,5 +51,10 @@ globalStyle("ul,li,dl,dd,p,a,h1,h2,h3,h4,h5,h6", {
 
 globalStyle("ul, ol", {
   listStyle: "none",
-  paddingLeft: 0,
+  paddingInlineStart: 0,
+});
+
+globalStyle("img", {
+  maxWidth: "100%",
+  height: "auto",
 });
