@@ -1,8 +1,8 @@
-import * as styles from "./education.css";
-
+import { Paragraph, Paragraphs } from "~/components/typography/typography";
 import type { Resume } from "~/schema";
-import { Paragraphs } from "~/components/typography/typography";
+
 import { CvSection } from "./cv-section";
+import * as styles from "./education.css";
 
 export interface EducationProps {
   education: NonNullable<Resume["education"]>;
@@ -20,7 +20,7 @@ export function Education({ education }: EducationProps) {
 
             <p className={styles.institution}>{institution}</p>
             <p>{studyType}</p>
-            <p className={styles.area}>{area}</p>
+            <Paragraph>{area}</Paragraph>
           </CvSection.Child>
           <CvSection.Child variant="sub">
             <Paragraphs>{summary}</Paragraphs>

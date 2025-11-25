@@ -22,8 +22,8 @@ export const downloadPDF = style({
 });
 
 export const link = style({
-  borderTop: "2px solid white",
-  borderBottom: "2px solid white",
+  borderBlockStart: "2px solid white",
+  borderBlockEnd: "2px solid white",
   boxSizing: "border-box",
   padding: "1rem 7em",
   display: "block",
@@ -77,8 +77,8 @@ export const icon = style({
     bottom: "-3px",
     borderWidth: "5px",
     borderStyle: "solid",
-    borderBottomColor: "transparent",
-    borderLeftColor: "transparent",
+    borderBlockEndColor: "transparent",
+    borderInlineStartColor: "transparent",
   },
   "::after": {
     content: "",

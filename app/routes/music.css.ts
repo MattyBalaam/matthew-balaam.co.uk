@@ -18,7 +18,7 @@ export const post = style({
   alignItems: "start",
   justifyContent: "center",
   gap: vars.rhythmVerticalHalf,
-  borderTop: vars.sectionDecoration,
+  borderBlockStart: vars.sectionDecoration,
   padding: vars.rhythmVerticalHalf,
 });
 

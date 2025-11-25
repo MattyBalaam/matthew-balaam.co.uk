@@ -48,12 +48,18 @@ importers:
         specifier: 7.9.6
         version: 7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
     devDependencies:
+      '@axe-core/playwright':
+        specifier: 4.10.2
+        version: 4.10.2(playwright-core@1.56.1)
       '@ianvs/prettier-plugin-sort-imports':
         specifier: 4.7.0
         version: 4.7.0(@prettier/plugin-oxc@0.0.5)(prettier@3.6.2)
       '@netlify/vite-plugin-react-router':
         specifier: 2.1.2
         version: 2.1.2(react-router@7.9.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(rolldown-vite@7.2.7(@types/node@22.19.1)(esbuild@0.25.12)(yaml@2.8.1))
+      '@playwright/test':
+        specifier: ^1.56.1
+        version: 1.56.1
       '@prettier/plugin-oxc':
         specifier: 0.0.5
         version: 0.0.5
@@ -75,6 +81,9 @@ importers:
       '@typescript/native-preview':
         specifier: 7.0.0-dev.20251117.1
         version: 7.0.0-dev.20251117.1
+      axe-core:
+        specifier: 4.9.1
+        version: 4.9.1
       concurrently:
         specifier: 9.2.1
         version: 9.2.1
@@ -116,6 +125,11 @@ importers:
         version: 4.1.12
 
 packages:
+
+  '@axe-core/playwright@4.10.2':
+    resolution: {integrity: sha512-6/b5BJjG6hDaRNtgzLIfKr5DfwyiLHO4+ByTLB0cJgWSM8Ll7KqtdblIS6bEkwSF642/Ex91vNqIl3GLXGlceg==}
+    peerDependencies:
+      playwright-core: '>= 1.0.0'
 
   '@babel/code-frame@7.27.1':
     resolution: {integrity: sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg==}
@@ -990,6 +1004,11 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
+  '@playwright/test@1.56.1':
+    resolution: {integrity: sha512-vSMYtL/zOcFpvJCW71Q/OEGQb7KYBPAdKh35WNSkaZA75JlAO8ED8UN6GUNTm3drWomcbcqRPFqQbLae8yBTdg==}
+    engines: {node: '>=18'}
+    hasBin: true
+
   '@prettier/plugin-oxc@0.0.5':
     resolution: {integrity: sha512-A0uIVkwFrEFQJCU/Wpga6pS5t8UQDdVGB+5e7pVMtlPRw69KDmlozcAoLggwdp3FoVpzNGhngMmgfiE8KLs+BA==}
     engines: {node: '>=14'}
@@ -1404,6 +1423,14 @@ packages:
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
+
+  axe-core@4.10.3:
+    resolution: {integrity: sha512-Xm7bpRXnDSX2YE2YFfBk2FnF0ep6tmG7xPh8iHee8MIcrgq762Nkce856dYtJYLkuIoYZvGfTs/PbZhideTcEg==}
+    engines: {node: '>=4'}
+
+  axe-core@4.9.1:
+    resolution: {integrity: sha512-QbUdXJVTpvUTHU7871ppZkdOLBeGUKBQWHkHrvN2V9IQWGMt61zf3B45BtzjxEJzYuj0JBjBZP/hmYS/R9pmAw==}
+    engines: {node: '>=4'}
 
   babel-dead-code-elimination@1.0.10:
     resolution: {integrity: sha512-DV5bdJZTzZ0zn0DC24v3jD7Mnidh6xhKa4GfKCbq3sfW8kaWhDdZjP3i81geA8T33tdYqWKw4D3fVv0CwEgKVA==}
@@ -3120,6 +3147,11 @@ packages:
 
 snapshots:
 
+  '@axe-core/playwright@4.10.2(playwright-core@1.56.1)':
+    dependencies:
+      axe-core: 4.10.3
+      playwright-core: 1.56.1
+
   '@babel/code-frame@7.27.1':
     dependencies:
       '@babel/helper-validator-identifier': 7.28.5
@@ -3952,6 +3984,10 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
+  '@playwright/test@1.56.1':
+    dependencies:
+      playwright: 1.56.1
+
   '@prettier/plugin-oxc@0.0.5':
     dependencies:
       oxc-parser: 0.97.0
@@ -4352,6 +4388,10 @@ snapshots:
       picocolors: 1.1.1
       postcss: 8.5.6
       postcss-value-parser: 4.2.0
+
+  axe-core@4.10.3: {}
+
+  axe-core@4.9.1: {}
 
   babel-dead-code-elimination@1.0.10:
     dependencies:

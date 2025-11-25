@@ -1,7 +1,7 @@
 import { TextList } from "~/components/typography/typography";
 import jsonData from "~/json/cv.json";
 import { zResume } from "~/schema";
-import { Outlet, useSearchParams, type MetaDescriptor } from "react-router";
+import { Outlet, type MetaDescriptor } from "react-router";
 
 import type { Route } from "./+types/cv";
 import { Contact } from "./contact";
@@ -29,16 +29,12 @@ export async function loader() {
 export default function CV({
   loaderData: { basics, skills, work, education },
 }: Route.ComponentProps) {
-  const [searchParams] = useSearchParams();
-
-  const mask = searchParams.get("mask") === "true";
-
   return (
     <>
       <Download />
 
       <article className={styles.cvGrid}>
-        <Contact {...basics} mask={mask} />
+        <Contact {...basics} />
 
         <CvSection>
           <CvSection.Heading>Technologies</CvSection.Heading>

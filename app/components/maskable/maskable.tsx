@@ -14,8 +14,6 @@ export function Maskable({ children }: { children: ReactNode }) {
 
   return Children.count(children) > 1
     ? Children.map(children, (child) => {
-        console.log(child);
-
         return <Maskable>{child}</Maskable>;
       })
     : children;

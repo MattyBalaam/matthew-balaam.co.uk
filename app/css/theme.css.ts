@@ -3,12 +3,13 @@ import { createTheme } from "@vanilla-extract/css";
 const palette = {
   colorBody: "rgba(0, 0, 0, 0.9)",
   colorSubtleOffWhite: "#fafcfa",
-  colorIce: "#4db0c4",
-  colorFire: "#c47333",
+  colorIce: "#007f98",
+  colorFire: "#c25600",
   colorPrince: "#c53fa6",
 } as const;
 
 export const [themeClass, vars] = createTheme({
+  ...palette,
   headerSize: "1.6rem",
   headerMarginTop: "0.15rem",
   lineHeightBody: "1.35rem",
@@ -17,7 +18,6 @@ export const [themeClass, vars] = createTheme({
   columnGap: "3em",
   fontInfo: '"Theinhardt", sans-serif',
   fontHeader: '"Theinhardt", sans-serif',
-  ...palette,
   sectionDecoration: `0.075rem solid ${palette.colorIce}`,
   rhythmVertical: "1.35rem",
   rhythmVerticalHalf: "0.675rem",

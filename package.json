@@ -12,6 +12,7 @@
     "lint:fix": "pnpm oxlint --type-aware --fix",
     "start": "react-router-serve ./build/server/server.js",
     "postinstall": "playwright install",
+    "test": "pnpm build && playwright test",
     "typecheck": "react-router typegen && tsgo --noEmit",
     "typegen": "react-router typegen"
   },
@@ -43,8 +44,10 @@
     "react-router": "7.9.6"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
     "@ianvs/prettier-plugin-sort-imports": "4.7.0",
     "@netlify/vite-plugin-react-router": "2.1.2",
+    "@playwright/test": "^1.56.1",
     "@prettier/plugin-oxc": "0.0.5",
     "@react-router/dev": "7.9.6",
     "@types/mdx": "2.0.13",
@@ -60,6 +63,7 @@
     "playwright": "1.56.1",
     "postcss-custom-media-generator": "1.1.0",
     "postcss-preset-env": "10.4.0",
+    "axe-core": "4.9.1",
     "prettier": "3.6.2",
     "vite": "npm:rolldown-vite@latest",
     "vite-plugin-devtools-json": "1.0.0",

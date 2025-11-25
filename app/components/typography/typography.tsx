@@ -1,8 +1,6 @@
 import { Link } from "~/components/link/link";
-import { Maskable } from "~/components/maskable/maskable";
 import { classes } from "~/utilities/classes";
 import type { ReactNode } from "react";
-import { useSearchParams } from "react-router";
 import Linkify from "linkify-react";
 
 import * as styles from "./typography.css";
@@ -24,10 +22,6 @@ export function Paragraph({
   bottomMargin = false,
   maskable,
 }: ParagraphProps) {
-  const [searchParams] = useSearchParams();
-
-  const mask = maskable && searchParams.get("mask") === "true";
-
   return (
     <p
       className={classes([
@@ -38,11 +32,11 @@ export function Paragraph({
       <Linkify
         options={{
           defaultProtocol: "https",
-          render: ({ attributes, content }) => {
-            if (mask) return <Maskable>{content}</Maskable>;
-
-            return <Link {...attributes}>{content}</Link>;
-          },
+          render: ({ attributes, content }) => (
+            <Link {...attributes} maskable={maskable}>
+              {content}
+            </Link>
+          ),
         }}
       >
         {children}

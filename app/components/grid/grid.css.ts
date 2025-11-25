@@ -1,4 +1,5 @@
 import { style, styleVariants, type StyleRule } from "@vanilla-extract/css";
+
 import { dimensions, vars } from "~/css/theme.css";
 
 const printAndBreakHorizontalMin = (rule: StyleRule) => ({
@@ -40,7 +41,7 @@ export const gridChildVariant = styleVariants({
         left: 0,
         top: "-0.45rem",
         width: "100%",
-        borderTop: vars.sectionDecoration,
+        borderBlockStart: vars.sectionDecoration,
       },
     },
   },

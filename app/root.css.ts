@@ -12,7 +12,7 @@ export const body = style({
   minHeight: "100lvh",
   "@media": {
     [dimensions.breakHorizontalMin]: {
-      paddingTop: "6em",
+      paddingBlockStart: "6em",
     },
   },
 });
@@ -51,7 +51,7 @@ globalStyle("ul,li,dl,dd,p,a,h1,h2,h3,h4,h5,h6", {
 
 globalStyle("ul, ol", {
   listStyle: "none",
-  paddingLeft: 0,
+  paddingInlineStart: 0,
 });
 
 globalStyle("img", {

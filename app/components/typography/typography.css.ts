@@ -1,4 +1,5 @@
 import { globalStyle, style } from "@vanilla-extract/css";
+
 import { vars } from "~/css/theme.css";
 
 export const paragraph = style({
@@ -11,7 +12,7 @@ globalStyle(`${paragraph} + ${paragraph}:not(:first-of-type)`, {
 });
 
 export const bottomMargin = style({
-  marginBottom: vars.rhythmVertical,
+  marginBlockEnd: vars.rhythmVertical,
 });
 
 export const item = style({

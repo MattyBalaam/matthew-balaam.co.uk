@@ -1,7 +1,6 @@
 import { Link } from "~/components/link/link";
 import { Paragraph, TextList } from "~/components/typography/typography";
 import type { Resume } from "~/schema";
-import { classes } from "~/utilities/classes";
 import { href, Link as RouterLink } from "react-router";
 
 import { CvSection } from "./cv-section";
@@ -31,19 +30,11 @@ export function Experience({ work }: ExperienceProps) {
           ) => (
             <CvSection.Child variant="main" key={name}>
               <CvSection.Child variant="info">
-                <header className={classes([styles.header])}>
+                <header>
                   <CvSection.Dates startDate={startDate} endDate={endDate} />
 
                   <p>{position}</p>
-                  <p>
-                    {url ? (
-                      <Link className={styles.website} href={name}>
-                        {name}
-                      </Link>
-                    ) : (
-                      name
-                    )}
-                  </p>
+                  <p>{url ? <Link href={name}>{name}</Link> : name}</p>
                 </header>
               </CvSection.Child>
               <CvSection.Child variant="sub">
