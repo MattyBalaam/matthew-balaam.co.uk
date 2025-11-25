@@ -71,7 +71,7 @@ export const cubeWrapper = style({
 export const cube = style({
   background: vars.colorSubtleOffWhite,
   minHeight: "100lvh",
-  padding: "2em",
+  padding: vars.bodyMargin,
   "@container": {
     [`${cubeContainerName} ${dimensions.breakHorizontalMin}`]: {
       padding: "4em",

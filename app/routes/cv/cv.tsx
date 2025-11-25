@@ -31,9 +31,9 @@ export default function CV({
 }: Route.ComponentProps) {
   return (
     <>
-      <Download />
-
       <article className={styles.cvGrid}>
+        <Download />
+
         <Contact {...basics} />
 
         <CvSection>

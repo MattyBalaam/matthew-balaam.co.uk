@@ -18,9 +18,10 @@ export function Education({ education }: EducationProps) {
           <CvSection.Child variant="info">
             <CvSection.Dates startDate={startDate} endDate={endDate} />
 
-            <p className={styles.institution}>{institution}</p>
-            <p>{studyType}</p>
-            <Paragraph>{area}</Paragraph>
+            <p>
+              {studyType} <span className={styles.area}>{area}</span>
+            </p>
+            <p>{institution}</p>
           </CvSection.Child>
           <CvSection.Child variant="sub">
             <Paragraphs>{summary}</Paragraphs>

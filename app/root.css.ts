@@ -7,7 +7,7 @@ export const body = style({
   color: vars.colorBody,
   fontFamily: "Theinhardt, sans-serif",
   lineHeight: vars.lineHeightBody,
-  margin: vars.bodyMargin,
+  margin: 0,
   padding: 0,
   minHeight: "100lvh",
   "@media": {

@@ -38,8 +38,8 @@ export const gridChildVariant = styleVariants({
       [`&.${divider}::before`]: {
         content: "",
         position: "absolute",
-        left: 0,
-        top: "-0.45rem",
+        insetInlineStart: 0,
+        insetBlockStart: "-0.45rem",
         width: "100%",
         borderBlockStart: vars.sectionDecoration,
       },
