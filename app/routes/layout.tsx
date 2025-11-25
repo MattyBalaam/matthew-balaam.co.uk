@@ -23,6 +23,7 @@ export default function Layout() {
               <NavLink
                 className={styles.item}
                 to={to}
+                // disable view transitions on same-page navigation
                 viewTransition={pathname !== to}
               >
                 {label}

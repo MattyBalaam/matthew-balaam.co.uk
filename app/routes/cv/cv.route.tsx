@@ -43,7 +43,7 @@ export default function CV({
 
           <CvSection.Child variant="main">
             <TextList className={styles.technologyList}>
-              {[...skills[0].keywords.slice(0, 11), <>And many more…</>]}
+              {[...skills[0].keywords.slice(0, 11), <>More…</>]}
             </TextList>
           </CvSection.Child>
         </CvSection>

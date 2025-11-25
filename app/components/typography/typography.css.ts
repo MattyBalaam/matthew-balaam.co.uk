@@ -9,7 +9,11 @@ export const paragraph = style({
 
 export const variants = styleVariants({
   default: {
-    marginBlockEnd: vars.rhythmVertical,
+    selectors: {
+      "&:not(:last-child)": {
+        marginBlockEnd: vars.rhythmVertical,
+      },
+    },
   },
   indent: {
     selectors: {

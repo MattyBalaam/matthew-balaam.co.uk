@@ -5,16 +5,18 @@ import { dimensions, vars } from "~/css/theme.css";
 export const downloadPDF = style({
   color: "white",
   textAlign: "center",
-  display: "inline-block",
   position: "absolute",
-  insetInlineEnd: vars.bodyMargin,
+  zIndex: 10,
+  maxWidth: "12ch",
+  insetInlineEnd: "1rem",
   "@media": {
     print: {
       display: "none",
     },
+    [dimensions.breakMediumMin]: {
+      maxWidth: "unset",
+    },
     [dimensions.breakHorizontalMin]: {
-      position: "fixed",
-      zIndex: 10,
       transform: "rotate(45deg)",
       insetBlockStart: 0,
       insetInlineEnd: 0,
@@ -41,16 +43,6 @@ export const link = style({
     [dimensions.breakHorizontalMin]: {
       boxSizing: "unset",
       padding: "1rem 7em",
-    },
-  },
-});
-
-export const text = style({
-  "@media": {
-    [dimensions.breakHorizontalMin]: {
-      display: "inline-block",
-      verticalAlign: "middle",
-      width: "6em",
     },
   },
 });
