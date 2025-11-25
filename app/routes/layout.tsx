@@ -1,11 +1,14 @@
-import { NavLink, Outlet, href, useLocation } from "react-router";
+import { href, NavLink, Outlet, useLocation } from "react-router";
+
 import { Cube } from "~/components/cube/cube";
+
 import * as styles from "./layout.css";
 
 const links = [
   { to: href("/"), label: "Home" },
   { to: href("/cv"), label: "C.V." },
   { to: href("/music"), label: "Music" },
+  { to: href("/web-components"), label: "Web components" },
 ] as const;
 
 export default function Layout() {

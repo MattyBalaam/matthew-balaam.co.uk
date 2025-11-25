@@ -29,6 +29,7 @@ export const item = style({
   alignItems: "center",
   color: "white",
   textDecoration: "none",
+  verticalAlign: "text-top",
   selectors: {
     "&:hover": {
       background: "rgb(100 100 100 / 0.8)",

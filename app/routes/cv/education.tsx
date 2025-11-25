@@ -1,7 +1,8 @@
-import { Paragraph, Paragraphs } from "~/components/typography/typography";
+import { Paragraphs } from "~/components/typography/typography";
 import type { Resume } from "~/schema";
 
 import { CvSection } from "./cv-section";
+
 import * as styles from "./education.css";
 
 export interface EducationProps {

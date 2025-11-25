@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { useSearchParams } from "react-router";
 
-import { Maskable } from "../maskable/maskable";
+import { Maskable } from "~/components/maskable/maskable";
 
 type LinkProps = {
   className?: string;

@@ -1,9 +1,11 @@
+import { href, Link as RouterLink } from "react-router";
+
 import { Link } from "~/components/link/link";
 import { Paragraph, TextList } from "~/components/typography/typography";
 import type { Resume } from "~/schema";
-import { href, Link as RouterLink } from "react-router";
 
 import { CvSection } from "./cv-section";
+
 import * as styles from "./experience.css";
 
 interface ExperienceProps {
@@ -41,7 +43,7 @@ export function Experience({ work }: ExperienceProps) {
                 {/* we only want to show the full highlights for the current role */}
                 {index === 0 ? (
                   <>
-                    <Paragraph bottomMargin>{summary}</Paragraph>
+                    <Paragraph>{summary}</Paragraph>
                     <TextList variant="serif">{highlights}</TextList>
                   </>
                 ) : (

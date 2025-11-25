@@ -1,8 +1,11 @@
-import { Paragraph, Paragraphs } from "~/components/typography/typography";
-import { UnderConstruction } from "~/components/under-construction/under-construction";
 import { href, Link, type MetaDescriptor } from "react-router";
 
-import type { Route } from "./+types/music";
+import { MdxFormatter } from "~/components/mdx/mdx";
+import { Paragraphs } from "~/components/typography/typography";
+
+import type { Route } from "./+types/music.route";
+import music from "./music.mdx";
+
 import * as styles from "./music.css";
 
 export function meta() {
@@ -43,18 +46,14 @@ export function loader() {
 
 export default function Music({ loaderData: { posts } }: Route.ComponentProps) {
   return (
-    <div className={styles.layout}>
-      <h1>DJing and music</h1>
-
-      <Paragraph>This is the music page for Matthew Balaam</Paragraph>
-
-      <UnderConstruction />
+    <article>
+      <MdxFormatter md={music} />
 
       <ul className={styles.posts}>
         {posts.map((item) => (
           <li key={item.url} className={styles.post}>
             <h2>{item.title}</h2>
-            <Paragraphs>{item.description} </Paragraphs>
+            <Paragraphs>{item.description}</Paragraphs>
             <a className={styles.listenMatey} href={item.url}>
               Visit site
             </a>
@@ -65,6 +64,6 @@ export default function Music({ loaderData: { posts } }: Route.ComponentProps) {
       <Link to={href("/")} viewTransition>
         Back home
       </Link>
-    </div>
+    </article>
   );
 }

@@ -1,12 +1,14 @@
+import { useSearchParams } from "react-router";
+
 import { Icon } from "~/components/icons/icon";
 import { Link } from "~/components/link/link";
 import { Maskable } from "~/components/maskable/maskable";
 import { Paragraphs } from "~/components/typography/typography";
 import type { Resume } from "~/schema";
-import { useSearchParams } from "react-router";
+
+import { CvSection } from "./cv-section";
 
 import * as styles from "./contact.css";
-import { CvSection } from "./cv-section";
 
 export type ContactProps = Resume["basics"];
 
@@ -62,7 +64,9 @@ export function Contact({
           ))}
       </CvSection.Child>
       <CvSection.Child variant="sub">
-        <Paragraphs maskable>{summary}</Paragraphs>
+        <Paragraphs maskable variant="indent">
+          {summary}
+        </Paragraphs>
       </CvSection.Child>
     </CvSection>
   );

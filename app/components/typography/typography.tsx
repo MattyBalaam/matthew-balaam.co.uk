@@ -1,7 +1,8 @@
-import { Link } from "~/components/link/link";
-import { classes } from "~/utilities/classes";
 import type { ReactNode } from "react";
 import Linkify from "linkify-react";
+
+import { Link } from "~/components/link/link";
+import { classes } from "~/utilities/classes";
 
 import * as styles from "./typography.css";
 
@@ -13,22 +14,17 @@ const NEW_PARAGRAPH_INDICATOR = "\n\n";
 
 interface ParagraphProps {
   children: ReactNode;
-  bottomMargin?: boolean;
   maskable?: boolean;
+  variant?: keyof typeof styles.variants;
 }
 
 export function Paragraph({
   children,
-  bottomMargin = false,
+  variant = "default",
   maskable,
 }: ParagraphProps) {
   return (
-    <p
-      className={classes([
-        styles.paragraph,
-        bottomMargin && styles.bottomMargin,
-      ])}
-    >
+    <p className={classes([styles.paragraph, styles.variants[variant]])}>
       <Linkify
         options={{
           defaultProtocol: "https",
@@ -48,7 +44,8 @@ export function Paragraph({
 export function Paragraphs({
   children,
   maskable,
-}: ParagraphsProps & { maskable?: boolean }) {
+  variant,
+}: Pick<ParagraphProps, "maskable" | "variant" | "children">) {
   if (!children) {
     return null;
   }
@@ -59,7 +56,7 @@ export function Paragraphs({
   ).flatMap((val: string) => val.split(NEW_PARAGRAPH_INDICATOR));
 
   return normalisedValues.map((text: string) => (
-    <Paragraph key={text} maskable={maskable}>
+    <Paragraph key={text} maskable={maskable} variant={variant}>
       {text}
     </Paragraph>
   ));
