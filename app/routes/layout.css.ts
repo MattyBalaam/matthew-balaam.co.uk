@@ -1,11 +1,11 @@
 import { style } from "@vanilla-extract/css";
 
-import { dimensions } from "~/css/theme.css";
+import { dimensions, vars } from "~/css/theme.css";
 
 export const nav = style({
   display: "flex",
   inset: "0 0 auto 0",
-  background: "rgb(55 55 55 / 0.8)",
+  background: vars.palette.stone,
   zIndex: 5,
   "@media": {
     [dimensions.breakHorizontalMin]: {

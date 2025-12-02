@@ -1,15 +1,16 @@
 import { createTheme } from "@vanilla-extract/css";
 
 const palette = {
-  colorBody: "rgba(0, 0, 0, 0.9)",
-  colorSubtleOffWhite: "#fafcfa",
-  colorIce: "#007f98",
-  colorFire: "#c25600",
-  colorPrince: "#c53fa6",
+  body: "rgba(0, 0, 0, 0.9)",
+  subtleOffWhite: "#fafcfa",
+  ice: "#007f98",
+  fire: "#c25600",
+  prince: "#c53fa6",
+  stone: "rgb(55 55 55 / 0.8)",
 } as const;
 
 export const [themeClass, vars] = createTheme({
-  ...palette,
+  palette,
   bodyMargin: "2em",
   headerSize: "1.6rem",
   headerMarginTop: "0.15rem",
@@ -18,7 +19,7 @@ export const [themeClass, vars] = createTheme({
   columnGap: "3em",
   fontInfo: '"Theinhardt", sans-serif',
   fontHeader: '"Theinhardt", sans-serif',
-  sectionDecoration: `0.075rem solid ${palette.colorIce}`,
+  sectionDecoration: `0.075rem solid ${palette.ice}`,
   rhythmVertical: "1.35rem",
   rhythmVerticalHalf: "0.675rem",
   rhythmVertical2: "2.7rem",

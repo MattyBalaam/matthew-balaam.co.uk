@@ -6,7 +6,7 @@ export const icon = style({
   display: "inline-flex",
   width: "1em",
   height: "1em",
-  color: vars.colorIce,
+  color: vars.palette.ice,
   alignItems: "baseline",
 });
 

@@ -26,9 +26,9 @@ export const variants = styleVariants({
 
 export const item = style({
   listStyle: "outside",
-  color: vars.colorFire,
+  color: vars.palette.fire,
 });
 
 export const itemText = style({
-  color: vars.colorBody,
+  color: vars.palette.body,
 });

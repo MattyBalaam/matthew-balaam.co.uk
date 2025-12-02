@@ -4,7 +4,7 @@ import { href } from "react-router";
 import { dimensions, vars } from "./css/theme.css";
 
 export const body = style({
-  color: vars.colorBody,
+  color: vars.palette.body,
   fontFamily: "Theinhardt, sans-serif",
   lineHeight: vars.lineHeightBody,
   margin: 0,
@@ -33,11 +33,11 @@ export const html = style({
 });
 
 globalStyle(":link", {
-  color: vars.colorIce,
+  color: vars.palette.ice,
 });
 
 globalStyle(":visited", {
-  color: vars.colorPrince,
+  color: vars.palette.prince,
 });
 
 globalStyle("main", {

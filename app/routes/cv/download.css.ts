@@ -33,10 +33,10 @@ export const link = style({
   width: "100%",
   color: "inherit",
   textDecoration: "none",
-  background: vars.colorFire,
+  background: vars.palette.fire,
   selectors: {
     "&:hover": {
-      background: vars.colorIce,
+      background: vars.palette.ice,
     },
   },
   "@media": {

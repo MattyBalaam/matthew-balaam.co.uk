@@ -74,7 +74,7 @@ export const cubeWrapper = style({
 });
 
 export const cube = style({
-  background: vars.colorSubtleOffWhite,
+  background: vars.palette.subtleOffWhite,
   minHeight: "100lvh",
   padding: vars.bodyMargin,
   "@container": {

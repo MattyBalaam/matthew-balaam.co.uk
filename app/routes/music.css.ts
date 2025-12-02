@@ -21,11 +21,11 @@ export const listenMatey = style({
   verticalAlign: "middle",
   padding: "0.5rem 1rem",
   textDecoration: "none",
-  background: vars.colorFire,
+  background: vars.palette.fire,
   color: "white",
   selectors: {
     "&:hover": {
-      background: vars.colorPrince,
+      background: vars.palette.prince,
     },
     "&::after": {
       content: '"  ▶"',
