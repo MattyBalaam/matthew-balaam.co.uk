@@ -31,6 +31,15 @@ export const item = style({
   textDecoration: "none",
   verticalAlign: "text-top",
   selectors: {
+    "&[popoverTarget]": {
+      anchorName: "var(--anchorName)",
+      font: "inherit",
+      background: "none",
+      border: "none",
+      appearance: "none",
+      margin: "0",
+      outline: "none",
+    },
     "&:hover": {
       background: "rgb(100 100 100 / 0.8)",
     },
@@ -38,4 +47,12 @@ export const item = style({
       color: "white",
     },
   },
+});
+
+export const sublist = style({
+  background: vars.palette.stone,
+  border: "none",
+  top: "anchor(bottom)",
+  left: "anchor(left)",
+  positionAnchor: "var(--anchorName)",
 });

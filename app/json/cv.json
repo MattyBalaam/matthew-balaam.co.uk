@@ -33,8 +33,9 @@
     {
       "name": "Shieldpay",
       "position": "Lead UI Engineer",
-      "url": "www.shieldpay.com",
-      "startDate": "2021-02-20",
+      "url": "https://www.shieldpay.com",
+      "startDate": "2021-01-25",
+      "endDate": "2025-12-15",
       "summary": "Hands-on code-focused lead for the UI stack managing and mentoring in a “chapter” of 4 inside larger cross-functional team. Set of React Router 7 (Remix) SSR apps using accessible (WCAG 2.1 AAA) component library deployed to AWS infrastructure with Github actions and comprehensive automated testing.",
       "highlights": [
         "Architected and built React Router 7 SSR apps using shared “Optimus” platform hosted on AWS Lambda NodeJS calling microservices via REST API.",
@@ -51,9 +52,9 @@
     {
       "name": "Pure360",
       "position": "Software developer",
-      "url": "pure360.com",
+      "url": "https://pure360.com",
       "startDate": "2018-11-12",
-      "endDate": "2021-02-15",
+      "endDate": "2021-01-22",
       "summary": "React/Typescript SPA with REST for handling customer creation and scheduling of multi-channel marketing campaigns. Redux for data fetching and state management, charts for data visualisation. Agile/Scrum environment.",
       "highlights": [
         "Building a graph-style decision tree with a clear simple graphic interface for multiple journeys of customer engagement",
@@ -64,7 +65,7 @@
     {
       "name": "Simpplr",
       "position": "JavaScript engineer",
-      "url": "simpplr.com",
+      "url": "https://simpplr.com",
       "startDate": "2018-05-01",
       "endDate": "2018-11-10",
       "summary": "Building features on two React SPAs in the corporate intranet sector. An established product using React and Redux and a greenfield product using React with Apollo/GraphQL.",
@@ -76,7 +77,7 @@
     {
       "name": "Filmstro",
       "position": "Software developer",
-      "url": "filmstro.com",
+      "url": "https://filmstro.com",
       "startDate": "2017-07-21",
       "endDate": "2018-03-23",
       "summary": "Building cross-platform adaptive-music desktop app Filmstro Pro: A React/Redux app inside Electron using a lower-level audio binary.",
@@ -88,7 +89,7 @@
     {
       "name": "New Era Education Ltd.",
       "position": "Front-end developer",
-      "url": "neweraed.co.uk",
+      "url": "https://www.neweratech.com/uk/education",
       "startDate": "2013-07-07",
       "endDate": "2017-07-20",
       "summary": "Developed websites and e-learning courses for the education sector.",
@@ -100,7 +101,7 @@
     {
       "name": "Freelance",
       "position": "Developer and designer",
-      "url": "matthewbalaam.co.uk",
+      "url": "https://matthewbalaam.co.uk",
       "startDate": "2009-10-10",
       "endDate": "2013-07-07",
       "summary": "Providing web design and development services to a variety of clients.",

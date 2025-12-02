@@ -3,7 +3,8 @@
     "**/*",
     "**/.server/**/*",
     "**/.client/**/*",
-    ".react-router/types/**/*"
+    ".react-router/types/**/*",
+    "app/types/**/*"
   ],
   "compilerOptions": {
     // allowJs allows .mdx files to use the import paths defined in tsconfig
@@ -13,6 +14,7 @@
       "node",
       "vite/client",
       "mdx",
+      "./app/types/web-components",
       "./app/utilities/vite-plugin-image-metadata"
     ],
     "target": "ES2022",
