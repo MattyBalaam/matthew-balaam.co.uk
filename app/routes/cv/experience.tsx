@@ -36,7 +36,7 @@ export function Experience({ work }: ExperienceProps) {
                   <CvSection.Dates startDate={startDate} endDate={endDate} />
 
                   <p>{position}</p>
-                  <p>{url ? <Link href={name}>{name}</Link> : name}</p>
+                  <p>{url ? <Link href={url}>{name}</Link> : name}</p>
                 </header>
               </CvSection.Child>
               <CvSection.Child variant="sub">

@@ -1,37 +1,43 @@
-import { href, NavLink, Outlet, useLocation } from "react-router";
+import { href, Outlet } from "react-router";
 
 import { Cube } from "~/components/cube/cube";
-
-import * as styles from "./layout.css";
-
-const links = [
-  { to: href("/"), label: "Home" },
-  { to: href("/cv"), label: "C.V." },
-  { to: href("/music"), label: "Music" },
-  { to: href("/web-components"), label: "Web components" },
-] as const;
+import { routeTypes, SiteNav } from "~/components/site-nav/site-nav";
 
 export default function Layout() {
-  const pathname = useLocation().pathname;
-
   return (
     <>
-      <nav className={styles.nav}>
-        <ul className={styles.list}>
-          {links.map(({ to, label }) => (
-            <li key={to}>
-              <NavLink
-                className={styles.item}
-                to={to}
-                // disable view transitions on same-page navigation
-                viewTransition={pathname !== to}
-              >
-                {label}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <SiteNav
+        routes={[
+          { to: href("/"), label: "Home", type: routeTypes.link },
+          { to: href("/cv"), label: "C.V.", type: routeTypes.link },
+          { to: href("/music"), label: "Music", type: routeTypes.link },
+          {
+            label: "Experiments",
+            type: routeTypes.group,
+            links: [
+              {
+                to: href("/web-components"),
+                label: "Web components",
+                type: routeTypes.link,
+              },
+            ],
+          },
+          import.meta.env.DEV
+            ? {
+                label: "test",
+                type: routeTypes.group,
+                links: [
+                  {
+                    to: href("/web-components"),
+                    label: "Test1  ",
+                    type: routeTypes.link,
+                  },
+                  { to: href("/cv"), label: "Test2", type: routeTypes.link },
+                ],
+              }
+            : [],
+        ].flat()}
+      />
       <Cube>
         <Outlet />
       </Cube>

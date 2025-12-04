@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+import { globalStyle, style } from "@vanilla-extract/css";
 
 import { dimensions, vars } from "~/css/theme.css";
 
@@ -22,9 +22,11 @@ export const list = style({
   gap: "1rem",
 });
 
+export const popover = style({});
+
 export const item = style({
   height: "2em",
-  display: "inline-grid",
+  display: "grid",
   padding: "0 1em",
   alignItems: "center",
   color: "white",
@@ -38,7 +40,7 @@ export const item = style({
       border: "none",
       appearance: "none",
       margin: "0",
-      outline: "none",
+      // outline: "none",
     },
     "&:hover": {
       background: "rgb(100 100 100 / 0.8)",
@@ -55,4 +57,14 @@ export const sublist = style({
   top: "anchor(bottom)",
   left: "anchor(left)",
   positionAnchor: "var(--anchorName)",
+});
+
+globalStyle(`${sublist}:popover-open`, {
+  "@supports": {
+    "not (top: anchor(bottom))": {
+      display: "block",
+      position: "fixed",
+      whiteSpace: "nowrap",
+    },
+  },
 });
