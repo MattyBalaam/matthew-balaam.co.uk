@@ -11,7 +11,7 @@ test.describe("CV Page", () => {
     await expect(
       page.getByRole("heading", { name: "Technologies" }),
     ).toBeVisible();
-    await expect(page.getByText("And many more…")).toBeVisible();
+    await expect(page.getByText("More…")).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "Education" }),
     ).toBeVisible();

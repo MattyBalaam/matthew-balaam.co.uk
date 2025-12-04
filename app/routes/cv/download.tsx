@@ -2,7 +2,7 @@ import * as styles from "./download.css";
 
 export function Download() {
   return (
-    <aside className={styles.downloadPDF}>
+    <section className={styles.downloadPDF}>
       <a
         className={styles.link}
         href="Matthew-Balaam_Developer.pdf"
@@ -14,6 +14,6 @@ export function Download() {
           <span className={styles.icon} />
         </>
       </a>
-    </aside>
+    </section>
   );
 }

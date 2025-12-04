@@ -5,6 +5,7 @@ import { vars } from "~/css/theme.css";
 export const paragraph = style({
   fontFamily: "Calluna, serif",
   fontSize: "105%",
+  textWrap: "pretty",
 });
 
 export const variants = styleVariants({
